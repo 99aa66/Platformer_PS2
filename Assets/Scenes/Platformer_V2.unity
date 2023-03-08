@@ -432,8 +432,8 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: -0.09249246, y: 0}
-  m_ConnectedAnchor: {x: 0.34350756, y: -0.062999964}
+  m_Anchor: {x: 0.065761566, y: -0.0027763844}
+  m_ConnectedAnchor: {x: -0.3292384, y: -0.06277633}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -455,8 +455,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.028231073, y: 0.0064195218}
-  m_Size: {x: 0.24646342, y: 0.21008748}
+  m_Offset: {x: -0.06061349, y: 0.0064195325}
+  m_Size: {x: 0.26312292, y: 0.21008971}
   m_Direction: 1
 --- !u!50 &673701074
 Rigidbody2D:

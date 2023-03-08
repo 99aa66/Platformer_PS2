@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 227614482}
   - component: {fileID: 227614481}
   - component: {fileID: 227614484}
+  - component: {fileID: 227614485}
   m_Layer: 0
   m_Name: Corps
   m_TagString: Untagged
@@ -285,6 +286,18 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -80
     m_UpperAngle: 80
+--- !u!114 &227614485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227614480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da109efdd55366449a4baff78bcd8a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &371332755
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,6 +311,7 @@ GameObject:
   - component: {fileID: 371332760}
   - component: {fileID: 371332759}
   - component: {fileID: 371332758}
+  - component: {fileID: 371332761}
   m_Layer: 0
   m_Name: Pied G
   m_TagString: Untagged
@@ -443,6 +457,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.46255642, y: 0.0894312}
   m_EdgeRadius: 0
+--- !u!114 &371332761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371332755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da109efdd55366449a4baff78bcd8a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &448527150
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +483,7 @@ GameObject:
   - component: {fileID: 448527153}
   - component: {fileID: 448527154}
   - component: {fileID: 448527156}
+  - component: {fileID: 448527157}
   m_Layer: 0
   m_Name: Jambe D
   m_TagString: Untagged
@@ -617,6 +644,18 @@ MonoBehaviour:
   targetRotation: 0
   rb: {fileID: 448527153}
   force: 300
+--- !u!114 &448527157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448527150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da109efdd55366449a4baff78bcd8a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,6 +740,74 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &610734902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 610734905}
+  - component: {fileID: 610734904}
+  - component: {fileID: 610734903}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &610734903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610734902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &610734904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610734902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &610734905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610734902}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &657109977
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,6 +821,7 @@ GameObject:
   - component: {fileID: 657109982}
   - component: {fileID: 657109980}
   - component: {fileID: 657109981}
+  - component: {fileID: 657109983}
   m_Layer: 0
   m_Name: Bras D
   m_TagString: Untagged
@@ -859,6 +967,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25272095, y: 0.66544175}
   m_EdgeRadius: 0
+--- !u!114 &657109983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657109977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da109efdd55366449a4baff78bcd8a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &672315314
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +992,7 @@ GameObject:
   - component: {fileID: 672315316}
   - component: {fileID: 672315315}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -985,7 +1105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672315314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.08, y: -2.05, z: 0}
+  m_LocalPosition: {x: 3.08, y: -1.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1006,6 +1126,7 @@ GameObject:
   - component: {fileID: 899805844}
   - component: {fileID: 899805845}
   - component: {fileID: 899805847}
+  - component: {fileID: 899805848}
   m_Layer: 0
   m_Name: Jambe G
   m_TagString: Untagged
@@ -1166,6 +1287,18 @@ MonoBehaviour:
   targetRotation: 0
   rb: {fileID: 899805844}
   force: 300
+--- !u!114 &899805848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899805841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da109efdd55366449a4baff78bcd8a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1227086610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,6 +1311,7 @@ GameObject:
   - component: {fileID: 1227086612}
   - component: {fileID: 1227086614}
   - component: {fileID: 1227086613}
+  - component: {fileID: 1227086615}
   m_Layer: 0
   m_Name: Main G
   m_TagString: Untagged
@@ -1297,6 +1431,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1227086615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227086610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da109efdd55366449a4baff78bcd8a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1247102924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,8 +1565,9 @@ GameObject:
   - component: {fileID: 1284933312}
   - component: {fileID: 1284933313}
   - component: {fileID: 1284933314}
+  - component: {fileID: 1284933315}
   m_Layer: 0
-  m_Name: "T\xEAte"
+  m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1535,7 +1682,7 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_AngleLimits:
     m_LowerAngle: -90
     m_UpperAngle: 90
@@ -1554,6 +1701,18 @@ MonoBehaviour:
   rb: {fileID: 1284933312}
   cam: {fileID: 519420031}
   mousebutton: 323
+--- !u!114 &1284933315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284933309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da109efdd55366449a4baff78bcd8a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1328798251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,6 +1725,7 @@ GameObject:
   - component: {fileID: 1328798253}
   - component: {fileID: 1328798255}
   - component: {fileID: 1328798254}
+  - component: {fileID: 1328798256}
   m_Layer: 0
   m_Name: Main D
   m_TagString: Untagged
@@ -1685,6 +1845,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1328798256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328798251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da109efdd55366449a4baff78bcd8a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1698070246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,7 +1870,7 @@ GameObject:
   - component: {fileID: 1698070248}
   - component: {fileID: 1698070247}
   m_Layer: 0
-  m_Name: Square
+  m_Name: 'obj '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1831,6 +2003,7 @@ GameObject:
   - component: {fileID: 1782859649}
   - component: {fileID: 1782859652}
   - component: {fileID: 1782859651}
+  - component: {fileID: 1782859653}
   m_Layer: 0
   m_Name: hanche
   m_TagString: Untagged
@@ -1960,6 +2133,18 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: -0.0065071583, y: -0.6730001}
   m_DampingRatio: 0
   m_Frequency: 0
+--- !u!114 &1782859653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782859646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da109efdd55366449a4baff78bcd8a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1836140974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2058,6 +2243,7 @@ GameObject:
   - component: {fileID: 1879444866}
   - component: {fileID: 1879444867}
   - component: {fileID: 1879444868}
+  - component: {fileID: 1879444869}
   m_Layer: 0
   m_Name: bras G
   m_TagString: Untagged
@@ -2177,6 +2363,18 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -10
     m_UpperAngle: 150
+--- !u!114 &1879444869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879444864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da109efdd55366449a4baff78bcd8a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2064886260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2301,6 +2499,7 @@ GameObject:
   - component: {fileID: 2103501082}
   - component: {fileID: 2103501081}
   - component: {fileID: 2103501080}
+  - component: {fileID: 2103501083}
   m_Layer: 0
   m_Name: Pied D
   m_TagString: Untagged
@@ -2446,3 +2645,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8632438, y: 0.15768218}
   m_EdgeRadius: 0
+--- !u!114 &2103501083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103501077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da109efdd55366449a4baff78bcd8a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

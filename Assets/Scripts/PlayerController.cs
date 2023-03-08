@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
+    //Déclaration pour mvmt player 
     public Animator anim;
     public Rigidbody2D rb;
     public float jumpForce;
@@ -14,7 +15,6 @@ public class PlayerController : MonoBehaviour
     public float positionRadius;
     public LayerMask ground;
     public Transform playerPos;
-
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxisRaw("Horizontal") != 0)
+
+        if (Input.GetAxisRaw("Horizontal") != 0)
         {
             if(Input.GetAxisRaw("Horizontal") > 0)
             {
