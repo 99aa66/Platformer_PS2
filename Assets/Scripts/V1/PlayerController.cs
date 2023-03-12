@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     public Animator anim;
     public Rigidbody2D rb;
-    SpriteRenderer sr;
     public float jumpForce = 12f;
     public float playerSpeed;
     public Vector2 jumpHeight;
@@ -23,7 +22,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
 
         Collider2D[] colliders = transform.GetComponentsInChildren<Collider2D>();
         for (int i = 0; i < colliders.Length; i++)
@@ -44,13 +42,12 @@ public class PlayerController : MonoBehaviour
             {
                 anim.Play("Walk");
                 rb.AddForce(Vector2.right * playerSpeed * Time.deltaTime);
-                sr.flipX = false;
+   
             }
             else
             {
                 anim.Play("WalkBack");
                 rb.AddForce(Vector2.left * playerSpeed * Time.deltaTime);
-                sr.flipX = true;
             }
         }
         else
@@ -59,7 +56,7 @@ public class PlayerController : MonoBehaviour
         }
 
         isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
-        if (isOnGround == true && Input.GetKeyDown(KeyCode.Space))
+        if (isOnGround == true && Input.GetButtonDown("Jump"))
         {
             Debug.Log("jumping");
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
