@@ -430,7 +430,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+<<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
   m_Offset: {x: 0.060213476, y: -0.033735782}
+=======
+  m_Offset: {x: 0.22895142, y: -0.23240869}
+>>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -441,7 +445,11 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
   m_Size: {x: 1.0850172, y: 0.486777}
+=======
+  m_Size: {x: 0.46255642, y: 0.0894312}
+>>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
   m_EdgeRadius: 0
 --- !u!1 &448527150
 GameObject:
@@ -1783,6 +1791,10 @@ GameObject:
   - component: {fileID: 1284933312}
   - component: {fileID: 1284933313}
   - component: {fileID: 1284933314}
+<<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
+=======
+  - component: {fileID: 1284933315}
+>>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
   m_Layer: 0
   m_Name: "T\xEAte"
   m_TagString: Untagged
@@ -1895,11 +1907,17 @@ HingeJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: -0.0039999485, y: -1.494}
   m_ConnectedAnchor: {x: 0, y: 0.645}
-  m_UseMotor: 1
+  m_UseMotor: 0
   m_Motor:
+<<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
     m_MotorSpeed: 100
     m_MaximumMotorForce: 5000
   m_UseLimits: 0
+=======
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 1
+>>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
   m_AngleLimits:
     m_LowerAngle: -90
     m_UpperAngle: 90
@@ -1918,7 +1936,22 @@ MonoBehaviour:
   rb: {fileID: 1284933312}
   cam: {fileID: 519420031}
   mousebutton: 323
+<<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
   button: 335
+=======
+--- !u!114 &1284933315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284933309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da109efdd55366449a4baff78bcd8a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
 --- !u!1 &1328798251
 GameObject:
   m_ObjectHideFlags: 0
@@ -3415,7 +3448,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+<<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
   m_Offset: {x: -0.08899468, y: -0.0070594847}
+=======
+  m_Offset: {x: -0.041598678, y: -0.1539849}
+>>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3426,5 +3463,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
   m_Size: {x: 0.9580358, y: 0.47997695}
+=======
+  m_Size: {x: 0.8632438, y: 0.15768218}
+>>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
   m_EdgeRadius: 0
