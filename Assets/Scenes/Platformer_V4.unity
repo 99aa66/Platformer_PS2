@@ -432,7 +432,11 @@ BoxCollider2D:
   m_UsedByComposite: 0
 <<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
 <<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
+<<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
   m_Offset: {x: 0.060213476, y: -0.033735782}
+=======
+  m_Offset: {x: 0.22895142, y: -0.23240869}
+>>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
 =======
   m_Offset: {x: 0.22895142, y: -0.23240869}
 >>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
@@ -451,7 +455,11 @@ BoxCollider2D:
   serializedVersion: 2
 <<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
 <<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
+<<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
   m_Size: {x: 1.0850172, y: 0.486777}
+=======
+  m_Size: {x: 0.46255642, y: 0.0894312}
+>>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
 =======
   m_Size: {x: 0.46255642, y: 0.0894312}
 >>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
@@ -1803,6 +1811,9 @@ GameObject:
 =======
   - component: {fileID: 1284933315}
 <<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
+<<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
+>>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
+=======
 >>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
 =======
 >>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
@@ -1922,10 +1933,13 @@ HingeJoint2D:
   m_Motor:
 <<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
 <<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
+<<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
     m_MotorSpeed: 100
     m_MaximumMotorForce: 5000
   m_UseLimits: 0
 =======
+=======
+>>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
 =======
 >>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
     m_MotorSpeed: 0
@@ -1966,6 +1980,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
+<<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
+>>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
+=======
 >>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
 =======
 >>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
@@ -3467,7 +3484,11 @@ BoxCollider2D:
   m_UsedByComposite: 0
 <<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
 <<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
+<<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
   m_Offset: {x: -0.08899468, y: -0.0070594847}
+=======
+  m_Offset: {x: -0.041598678, y: -0.1539849}
+>>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
 =======
   m_Offset: {x: -0.041598678, y: -0.1539849}
 >>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
@@ -3486,7 +3507,11 @@ BoxCollider2D:
   serializedVersion: 2
 <<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
 <<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
+<<<<<<< HEAD:Assets/Scenes/Platformer_V4.unity
   m_Size: {x: 0.9580358, y: 0.47997695}
+=======
+  m_Size: {x: 0.8632438, y: 0.15768218}
+>>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
 =======
   m_Size: {x: 0.8632438, y: 0.15768218}
 >>>>>>> parent of fef4223 (correction body droit):Assets/Scenes/Platformer.unity
