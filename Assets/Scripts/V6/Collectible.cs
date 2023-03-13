@@ -1,17 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class Collectible : MonoBehaviour
 {
-    private GameObject playerRef;
-    private GameObject Huile;
+    private GameObject Player;
 
-    // Start is called before the first frame update
     void Start()
     {
+        Player = GetComponent<GameObject>();
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
+    /*private GameObject HancheRef;
 
     // Update is called once per frame
     void Update()
@@ -21,20 +27,20 @@ public class Collectible : MonoBehaviour
 
     void PickUpPotion()
     {
-        if (playerRef && Input.GetKeyDown(KeyCode.E))
+        if (HancheRef && Input.GetKeyDown(KeyCode.E))
         {
-            playerRef.GetComponentInChildren<Vie>().pv += 10;
-            Destroy(Huile);
+            //HancheRef.GetComponentInChildren<Vie>().pv += 10; DEMANDER A MANU
+            Destroy(gameObject);
         }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        playerRef = collision.gameObject;
+        HancheRef = collision.gameObject;
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        playerRef = null;
-    }
+        HancheRef = null;
+    }*/
 }
