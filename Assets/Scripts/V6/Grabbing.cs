@@ -41,7 +41,7 @@ public class Grabbing : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-      if (canGrab && col.gameObject.GetComponent<Rigidbody2D>() != null)
+      if (canGrab && col.gameObject.GetComponent<Rigidbody2D>() != null && col.tag != "Player")
         {
             currentlyHolding = col.gameObject;
             joint = currentlyHolding.AddComponent<FixedJoint2D>();

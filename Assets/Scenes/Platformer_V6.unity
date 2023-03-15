@@ -178,7 +178,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.45, y: 3.64}
+    oldSize: {x: 3.31, y: 3.76}
     newSize: {x: 2.45, y: 3.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -418,7 +418,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -1456,7 +1456,6 @@ GameObject:
   - component: {fileID: 826668850}
   - component: {fileID: 826668849}
   - component: {fileID: 826668848}
-  - component: {fileID: 826668851}
   - component: {fileID: 826668852}
   m_Layer: 0
   m_Name: Grabhead
@@ -1541,23 +1540,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &826668851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826668846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d579f47735c069d46a5ca78677b10731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 300
-  cam: {fileID: 871248597}
-  mousebutton: 323
-  button: 335
-  rb: {fileID: 826668850}
 --- !u!114 &826668852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2121,9 +2103,14 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -150.19
-    m_UpperAngle: 19.7
---- !u!114 &1318356780
+    m_LowerAngle: -90
+    m_UpperAngle: 90
+--- !u!4 &1318356781 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8244691016477402259, guid: 0ff5f1dba1de3e84d9320c77f2c25620, type: 3}
+  m_PrefabInstance: {fileID: 782556188}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1318356783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2132,16 +2119,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1318356774}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70e6b63e8e8d2b04b93ad08b1154e1ea, type: 3}
+  m_Script: {fileID: 11500000, guid: d579f47735c069d46a5ca78677b10731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restingAngle: 0
-  force: 700
---- !u!4 &1318356781 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8244691016477402259, guid: 0ff5f1dba1de3e84d9320c77f2c25620, type: 3}
-  m_PrefabInstance: {fileID: 782556188}
-  m_PrefabAsset: {fileID: 0}
+  speed: 300
+  cam: {fileID: 871248597}
+  rb: {fileID: 1318356777}
 --- !u!1 &1326807732
 GameObject:
   m_ObjectHideFlags: 0
@@ -2237,8 +2220,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -27.3
-    m_UpperAngle: 184.9
+    m_LowerAngle: -10
+    m_UpperAngle: 10
 --- !u!114 &1383061523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2743,8 +2726,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -26.49
-    m_UpperAngle: 188.8
+    m_LowerAngle: -10
+    m_UpperAngle: 10
 --- !u!114 &1830615521
 MonoBehaviour:
   m_ObjectHideFlags: 0
