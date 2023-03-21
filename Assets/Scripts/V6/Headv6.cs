@@ -25,5 +25,4 @@ public class Headv6 : MonoBehaviour
             rb.MoveRotation(Mathf.LerpAngle(rb.rotation, 0, 700 * Time.deltaTime));
         }
     }
-    //  if (Input.GetButtonDown("Clic gauche") || Input.GetButtonDown("Grab"))
 }
