@@ -6,7 +6,7 @@ public class CameraManagerperdu : MonoBehaviour
 {
     [SerializeField] GameObject playerRef;
     Vector3 refVelocity = Vector3.zero;
-    float smoothTime = 0.2f;
+    [SerializeField] float smoothTime = 1f;
 
     // Start is called before the first frame update
     void Start()

@@ -4,25 +4,55 @@ using UnityEngine;
 
 public class Headv6 : MonoBehaviour
 {
-    public float speed = 300f;
-    public Camera cam;
-    public Rigidbody2D rb;
+    private Camera cam;
+    private Rigidbody2D rb;
+    private HingeJoint2D joint;
+    [SerializeField] float distMax = 3;
+    public GameObject playerPos;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        cam = Camera.main;
+        joint = GetComponent<HingeJoint2D>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePos = new Vector3(cam.ScreenToWorldPoint(Input.mousePosition).x, cam.ScreenToWorldPoint(Input.mousePosition).y, 0);
-        Vector3 difference = (mousePos - transform.position);
+        Vector2 mousePos = new Vector3(cam.ScreenToWorldPoint(Input.mousePosition).x, cam.ScreenToWorldPoint(Input.mousePosition).y, 0);
+        Vector2 difference = (mousePos - (Vector2)playerPos.transform.position).normalized;
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        Debug.DrawRay(transform.position, difference);
+        Debug.DrawRay((Vector2)playerPos.transform.position, difference);
+
+
+
+        if(Input.GetButtonDown("Clic gauche") && rb.gameObject.name != "Top_Head")
+        {
+            joint.enabled = false;
+        }
+        if(Input.GetButtonUp("Clic gauche") && rb.gameObject.name != "Top_Head")
+        {
+            rb.MovePosition((Vector2)playerPos.transform.position);
+            rb.MoveRotation(0);
+            joint.enabled = true;
+        }
+
+
+
         if (Input.GetButton("Clic gauche"))
         {
-            rb.MoveRotation(Quaternion.Euler(0,0,rotationZ-90));
+
+            rb.MoveRotation(Quaternion.Euler(0, 0, rotationZ));
+            if (rb.gameObject.name == "Top_Head")
+            {
+                rb.MovePosition((Vector2)playerPos.transform.position + difference*distMax);
+            }
         }
         else
         {
-            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, 0, 700 * Time.deltaTime));
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, 90, 700 * Time.deltaTime));
         }
+
     }
 }

@@ -20,7 +20,7 @@ public class PlayerControllerv8 : MonoBehaviour
     public Transform playerPos;
 
     [Header("Camera Follow")]
-    public Camera cam;
+    private Camera cam;
     [Range(0f, 1f)] public float interpolation = 0.1f ;
     public Vector3 offset = new Vector3(0f, 2f, -10f);
 
@@ -61,6 +61,9 @@ public class PlayerControllerv8 : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        cam = Camera.main;
+
+
         Collider2D[] colliders = transform.GetComponentsInChildren<Collider2D>();
         for (int i = 0; i < colliders.Length; i++)
         {
