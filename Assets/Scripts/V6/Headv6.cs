@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,16 +9,12 @@ public class Headv6 : MonoBehaviour
     private HingeJoint2D joint;
     [SerializeField] float distMax = 3;
     public GameObject playerPos;
-    public float restingAngle = 90;
 
-    public float timePassed;
-    public float waitTime;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
         joint = GetComponent<HingeJoint2D>();
-        
     }
 
     // Update is called once per frame
@@ -34,14 +29,9 @@ public class Headv6 : MonoBehaviour
 
         if(Input.GetButtonDown("Clic gauche") && rb.gameObject.name != "Top_Head")
         {
-            joint.enabled = false;         
-        
-
+            joint.enabled = false;
         }
-
-       
-
-        if (Input.GetButtonUp("Clic gauche") && rb.gameObject.name != "Top_Head")
+        if(Input.GetButtonUp("Clic gauche") && rb.gameObject.name != "Top_Head")
         {
             rb.MovePosition((Vector2)playerPos.transform.position);
             rb.MoveRotation(0);
@@ -61,10 +51,8 @@ public class Headv6 : MonoBehaviour
         }
         else
         {
-            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, restingAngle, 700 * Time.deltaTime));
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, 90, 700 * Time.deltaTime));
         }
 
     }
-
-  
 }
