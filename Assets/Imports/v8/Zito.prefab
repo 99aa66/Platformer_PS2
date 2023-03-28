@@ -468,10 +468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d579f47735c069d46a5ca78677b10731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
-  cam: {fileID: 0}
-  rb: {fileID: 8843836231017412094}
-  joint: {fileID: 0}
   distMax: 3
   playerPos: {fileID: 8843836232520198938}
 --- !u!1 &3003652478951838747
@@ -1421,7 +1417,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 5998589375442438074}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 90804052a4bad944684d4543ee1f766b, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1645,7 +1641,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 7298002131423905203}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 90804052a4bad944684d4543ee1f766b, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2420,11 +2416,10 @@ MonoBehaviour:
     m_Bits: 64
   jumpHeight: {x: 0, y: 0}
   positionRadius: 0
-  Ground: 0
+  Ground: 1
   is_jumping: 0
   smooth_time: 0.5
   playerPos: {fileID: 8843836230963139089}
-  cam: {fileID: 0}
   interpolation: 0.1
   offset: {x: 0, y: 2, z: -10}
   anim: {fileID: 0}
@@ -3082,10 +3077,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d579f47735c069d46a5ca78677b10731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
-  cam: {fileID: 0}
-  rb: {fileID: 8843836232890619088}
-  joint: {fileID: 8843836232890619116}
   distMax: 3
   playerPos: {fileID: 8843836232520198938}
 --- !u!1 &9033185033962272099

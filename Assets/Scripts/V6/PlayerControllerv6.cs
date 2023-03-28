@@ -106,24 +106,7 @@ public class PlayerControllerv6 : MonoBehaviour
         }
     }
 
-    /*private void Jump ()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (IsGrounded())
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
-            }
-           
-
-        }
-    }
-
-    private bool IsGrounded()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastDistance, whatIsGround);
-        return hit.collider != null;
-    }*/
+   
 
     private void CameraFollow()
     {

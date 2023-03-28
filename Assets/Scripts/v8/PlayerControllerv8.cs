@@ -6,7 +6,7 @@ public class PlayerControllerv8 : MonoBehaviour
 {
     [Header("Movement")]
     public float movementForce;
-    public float jumpForce = 10f;
+    public float jumpForce = 7f;
     [Space(5)]
     [Range(0f, 100f)] public float raycastDistance = 1.5f;
     public LayerMask whatIsGround;
@@ -22,7 +22,7 @@ public class PlayerControllerv8 : MonoBehaviour
     [Header("Camera Follow")]
     private Camera cam;
     [Range(0f, 1f)] public float interpolation = 0.1f ;
-    public Vector3 offset = new Vector3(0f, 2f, -10f);
+    public Vector3 offset = new Vector3(0f, 2f, -7f);
 
     [Header("Animation")]
     public Animator anim;
@@ -90,6 +90,10 @@ public class PlayerControllerv8 : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             is_jumping = true;
+        }
+        else
+        {
+            is_jumping= false;
         }
     }
     private void FixedUpdate()
