@@ -25,9 +25,18 @@ public class PlayerHealth : MonoBehaviour
 
     public HealthBar HealthBar;
 
-    //[SerializeField] GameObject hitboxDMG;
+    public static PlayerHealth instance;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il n'y a plus d'instance de PlayerHealth dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
     void Start()
     {
         // le joueur commence avec toute sa vie
@@ -35,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
         HealthBar.SetMaxHealth(maxHealth);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         // test pour voir si ca fonctionne quand on prend des damages
@@ -45,6 +54,20 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void HealPlayer(int amount)
+    {
+        if((currentHealth + amount) > maxHealth)
+        {
+            currentHealth = maxHealth; //condition qui empêche de dépasser le nombre maximal de ppints de vie du joueur
+        }
+        else
+        {
+            currentHealth += amount;
+        }
+        
+        HealthBar.SetHealth(currentHealth); // maj barre de vie
+
+    }
     public void TakeDamage (int damage)
     {
         if(!isInvincible)
