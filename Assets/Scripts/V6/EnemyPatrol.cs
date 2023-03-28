@@ -7,7 +7,7 @@ public class EnemyPatrol : MonoBehaviour
     public float speed;
     public Transform[] waypoints;
 
-    public SpriteRenderer graphics;
+    public SpriteRenderer coquillette1;
     private Transform target;
     private int destPoint = 0;
 
@@ -15,6 +15,7 @@ public class EnemyPatrol : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Commencer par le premier waypoints de la liste
         target = waypoints[0]; 
     }
 
@@ -27,9 +28,9 @@ public class EnemyPatrol : MonoBehaviour
         //Si l'ennemi est quasiment arrivé à sa destination
         if(Vector3.Distance(transform.position, target.position) < 0.3f)
         {
-            destPoint = (destPoint+ 1) % waypoints.Length;
+            destPoint = (destPoint + 1) % waypoints.Length;
             target = waypoints[destPoint];
-            graphics.flipX = !graphics.flipX;
+            coquillette1.flipX = !coquillette1.flipX;
         }
     }
 }

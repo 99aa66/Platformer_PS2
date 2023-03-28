@@ -6,7 +6,7 @@ public class WeakSpot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag("Player")) //Si joueur comportant tag player entre dans zone
         {
             Destroy(objectToDestroy);
         }

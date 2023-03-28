@@ -1363,8 +1363,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3724092265350454588}
   - component: {fileID: 8843836231941662146}
-  - component: {fileID: 8843836231941662147}
   - component: {fileID: 8843836231941662173}
+  - component: {fileID: 7109045035880449696}
   m_Layer: 3
   m_Name: Pied_D
   m_TagString: Player
@@ -1379,7 +1379,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5998589375442438074}
-  m_LocalRotation: {x: -0, y: -0, z: 0.86082613, w: 0.5088992}
+  m_LocalRotation: {x: -0, y: -0, z: 0.85988194, w: 0.510493}
   m_LocalPosition: {x: 0.56521654, y: -0.008550093, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1408,44 +1408,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &8843836231941662147
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5998589375442438074}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 90804052a4bad944684d4543ee1f766b, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.7078064, y: 0.2548996}
-      - {x: 0.42728877, y: 0.19742884}
-      - {x: 0.3709677, y: 0.2485973}
-      - {x: 0.26528436, y: 0.09896134}
-      - {x: 0.014822617, y: 0.13003129}
-      - {x: -0.010871768, y: 0.29504997}
-      - {x: -0.104175195, y: 0.25562337}
-      - {x: -0.24381757, y: -0.03488612}
-      - {x: -0.08682313, y: -0.17345962}
-      - {x: 0.17651337, y: -0.13537702}
-      - {x: 0.34217536, y: -0.18858336}
-      - {x: 0.83746576, y: -0.17915338}
-      - {x: 0.96422297, y: 0.050558567}
 --- !u!233 &8843836231941662173
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -1470,6 +1432,22 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -30
     m_UpperAngle: 2
+--- !u!70 &7109045035880449696
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5998589375442438074}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.3633129, y: -0.12729837}
+  m_Size: {x: 0.94705135, y: 0.12357276}
+  m_Direction: 1
 --- !u!1 &6782026570974632673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,8 +1550,8 @@ MonoBehaviour:
   - {fileID: 3724092265350454588}
   - {fileID: 9215659108047538946}
   m_Bounds:
-    m_Center: {x: 0.15266043, y: -1.2282217, z: 0}
-    m_Extent: {x: 0.57655984, y: 0.26248795, z: 0}
+    m_Center: {x: 0.15285724, y: -1.2294204, z: 0}
+    m_Extent: {x: 0.5767132, y: 0.26368666, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1588,6 +1566,7 @@ GameObject:
   - component: {fileID: 475425395695893326}
   - component: {fileID: 8843836231465222593}
   - component: {fileID: 8843836231465222592}
+  - component: {fileID: 6097038462793776544}
   m_Layer: 3
   m_Name: Pied_G
   m_TagString: Player
@@ -1602,14 +1581,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7298002131423905203}
-  m_LocalRotation: {x: 0, y: 0, z: 0.83723694, w: 0.5468403}
+  m_LocalRotation: {x: -0, y: -0, z: 0.8376482, w: 0.54621017}
   m_LocalPosition: {x: 0.40234074, y: 0.000000065069614, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6817949933670821132}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 113.785}
 --- !u!50 &8843836231465222593
 Rigidbody2D:
   serializedVersion: 4
@@ -1655,6 +1634,22 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -30
     m_UpperAngle: 2
+--- !u!70 &6097038462793776544
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298002131423905203}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.3121416, y: -0.22809216}
+  m_Size: {x: 0.75785303, y: 0.08859467}
+  m_Direction: 1
 --- !u!1 &7918681019507517003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,8 +2015,8 @@ MonoBehaviour:
   - {fileID: 475425395695893326}
   - {fileID: 6817949933670821132}
   m_Bounds:
-    m_Center: {x: 0.15383083, y: -1.2033122, z: 0}
-    m_Extent: {x: 0.5759561, y: 0.25381303, z: 0}
+    m_Center: {x: 0.15388888, y: -1.2031039, z: 0}
+    m_Extent: {x: 0.57601416, y: 0.25360477, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -2378,11 +2373,11 @@ MonoBehaviour:
   movementForce: 300
   jumpForce: 150
   raycastDistance: 2
+  jumpHeight: {x: 0, y: 0}
+  positionRadius: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  jumpHeight: {x: 0, y: 0}
-  positionRadius: 0
   Ground: 1
   is_jumping: 0
   smooth_time: 0.5
