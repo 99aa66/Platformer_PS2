@@ -76,30 +76,16 @@ public class PlayerControllerv8 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            Debug.Log("jumping");
-        }
-
         isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, whatIsGround);
         if (isOnGround == true && Input.GetButtonDown("Jump"))
         {
-            Debug.Log("jumping");
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
-        }
-        if (Input.GetButtonDown("Jump"))
-        {
             is_jumping = true;
-        }
-        else
-        {
-            is_jumping= false;
         }
     }
     private void FixedUpdate()
     {
         Movement();
-        //Jump();
         CameraFollow();
 
         if (is_jumping)
@@ -137,18 +123,7 @@ public class PlayerControllerv8 : MonoBehaviour
         }
     }
 
-    /*private void Jump ()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (IsGrounded())
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
-            }
-           
-
-        }
-    }
+    /*
 
     private bool IsGrounded()
     {
