@@ -9,11 +9,12 @@ public class PlayerControllerv8 : MonoBehaviour
     public float jumpForce = 7f;
     [Space(5)]
     [Range(0f, 100f)] public float raycastDistance = 1.5f;
-    public LayerMask whatIsGround;
-
+    
     public Vector2 jumpHeight;
+
     private bool isOnGround;
     public float positionRadius;
+    public LayerMask whatIsGround;
     [SerializeField] bool Ground = false;
     [SerializeField] bool is_jumping = false;
     [Range(0, 1)][SerializeField] float smooth_time = 0.5f;
@@ -53,11 +54,6 @@ public class PlayerControllerv8 : MonoBehaviour
 
     
 
-    private void Awake()
-    {
-        rb = gameObject.AddComponent<Rigidbody2D>(); 
-    }
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -88,11 +84,10 @@ public class PlayerControllerv8 : MonoBehaviour
         Movement();
         CameraFollow();
 
-        if (is_jumping)
+        if (is_jumping == true)
         {
-            is_jumping = false;
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            Ground = false;
+            is_jumping = false; // là on saute plus car on est déjà en saut (éviter le double saut)
         }
     }
 
@@ -100,9 +95,10 @@ public class PlayerControllerv8 : MonoBehaviour
     {
         float xDir = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(xDir * (movementForce * Time.deltaTime), rb.velocity.y);
-        if (xDir!= 0) 
+
+        /*if (xDir!= 0) 
         {
-            /*transform.localRotation = Quaternion.Euler(0, -180, 0);
+            transform.localRotation = Quaternion.Euler(0, -180, 0);
             Zito.localScale = new Vector3(xDir, 1f, 1f);
             head.localScale = new Vector3(xDir, 1f, 1f);
             top_head.localScale = new Vector3(xDir, 1f, 1f);
@@ -119,20 +115,18 @@ public class PlayerControllerv8 : MonoBehaviour
             brasG.localScale = new Vector3(xDir, 1f, 1f);
             avb_G.localScale = new Vector3(xDir, 1f, 1f);
             mainD.localScale = new Vector3(xDir, 1f, 1f);
-            mainG.localScale = new Vector3(xDir, 1f, 1f);*/
-        }
+            mainG.localScale = new Vector3(xDir, 1f, 1f);
+        }*/
+
     }
-
-    /*
-
-    private bool IsGrounded()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastDistance, whatIsGround);
-        return hit.collider != null;
-    }*/
-
     private void CameraFollow()
     {
         cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position + offset, interpolation);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(playerPos.position, positionRadius);
     }
 }
