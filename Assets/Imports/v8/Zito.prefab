@@ -1379,14 +1379,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5998589375442438074}
-  m_LocalRotation: {x: -0, y: -0, z: 0.8814209, w: 0.47233164}
+  m_LocalRotation: {x: -0, y: -0, z: 0.86082613, w: 0.5088992}
   m_LocalPosition: {x: 0.56521654, y: -0.008550093, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9215659108047538946}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 123.629}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 118.819}
 --- !u!50 &8843836231941662146
 Rigidbody2D:
   serializedVersion: 4
@@ -1572,8 +1572,8 @@ MonoBehaviour:
   - {fileID: 3724092265350454588}
   - {fileID: 9215659108047538946}
   m_Bounds:
-    m_Center: {x: 0.14870074, y: -1.2037323, z: 0}
-    m_Extent: {x: 0.5732445, y: 0.25460818, z: 0}
+    m_Center: {x: 0.15266043, y: -1.2282217, z: 0}
+    m_Extent: {x: 0.57655984, y: 0.26248795, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1587,7 +1587,6 @@ GameObject:
   m_Component:
   - component: {fileID: 475425395695893326}
   - component: {fileID: 8843836231465222593}
-  - component: {fileID: 8843836231465222598}
   - component: {fileID: 8843836231465222592}
   m_Layer: 3
   m_Name: Pied_G
@@ -1632,38 +1631,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &8843836231465222598
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7298002131423905203}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 90804052a4bad944684d4543ee1f766b, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.72014344, y: 0.21715677}
-      - {x: 0.33436817, y: 0.12946}
-      - {x: -0.16406304, y: 0.1073122}
-      - {x: -0.16081432, y: -0.2969773}
-      - {x: 0.22399293, y: -0.26793832}
-      - {x: 0.7345674, y: -0.25893468}
-      - {x: 0.9064047, y: 0.07720357}
 --- !u!233 &8843836231465222592
 HingeJoint2D:
   m_ObjectHideFlags: 0
