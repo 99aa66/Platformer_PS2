@@ -2706,7 +2706,11 @@ PrefabInstance:
       objectReference: {fileID: 1079315014}
     - target: {fileID: 8843836232129252855, guid: 5660c9cc778b09847a012b9a50e331e1, type: 3}
       propertyPath: jumpForce
-      value: 200
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8843836232129252855, guid: 5660c9cc778b09847a012b9a50e331e1, type: 3}
+      propertyPath: movementForce
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 8843836232129252855, guid: 5660c9cc778b09847a012b9a50e331e1, type: 3}
       propertyPath: positionRadius
@@ -2750,7 +2754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8843836232129252859, guid: 5660c9cc778b09847a012b9a50e331e1, type: 3}
       propertyPath: m_Mass
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8843836232129252859, guid: 5660c9cc778b09847a012b9a50e331e1, type: 3}
       propertyPath: m_Interpolate
