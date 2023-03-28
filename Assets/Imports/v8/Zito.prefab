@@ -1769,7 +1769,6 @@ GameObject:
   - component: {fileID: 2092273223899867337}
   - component: {fileID: 8843836231622699356}
   - component: {fileID: 8843836231622699358}
-  - component: {fileID: 8843836231622699348}
   - component: {fileID: 8843836231622699351}
   - component: {fileID: 8843836231622699352}
   - component: {fileID: 8843836231622699354}
@@ -1844,24 +1843,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1330637, y: 0.9711137}
   m_EdgeRadius: 0
---- !u!255 &8843836231622699348
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8036066925660002292}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 8843836231622699356}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: -0}
-  m_DampingRatio: 0
-  m_Frequency: 0
 --- !u!233 &8843836231622699351
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -2245,7 +2226,6 @@ GameObject:
   - component: {fileID: 4366982709736951032}
   - component: {fileID: 8843836232129252859}
   - component: {fileID: 8843836232129252856}
-  - component: {fileID: 8843836232129252858}
   - component: {fileID: 8843836232129252853}
   - component: {fileID: 8843836232129252855}
   m_Layer: 3
@@ -2326,24 +2306,6 @@ PolygonCollider2D:
       - {x: 0.014519215, y: -0.46858457}
       - {x: 1.2243177, y: -0.44295493}
       - {x: 1.2215228, y: 0.52761877}
---- !u!255 &8843836232129252858
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8537693700883300040}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 8843836231622699356}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -1.2413958, y: -0.00000042257398}
-  m_DampingRatio: 0
-  m_Frequency: 0
 --- !u!114 &8843836232129252853
 MonoBehaviour:
   m_ObjectHideFlags: 0

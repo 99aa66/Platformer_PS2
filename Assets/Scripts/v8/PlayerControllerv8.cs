@@ -27,32 +27,14 @@ public class PlayerControllerv8 : MonoBehaviour
 
     [Header("Animation")]
     public Animator anim;
-    public Transform hanche;
-    /*public Transform head;
-    public Transform top_head;
-    public Transform buste;
-    public Transform hanche;
-    public Transform jambeD;
-    public Transform tibiaD;
-    public Transform piedD;
-    public Transform jambeG;
-    public Transform tibiaG;
-    public Transform piedG;
-    public Transform brasD;
-    public Transform avb_D;
-    public Transform mainD;
-    public Transform brasG;
-    public Transform avb_G;
-    public Transform mainG;
-    public Transform Zito;
-    private float x = 0f;
-    private float y = 0f;
-    private float z = 0f;*/
-
 
     private Rigidbody2D rb;
 
-    
+    //[Header("GameObject")]
+    // public Transform Zito;
+
+
+
 
     void Start()
     {
@@ -96,10 +78,16 @@ public class PlayerControllerv8 : MonoBehaviour
         float xDir = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(xDir * (movementForce * Time.deltaTime), rb.velocity.y);
 
-        /*if (xDir!= 0) 
+        /*if (xDir != 0)
+        {
+            Zito.localScale = new Vector3(xDir, 1f, 1f);
+
+        }
+            
+         
         {
             transform.localRotation = Quaternion.Euler(0, -180, 0);
-            Zito.localScale = new Vector3(xDir, 1f, 1f);
+            
             head.localScale = new Vector3(xDir, 1f, 1f);
             top_head.localScale = new Vector3(xDir, 1f, 1f);
             buste.localScale = new Vector3(xDir, 1f, 1f);
