@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer graphics;
     public float invincibilityFlashDelay = 0.2f;
 
-    public HealthBar healthBar;
+    public HealthBar HealthBar;
 
     [SerializeField] GameObject hitboxDMG;
 
@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     {
         // le joueur commence avec toute sa vie
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        HealthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
         if(!isInvincible)
         {
             currentHealth -= damage;  // si on prend des degats ont retire de la vie a la vie actuelle
-            healthBar.SetHealth(currentHealth); // pour mettre a jour le visuel de la barre de vie
+            HealthBar.SetHealth(currentHealth); // pour mettre a jour le visuel de la barre de vie
             isInvincible = true;
             StartCoroutine(InvincibilityFlash());
             StartCoroutine(HandleInvincibilityDelay());
