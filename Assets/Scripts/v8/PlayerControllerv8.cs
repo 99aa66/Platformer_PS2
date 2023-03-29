@@ -29,10 +29,13 @@ public class PlayerControllerv8 : MonoBehaviour
     public Animator anim;
 
     private Rigidbody2D rb;
-   
 
+
+    GameObject Zito;
     void Start()
     {
+        Zito = transform.parent.gameObject;
+        Debug.Log(Zito.name);
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
 
@@ -73,14 +76,12 @@ public class PlayerControllerv8 : MonoBehaviour
         float xDir = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(xDir * (movementForce * Time.deltaTime), rb.velocity.y);
 
-        /* if (xDir < 0)
+         if (xDir < 0)
         {
             Zito.transform.localScale = new Vector3(-1f, 1f, 1f);
 
         }
-            
-         
-       {
+       /*{
             transform.localRotation = Quaternion.Euler(0, -180, 0);
             
             head.localScale = new Vector3(xDir, 1f, 1f);
