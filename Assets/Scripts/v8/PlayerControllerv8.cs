@@ -29,12 +29,7 @@ public class PlayerControllerv8 : MonoBehaviour
     public Animator anim;
 
     private Rigidbody2D rb;
-
-    //[Header("GameObject")]
-    // public Transform Zito;
-
-
-
+   
 
     void Start()
     {
@@ -78,14 +73,14 @@ public class PlayerControllerv8 : MonoBehaviour
         float xDir = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(xDir * (movementForce * Time.deltaTime), rb.velocity.y);
 
-        /*if (xDir != 0)
+        /* if (xDir < 0)
         {
-            Zito.localScale = new Vector3(xDir, 1f, 1f);
+            Zito.transform.localScale = new Vector3(-1f, 1f, 1f);
 
         }
             
          
-        {
+       {
             transform.localRotation = Quaternion.Euler(0, -180, 0);
             
             head.localScale = new Vector3(xDir, 1f, 1f);
