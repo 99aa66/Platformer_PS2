@@ -12,9 +12,11 @@ public class PlayerControllerv8 : MonoBehaviour
     
     public Vector2 jumpHeight;
 
-    private bool isOnGround;
+    //private bool isOnGround;
     public float positionRadius;
-    public LayerMask whatIsGround;
+    public bool can_jump;
+    //public LayerMask whatIsGround;
+    public LayerMask Default;
     [SerializeField] bool Ground = false;
     [SerializeField] bool is_jumping = false;
     [Range(0, 1)][SerializeField] float smooth_time = 0.5f;
@@ -29,8 +31,8 @@ public class PlayerControllerv8 : MonoBehaviour
     public Animator anim;
 
     private Rigidbody2D rb;
-   
 
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -49,8 +51,8 @@ public class PlayerControllerv8 : MonoBehaviour
 
     void Update()
     {
-        isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, whatIsGround);
-        if (isOnGround == true && Input.GetButtonDown("Jump"))
+        can_jump = Physics2D.OverlapCircle(playerPos.position, positionRadius, Default);
+        if (can_jump == true && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
             is_jumping = true;

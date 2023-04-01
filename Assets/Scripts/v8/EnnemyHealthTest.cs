@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnnemyHealthTest : MonoBehaviour
 {
     [SerializeField] int maxHealth;
     private int currentHealth;
     public Barredeviecoq healthBar;
-    private SpriteRenderer graphics;
+    
     [SerializeField] GameObject HEALTHBAR;
 
     // Start is called before the first frame update

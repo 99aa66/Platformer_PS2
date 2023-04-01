@@ -4,3 +4,6 @@
 [0328/113310.609:WARNING:spdy_session.cc(3216)] Received RST for invalid stream5
 [0328/113344.872:WARNING:spdy_session.cc(3216)] Received RST for invalid stream9
 [0328/222225.744:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0401/114113.187:WARNING:value_store_frontend.cc(47)] Reading mhjfbmdgcfjbbpaeojofohoefgiehjai.alarms from  failed: IO error: .../LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
+[0401/114311.433:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0401/135508.237:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
