@@ -359,8 +359,8 @@ MonoBehaviour:
   slider: {fileID: 643087194051214764}
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 1, g: 0, b: 0, a: 1}
+    key1: {r: 0.26415092, g: 0.020932695, b: 0.020932695, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d309ac4a97ff244787597b80fb4ee45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 100
   healthBar: {fileID: 643087194051214763}
   HEALTHBAR: {fileID: 643087194051214761}
 --- !u!61 &643087193200942237

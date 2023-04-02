@@ -10,7 +10,7 @@ public class controller_01 : MonoBehaviour
      
     float horizontal_value;
     float vertical_value;
-    float current = 50.0f;
+    //float current = 50.0f;
     float target = 300.0f;
     Vector2 ref_velocity = Vector2.zero;
 

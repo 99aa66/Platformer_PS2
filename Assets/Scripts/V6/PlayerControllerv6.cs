@@ -14,7 +14,7 @@ public class PlayerControllerv6 : MonoBehaviour
     public Vector2 jumpHeight;
     private bool isOnGround;
     public float positionRadius;
-    [SerializeField] bool Ground = false;
+    //[SerializeField] bool Ground = false;
     [SerializeField] bool is_jumping = false;
     [Range(0, 1)][SerializeField] float smooth_time = 0.5f;
     public Transform playerPos;
@@ -82,7 +82,7 @@ public class PlayerControllerv6 : MonoBehaviour
         {
             is_jumping = false;
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            Ground = false;
+            //Ground = false;
         }
     }
 

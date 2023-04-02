@@ -53,7 +53,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &8843836231279659612
 PolygonCollider2D:
@@ -166,7 +166,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &8843836231293494648
 BoxCollider2D:
@@ -273,7 +273,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &8843836231723598676
 PolygonCollider2D:
@@ -525,7 +525,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &8843836232063829440
 PolygonCollider2D:
@@ -864,7 +864,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &8843836232098082993
 BoxCollider2D:
@@ -1188,7 +1188,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &8843836232890619117
 BoxCollider2D:
@@ -1293,7 +1293,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &8843836230881468695
 PolygonCollider2D:
@@ -1406,7 +1406,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!233 &8843836231941662173
 HingeJoint2D:
@@ -1608,7 +1608,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!233 &8843836231465222592
 HingeJoint2D:
@@ -2055,7 +2055,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &8843836232298026077
 BoxCollider2D:
@@ -2226,7 +2226,6 @@ GameObject:
   - component: {fileID: 4366982709736951032}
   - component: {fileID: 8843836232129252859}
   - component: {fileID: 8843836232129252856}
-  - component: {fileID: 8843836232129252853}
   - component: {fileID: 8843836232129252855}
   m_Layer: 3
   m_Name: Hanche
@@ -2273,7 +2272,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &8843836232129252856
 PolygonCollider2D:
@@ -2306,20 +2305,6 @@ PolygonCollider2D:
       - {x: 0.014519215, y: -0.46858457}
       - {x: 1.2243177, y: -0.44295493}
       - {x: 1.2215228, y: 0.52761877}
---- !u!114 &8843836232129252853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8537693700883300040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70e6b63e8e8d2b04b93ad08b1154e1ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  restingAngle: 90
-  force: 500
 --- !u!114 &8843836232129252855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2335,19 +2320,17 @@ MonoBehaviour:
   movementForce: 300
   jumpForce: 150
   raycastDistance: 2
-  jumpHeight: {x: 0, y: 0}
   positionRadius: 0
-  whatIsGround:
+  can_jump: 0
+  Default:
     serializedVersion: 2
-    m_Bits: 64
-  Ground: 1
+    m_Bits: 0
   is_jumping: 0
   smooth_time: 0.5
   playerPos: {fileID: 8843836230963139089}
   interpolation: 0.1
   offset: {x: 0, y: 2, z: -10}
   anim: {fileID: 0}
-  hanche: {fileID: 0}
 --- !u!1 &8578379628786707210
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,7 +2386,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &8843836232014416666
 PolygonCollider2D:
@@ -2637,7 +2620,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &8843836232980811784
 PolygonCollider2D:
