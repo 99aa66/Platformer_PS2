@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Balancev6 : MonoBehaviour
+public class Hanche : MonoBehaviour
 {
-    public float restingAngle = 0f ;
-    public float force = 750f;
- 
     private Rigidbody2D rb;
+    float restingAngle = 90;
+    float force = 500f;
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-
-    private void FixedUpdate()
+    // Update is called once per frame
+    void FixedUpdate()
     {
         rb.MoveRotation(Mathf.LerpAngle(rb.rotation, restingAngle, force * Time.deltaTime));
-    
     }
+
 }

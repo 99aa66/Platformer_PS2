@@ -7,7 +7,6 @@ public class EnnemyHealthTest : MonoBehaviour
     [SerializeField] int maxHealth;
     private int currentHealth;
     public Barredeviecoq healthBar;
-    
     [SerializeField] GameObject HEALTHBAR;
 
     // Start is called before the first frame update
@@ -39,8 +38,9 @@ public class EnnemyHealthTest : MonoBehaviour
         {
             TakeDamage(25);
             StartCoroutine(ShowBar());
-
+            Debug.Log("perso touche boite");
         }
+
     }
     private IEnumerator ShowBar()
     {

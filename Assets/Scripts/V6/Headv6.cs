@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,11 +11,15 @@ public class Headv6 : MonoBehaviour
     [SerializeField] float distMax = 3;
     public GameObject playerPos;
 
+    public float timePassed;
+    public float waitTime;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
         joint = GetComponent<HingeJoint2D>();
+        timePassed = 0.05f;
+        waitTime = 2f;
     }
 
     // Update is called once per frame
@@ -29,9 +34,17 @@ public class Headv6 : MonoBehaviour
 
         if(Input.GetButtonDown("Clic gauche") && rb.gameObject.name != "Top_Head")
         {
-            joint.enabled = false;
+            joint.enabled = false;         
+            timePassed -= Time.fixedDeltaTime;
+
         }
-        if(Input.GetButtonUp("Clic gauche") && rb.gameObject.name != "Top_Head")
+
+        if (timePassed < 0)
+        {
+            StartCoroutine(waitingTime());
+        }
+
+        if (Input.GetButtonUp("Clic gauche") && rb.gameObject.name != "Top_Head")
         {
             rb.MovePosition((Vector2)playerPos.transform.position);
             rb.MoveRotation(0);
@@ -51,8 +64,16 @@ public class Headv6 : MonoBehaviour
         }
         else
         {
-            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, 90, 700 * Time.deltaTime));
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, 90, 40 * Time.deltaTime));
         }
+
+    }
+
+  
+    public IEnumerator waitingTime()
+    {
+        yield return new WaitForSeconds(2f);
+        //return timePassed;
 
     }
 }
