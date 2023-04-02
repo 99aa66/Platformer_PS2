@@ -9,7 +9,7 @@ public class EnemyPatrol : MonoBehaviour
 
     public int damageOnCollision = 20; //au moment de la collision il y a dégâts -20
 
-    public SpriteRenderer coquillette1;
+    public SpriteRenderer graphics;
     private Transform target;
     private int destPoint = 0;
 
@@ -32,7 +32,7 @@ public class EnemyPatrol : MonoBehaviour
         {
             destPoint = (destPoint + 1) % waypoints.Length;
             target = waypoints[destPoint];
-            coquillette1.flipX = !coquillette1.flipX;
+            graphics.flipX = !graphics.flipX;
         }
     }
 
