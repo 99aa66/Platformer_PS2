@@ -1,22 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IAEnnemy : MonoBehaviour
 {
-    float speeda = 20f;
-    float distancea = 2f;
+    float speeda = 3f;
+    float distancea = 1f;
     private bool movingRight = true;
     public Transform groundDetection;
     public Transform target;
-    public float speedb = 20f;
-    float distancemax = 5f;
-    // Start is called before the first frame update
+    public float speedb = 15f;
+    float distancemax = 10f;
 
+    public int startingHealth = 40;
+    public int health;
+    
+    public int damageOnCollision = 20;
     bool atckType1 = true;
     void Start()
     {
-
+        health = startingHealth;
     }
     private void function1()
     {
@@ -38,14 +42,30 @@ public class IAEnnemy : MonoBehaviour
     }
         private void function2()
     {
-
         transform.position = Vector3.MoveTowards(transform.position, target.position, speedb * Time.deltaTime);
         if (transform.position.y == 3)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
+        /*transform.position = Vector3.MoveTowards(transform.position, target.position, speedb * Time.deltaTime);
+        if (transform.position.y < 3.1f && transform.position.y > 2.9f)
+        {
+            transform.position = new Vector3(transform.position.x, 3f, transform.position.z);
+        }*/
     }
-  
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
+            playerHealth.TakeDamage(damageOnCollision);
+
+            // decrease enemy health and update UI
+            health -= damageOnCollision;
+        }
+    }
+    
     void Update()
     {
         if (Vector3.Distance(transform.position, target.transform.position) < distancemax)
@@ -66,7 +86,7 @@ public class IAEnnemy : MonoBehaviour
         {
             function2();
         }
-
+        
     }
 }
 

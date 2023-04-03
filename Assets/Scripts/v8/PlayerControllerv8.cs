@@ -9,7 +9,7 @@ public class PlayerControllerv8 : MonoBehaviour
     public float jumpForce = 7f;
     [Space(5)]
     [Range(0f, 100f)] public float raycastDistance = 1.5f;
-    
+
     //public Vector2 jumpHeight;
 
     public float positionRadius;
@@ -21,22 +21,17 @@ public class PlayerControllerv8 : MonoBehaviour
 
     [Header("Camera Follow")]
     private Camera cam;
-    [Range(0f, 1f)] public float interpolation = 0.1f ;
+    [Range(0f, 1f)] public float interpolation = 0.1f;
     public Vector3 offset = new Vector3(0f, 2f, -7f);
 
     [Header("Animation")]
     public Animator anim;
 
     private Rigidbody2D rb;
-    //public GameObject zito;
 
-
-
-    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //zito = GetComponent<GameObject>();
 
         cam = Camera.main;
 
@@ -50,7 +45,6 @@ public class PlayerControllerv8 : MonoBehaviour
             }
         }
     }
-
     void Update()
     {
         can_jump = Physics2D.OverlapCircle(playerPos.position, positionRadius, Default);
@@ -71,7 +65,6 @@ public class PlayerControllerv8 : MonoBehaviour
             is_jumping = false; // là on saute plus car on est déjà en saut (éviter le double saut)
         }
     }
-
     private void Movement()
     {
         float xDir = Input.GetAxisRaw("Horizontal");
@@ -88,11 +81,9 @@ public class PlayerControllerv8 : MonoBehaviour
         if (xDir < 0)
         {
             //zito.transform.localRotation = Quaternion.Euler(xDir, 180, 0);
-           
+
             anim.SetBool("Walk", false);
             anim.SetBool("WalkBack", true);
-           
-            
         }
 
         if (xDir == 0)
@@ -102,13 +93,11 @@ public class PlayerControllerv8 : MonoBehaviour
             anim.SetBool("WalkBack", false);
         }
 
-       
     }
     private void CameraFollow()
     {
         cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position + offset, interpolation);
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
