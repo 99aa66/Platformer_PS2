@@ -4,3 +4,22 @@
 [0328/113310.609:WARNING:spdy_session.cc(3216)] Received RST for invalid stream5
 [0328/113344.872:WARNING:spdy_session.cc(3216)] Received RST for invalid stream9
 [0328/222225.744:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0401/114113.187:WARNING:value_store_frontend.cc(47)] Reading mhjfbmdgcfjbbpaeojofohoefgiehjai.alarms from  failed: IO error: .../LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
+[0401/114311.433:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0401/135508.237:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0402/012126.479:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0402/012126.491:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0402/012131.508:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0402/012131.508:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0402/012141.519:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0402/012141.536:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0402/012201.532:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0402/012201.548:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0402/012325.401:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0402/012325.404:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0402/012330.408:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0402/012330.424:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0402/012340.416:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0402/012340.433:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0403/002257.700:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0403/111543.827:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
