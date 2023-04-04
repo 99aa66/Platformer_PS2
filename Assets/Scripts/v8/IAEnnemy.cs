@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class IAEnnemy : MonoBehaviour
 {
-    float speeda = 20f;
+    float speeda = 5f;
     float distancea = 2f;
     private bool movingRight = true;
     public Transform groundDetection;
     public Transform target;
-    public float speedb = 20f;
+    public float speedb = 5f;
     float distancemax = 5f;
+    public int damageOnCollision = 20;
     // Start is called before the first frame update
 
     bool atckType1 = true;
@@ -67,6 +68,14 @@ public class IAEnnemy : MonoBehaviour
             function2();
         }
 
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
+            playerHealth.TakeDamage(damageOnCollision);
+        }
     }
 }
 

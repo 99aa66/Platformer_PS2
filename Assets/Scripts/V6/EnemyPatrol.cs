@@ -7,7 +7,7 @@ public class EnemyPatrol : MonoBehaviour
     public float speed;
     public Transform[] waypoints;
 
-    public int damageOnCollision = 20; //au moment de la collision il y a dégâts -20
+    public int damageOnCollision = 10; //au moment de la collision il y a dégâts -20
 
     public SpriteRenderer graphics;
     private Transform target;
