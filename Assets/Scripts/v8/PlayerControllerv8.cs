@@ -6,15 +6,15 @@ public class PlayerControllerv8 : MonoBehaviour
 {
     [Header("Movement")]
     public float movementForce;
-    public float jumpForce = 7f;
+    public float jumpForce = 10f;
     [Space(5)]
     [Range(0f, 100f)] public float raycastDistance = 1.5f;
-    
-    //public Vector2 jumpHeight;
+    public LayerMask whatIsGround;
 
+    public Vector2 jumpHeight;
+    private bool isOnGround;
     public float positionRadius;
-    public bool can_jump;
-    public LayerMask Default;
+    [SerializeField] bool Ground = false;
     [SerializeField] bool is_jumping = false;
     [Range(0, 1)][SerializeField] float smooth_time = 0.5f;
     public Transform playerPos;
@@ -22,22 +22,45 @@ public class PlayerControllerv8 : MonoBehaviour
     [Header("Camera Follow")]
     private Camera cam;
     [Range(0f, 1f)] public float interpolation = 0.1f ;
-    public Vector3 offset = new Vector3(0f, 2f, -7f);
+    public Vector3 offset = new Vector3(0f, 2f, -10f);
 
     [Header("Animation")]
     public Animator anim;
+    public Transform hanche;
+    /*public Transform head;
+    public Transform top_head;
+    public Transform buste;
+    public Transform hanche;
+    public Transform jambeD;
+    public Transform tibiaD;
+    public Transform piedD;
+    public Transform jambeG;
+    public Transform tibiaG;
+    public Transform piedG;
+    public Transform brasD;
+    public Transform avb_D;
+    public Transform mainD;
+    public Transform brasG;
+    public Transform avb_G;
+    public Transform mainG;
+    public Transform Zito;
+    private float x = 0f;
+    private float y = 0f;
+    private float z = 0f;*/
+
 
     private Rigidbody2D rb;
-    //public GameObject zito;
-
-
 
     
+
+    private void Awake()
+    {
+        rb = gameObject.AddComponent<Rigidbody2D>(); 
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //zito = GetComponent<GameObject>();
-
         cam = Camera.main;
 
 
@@ -53,22 +76,33 @@ public class PlayerControllerv8 : MonoBehaviour
 
     void Update()
     {
-        can_jump = Physics2D.OverlapCircle(playerPos.position, positionRadius, Default);
-        if (can_jump == true && Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
+            Debug.Log("jumping");
+        }
+
+        isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, whatIsGround);
+        if (isOnGround == true && Input.GetButtonDown("Jump"))
+        {
+            Debug.Log("jumping");
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
             is_jumping = true;
         }
     }
     private void FixedUpdate()
     {
         Movement();
+        //Jump();
         CameraFollow();
 
-        if (is_jumping == true)
+        if (is_jumping)
         {
+            is_jumping = false;
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            is_jumping = false; // là on saute plus car on est déjà en saut (éviter le double saut)
+            Ground = false;
         }
     }
 
@@ -76,42 +110,50 @@ public class PlayerControllerv8 : MonoBehaviour
     {
         float xDir = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(xDir * (movementForce * Time.deltaTime), rb.velocity.y);
-
-        // animation
-
-        if (xDir > 0)
+        if (xDir!= 0) 
         {
-            anim.SetBool("Walk", true);
-            anim.SetBool("WalkBack", false);
+            /*transform.localRotation = Quaternion.Euler(0, -180, 0);
+            Zito.localScale = new Vector3(xDir, 1f, 1f);
+            head.localScale = new Vector3(xDir, 1f, 1f);
+            top_head.localScale = new Vector3(xDir, 1f, 1f);
+            buste.localScale = new Vector3(xDir, 1f, 1f);
+            hanche.localScale = new Vector3(xDir, 1f, 1f);
+            jambeD.localScale = new Vector3(xDir, 1f, 1f);
+            tibiaD.localScale = new Vector3(xDir, 1f, 1f);
+            jambeG.localScale = new Vector3(xDir, 1f, 1f);
+            tibiaG.localScale = new Vector3(xDir, 1f, 1f);
+            piedD.localScale = new Vector3(xDir, 1f, 1f);
+            piedG.localScale = new Vector3(xDir, 1f, 1f);
+            brasD.localScale = new Vector3(xDir, 1f, 1f);
+            avb_D.localScale = new Vector3(xDir, 1f, 1f);
+            brasG.localScale = new Vector3(xDir, 1f, 1f);
+            avb_G.localScale = new Vector3(xDir, 1f, 1f);
+            mainD.localScale = new Vector3(xDir, 1f, 1f);
+            mainG.localScale = new Vector3(xDir, 1f, 1f);*/
         }
-
-        if (xDir < 0)
-        {
-            //zito.transform.localRotation = Quaternion.Euler(xDir, 180, 0);
-           
-            anim.SetBool("Walk", false);
-            anim.SetBool("WalkBack", true);
-           
-            
-        }
-
-        if (xDir == 0)
-        {
-            anim.SetBool("Idle", true);
-            anim.SetBool("Walk", false);
-            anim.SetBool("WalkBack", false);
-        }
-
-       
     }
+
+    /*private void Jump ()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (IsGrounded())
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
+            }
+           
+
+        }
+    }
+
+    private bool IsGrounded()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastDistance, whatIsGround);
+        return hit.collider != null;
+    }*/
+
     private void CameraFollow()
     {
         cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position + offset, interpolation);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(playerPos.position, positionRadius);
     }
 }
