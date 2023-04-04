@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Headv6 : MonoBehaviour
+public class Headv8 : MonoBehaviour
 {
     private Camera cam;
     private Rigidbody2D rb;
@@ -19,7 +19,7 @@ public class Headv6 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
         joint = GetComponent<HingeJoint2D>();
-        
+
     }
 
     // Update is called once per frame
@@ -32,14 +32,11 @@ public class Headv6 : MonoBehaviour
 
 
 
-        if(Input.GetButtonDown("Clic gauche") && rb.gameObject.name != "Top_Head")
+        if (Input.GetButtonDown("Clic gauche") && rb.gameObject.name != "Top_Head")
         {
-            joint.enabled = false;         
-        
+            joint.enabled = false;
 
         }
-
-       
 
         if (Input.GetButtonUp("Clic gauche") && rb.gameObject.name != "Top_Head")
         {
@@ -48,15 +45,13 @@ public class Headv6 : MonoBehaviour
             joint.enabled = true;
         }
 
-
-
         if (Input.GetButton("Clic gauche"))
         {
 
             rb.MoveRotation(Quaternion.Euler(0, 0, rotationZ));
             if (rb.gameObject.name == "Top_Head")
             {
-                rb.MovePosition((Vector2)playerPos.transform.position + difference*distMax);
+                rb.MovePosition((Vector2)playerPos.transform.position + difference * distMax);
             }
         }
         else
@@ -66,5 +61,4 @@ public class Headv6 : MonoBehaviour
 
     }
 
-  
 }
