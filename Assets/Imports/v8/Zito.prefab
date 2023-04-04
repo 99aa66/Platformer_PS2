@@ -1021,7 +1021,7 @@ GameObject:
   - component: {fileID: 4119094220483399160}
   m_Layer: 3
   m_Name: Corps
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1321,8 +1321,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3724092265350454588}
   - component: {fileID: 8843836231941662146}
-  - component: {fileID: 8843836231941662147}
   - component: {fileID: 8843836231941662173}
+  - component: {fileID: 3715040827165045184}
   m_Layer: 3
   m_Name: Pied_D
   m_TagString: Player
@@ -1366,44 +1366,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &8843836231941662147
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5998589375442438074}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.7078064, y: 0.2548996}
-      - {x: 0.42728877, y: 0.19742884}
-      - {x: 0.3709677, y: 0.2485973}
-      - {x: 0.26528436, y: 0.09896134}
-      - {x: 0.014822617, y: 0.13003129}
-      - {x: -0.010871768, y: 0.29504997}
-      - {x: -0.104175195, y: 0.25562337}
-      - {x: -0.24381757, y: -0.03488612}
-      - {x: -0.08682313, y: -0.17345962}
-      - {x: 0.17651337, y: -0.13537702}
-      - {x: 0.34217536, y: -0.18858336}
-      - {x: 0.83746576, y: -0.17915338}
-      - {x: 0.96422297, y: 0.050558567}
 --- !u!233 &8843836231941662173
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -1428,6 +1390,22 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -30
     m_UpperAngle: 2
+--- !u!70 &3715040827165045184
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5998589375442438074}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.27226627, y: -0.07531498}
+  m_Size: {x: 0.9714138, y: 0.20145959}
+  m_Direction: 1
 --- !u!1 &6782026570974632673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,7 +1419,7 @@ GameObject:
   - component: {fileID: 7639858684652037396}
   m_Layer: 3
   m_Name: Pied D
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1545,8 +1523,8 @@ GameObject:
   m_Component:
   - component: {fileID: 475425395695893326}
   - component: {fileID: 8843836231465222593}
-  - component: {fileID: 8843836231465222598}
   - component: {fileID: 8843836231465222592}
+  - component: {fileID: 4681554767695077410}
   m_Layer: 3
   m_Name: Pied_G
   m_TagString: Player
@@ -1561,14 +1539,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7298002131423905203}
-  m_LocalRotation: {x: 0, y: 0, z: 0.83723694, w: 0.5468403}
+  m_LocalRotation: {x: -0, y: -0, z: 0.83733135, w: 0.5466958}
   m_LocalPosition: {x: 0.40234074, y: 0.000000065069614, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6817949933670821132}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 113.719}
 --- !u!50 &8843836231465222593
 Rigidbody2D:
   serializedVersion: 4
@@ -1590,38 +1568,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &8843836231465222598
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7298002131423905203}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.72014344, y: 0.21715677}
-      - {x: 0.33436817, y: 0.12946}
-      - {x: -0.16406304, y: 0.1073122}
-      - {x: -0.16081432, y: -0.2969773}
-      - {x: 0.22399293, y: -0.26793832}
-      - {x: 0.7345674, y: -0.25893468}
-      - {x: 0.9064047, y: 0.07720357}
 --- !u!233 &8843836231465222592
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -1646,6 +1592,22 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -30
     m_UpperAngle: 2
+--- !u!70 &4681554767695077410
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298002131423905203}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5320458, y: -0.16345106}
+  m_Size: {x: 0.65240896, y: 0.17901088}
+  m_Direction: 1
 --- !u!1 &7918681019507517003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,7 +1884,7 @@ GameObject:
   - component: {fileID: 1482427896714293269}
   m_Layer: 3
   m_Name: Pied G
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2011,8 +1973,8 @@ MonoBehaviour:
   - {fileID: 475425395695893326}
   - {fileID: 6817949933670821132}
   m_Bounds:
-    m_Center: {x: 0.15383083, y: -1.2033119, z: 0}
-    m_Extent: {x: 0.5759561, y: 0.25381303, z: 0}
+    m_Center: {x: 0.1538443, y: -1.2032642, z: 0}
+    m_Extent: {x: 0.5759696, y: 0.25376534, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -2244,7 +2206,6 @@ GameObject:
   - component: {fileID: 8843836232129252858}
   - component: {fileID: 8843836232129252853}
   - component: {fileID: 8843836232129252855}
-  - component: {fileID: 1309147518164914160}
   m_Layer: 3
   m_Name: Hanche
   m_TagString: Player
@@ -2368,7 +2329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementForce: 300
-  jumpForce: 150
+  jumpForce: 200
   raycastDistance: 2
   positionRadius: 0
   can_jump: 0
@@ -2380,27 +2341,7 @@ MonoBehaviour:
   playerPos: {fileID: 8843836230963139089}
   interpolation: 0.1
   offset: {x: 0, y: 2, z: -10}
-  anim: {fileID: 1309147518164914160}
---- !u!95 &1309147518164914160
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8537693700883300040}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 897bbe09557f700478bf60ce3fdf794b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  anim: {fileID: 0}
 --- !u!1 &8578379628786707210
 GameObject:
   m_ObjectHideFlags: 0

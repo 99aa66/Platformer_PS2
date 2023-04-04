@@ -36,11 +36,11 @@ public class EnemyPatrol : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if(collision.transform.CompareTag("Player"))
+        if(col.transform.CompareTag("Player"))
         {
-            PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
+            PlayerHealth playerHealth = col.transform.GetComponent<PlayerHealth>();
             playerHealth.TakeDamage(damageOnCollision);
         }
     }

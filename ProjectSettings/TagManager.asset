@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PlayerSpawn
   - FadeSystem
+  - Ennemi
+  - Ground
   layers:
   - Default
   - TransparentFX

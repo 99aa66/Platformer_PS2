@@ -9,7 +9,7 @@ public class Headv6 : MonoBehaviour
     private HingeJoint2D joint;
     [SerializeField] float distMax = 3;
     public GameObject playerPos;
-
+    float restingAngle = 90f;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -51,7 +51,7 @@ public class Headv6 : MonoBehaviour
         }
         else
         {
-            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, 90, 700 * Time.deltaTime));
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, restingAngle, 300 * Time.deltaTime));
         }
 
     }
