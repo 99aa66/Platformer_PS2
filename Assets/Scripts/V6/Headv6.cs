@@ -51,7 +51,7 @@ public class Headv6 : MonoBehaviour
         }
         else
         {
-            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, 90, 700 * Time.deltaTime));
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, 90, 400 * Time.deltaTime));
         }
 
     }
