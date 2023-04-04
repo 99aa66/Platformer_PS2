@@ -2643,6 +2643,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToDestroy: {fileID: 188505920}
+--- !u!1 &1306639347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1432055787, guid: 5d7880372d475604db2e8ce5131436c1, type: 3}
+  m_PrefabInstance: {fileID: 1787054526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1323688634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3967,6 +3972,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6602021697477715735, guid: 5d7880372d475604db2e8ce5131436c1, type: 3}
+      propertyPath: playerPos
+      value: 
+      objectReference: {fileID: 1306639347}
     - target: {fileID: 7489029830784629097, guid: 5d7880372d475604db2e8ce5131436c1, type: 3}
       propertyPath: m_Layer
       value: 3
