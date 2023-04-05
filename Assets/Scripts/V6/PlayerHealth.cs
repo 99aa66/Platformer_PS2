@@ -47,11 +47,7 @@ public class PlayerHealth : MonoBehaviour
     
     void Update()
     {
-        // test pour voir si ca fonctionne quand on prend des damages
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            TakeDamage(20);
-        }
+        
     }
 
     public void HealPlayer(int amount)
@@ -72,7 +68,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(!isInvincible)
         {
-            currentHealth -= damage;  // si on prend des degats ont retire de la vie a la vie actuelle
+            currentHealth -= damage;  // si on prend des degats on retire de la vie a la vie actuelle
             HealthBar.SetHealth(currentHealth); // pour mettre a jour le visuel de la barre de vie
             isInvincible = true;
             StartCoroutine(InvincibilityFlash());

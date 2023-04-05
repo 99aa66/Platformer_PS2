@@ -211,8 +211,8 @@ MonoBehaviour:
   - {fileID: 5985539708738610012}
   - {fileID: 3321582321535818018}
   m_Bounds:
-    m_Center: {x: 0.000045210123, y: 0.01173982, z: 0}
-    m_Extent: {x: 0.15995502, y: 0.19825983, z: 0}
+    m_Center: {x: 0.000045880675, y: 0.01173982, z: 0}
+    m_Extent: {x: 0.159955, y: 0.19825983, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -318,8 +318,8 @@ MonoBehaviour:
   - {fileID: 9123481004117562605}
   - {fileID: 3663439344041558739}
   m_Bounds:
-    m_Center: {x: -0.00055485964, y: -0.0074200183, z: 0}
-    m_Extent: {x: 0.5770051, y: 0.24757998, z: 0}
+    m_Center: {x: -0.00055497885, y: -0.0074200183, z: 0}
+    m_Extent: {x: 0.577005, y: 0.24757998, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 4001485376513756518}
   m_Layer: 3
   m_Name: Pied_D
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -679,8 +679,8 @@ MonoBehaviour:
   - {fileID: 2231667743314927954}
   - {fileID: 4424497171394380019}
   m_Bounds:
-    m_Center: {x: -0.01500006, y: 0.0000005662441, z: 0}
-    m_Extent: {x: 0.15000007, y: 0.3350005, z: 0}
+    m_Center: {x: -0.015000269, y: 0.0000005662441, z: 0}
+    m_Extent: {x: 0.14999986, y: 0.3350005, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 4001485376664525516}
   m_Layer: 3
   m_Name: Buste
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -820,7 +820,7 @@ GameObject:
   - component: {fileID: 4001485376111475537}
   m_Layer: 3
   m_Name: Pied_G
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1080,7 +1080,7 @@ GameObject:
   - component: {fileID: 4001485375363295137}
   m_Layer: 3
   m_Name: Jambe_G
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1377,7 +1377,7 @@ GameObject:
   - component: {fileID: 4001485376621151909}
   m_Layer: 3
   m_Name: Tibia_D
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1577,8 +1577,8 @@ MonoBehaviour:
   - {fileID: 3702998851394857517}
   - {fileID: 8190108383486477609}
   m_Bounds:
-    m_Center: {x: 0.00078494847, y: -0.00067049265, z: 0}
-    m_Extent: {x: 0.20907494, y: 0.41767016, z: 0}
+    m_Center: {x: 0.0007850081, y: -0.00067049265, z: 0}
+    m_Extent: {x: 0.209075, y: 0.41767016, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1595,9 +1595,10 @@ GameObject:
   - component: {fileID: 4001485376876272909}
   - component: {fileID: 4001485376876272899}
   - component: {fileID: 4001485376876272896}
+  - component: {fileID: 691419942000150761}
   m_Layer: 3
   m_Name: Hanche
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1713,6 +1714,33 @@ MonoBehaviour:
   interpolation: 0.1
   offset: {x: 0, y: 2, z: -10}
   anim: {fileID: 0}
+--- !u!114 &691419942000150761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4271739709500225305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba341e6cc5a7c9499143f32299af75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  JambeD: {fileID: 9019490024287364491}
+  PiedD: {fileID: 2809771636094957621}
+  BrasD: {fileID: 188329462692873931}
+  MainD: {fileID: 8151463315070505544}
+  Corps: {fileID: 6408101930962109200}
+  BrasG: {fileID: 7076331156051125791}
+  MainG: {fileID: 4910769822498829291}
+  JambeG: {fileID: 7966511090095855479}
+  PiedG: {fileID: 6572656706968848390}
+  invicibilityTimeAfterHit: 3
+  invincibilityFlashDelay: 0.2
+  isInvincible: 0
+  HealthBar: {fileID: 0}
 --- !u!1 &4417872774900315556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,8 +1843,8 @@ MonoBehaviour:
   - {fileID: 5452367580761879199}
   - {fileID: 1417937732098139357}
   m_Bounds:
-    m_Center: {x: -0.0037600994, y: -0.0000002682209, z: 0}
-    m_Extent: {x: 0.57624, y: 0.2550003, z: 0}
+    m_Center: {x: -0.0037594438, y: -0.0000002682209, z: 0}
+    m_Extent: {x: 0.57624054, y: 0.2550003, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1924,8 +1952,8 @@ MonoBehaviour:
   - {fileID: 1634373608473658618}
   - {fileID: 4424497171394380019}
   m_Bounds:
-    m_Center: {x: -0.00010493398, y: -0.0014548004, z: 0}
-    m_Extent: {x: 0.2956251, y: 0.24354485, z: 0}
+    m_Center: {x: -0.000104516745, y: -0.0014548004, z: 0}
+    m_Extent: {x: 0.29562455, y: 0.24354485, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -2101,7 +2129,7 @@ GameObject:
   - component: {fileID: 4001485377082379684}
   m_Layer: 3
   m_Name: Jambe_D
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2305,7 +2333,7 @@ GameObject:
   - component: {fileID: 4001485376910079761}
   m_Layer: 3
   m_Name: Tibia_G
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2416,7 +2444,7 @@ GameObject:
   - component: {fileID: 4001485377218319036}
   m_Layer: 3
   m_Name: Top_Head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2708,8 +2736,8 @@ MonoBehaviour:
   - {fileID: 4226861557385240215}
   - {fileID: 6260319998852650721}
   m_Bounds:
-    m_Center: {x: -0.0060600787, y: 0.01000075, z: 0}
-    m_Extent: {x: 0.17605993, y: 0.16499941, z: 0}
+    m_Center: {x: -0.006060317, y: 0.01000075, z: 0}
+    m_Extent: {x: 0.17606014, y: 0.16499941, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -2816,8 +2844,8 @@ MonoBehaviour:
   - {fileID: 2734869467330281881}
   - {fileID: 8190108383486477609}
   m_Bounds:
-    m_Center: {x: 0.0018798411, y: -0.0005348623, z: 0}
-    m_Extent: {x: 0.20294008, y: 0.41607475, z: 0}
+    m_Center: {x: 0.0018790662, y: -0.0005348623, z: 0}
+    m_Extent: {x: 0.20294002, y: 0.41607475, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0

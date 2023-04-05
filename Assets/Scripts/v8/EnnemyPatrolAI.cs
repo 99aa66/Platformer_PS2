@@ -14,7 +14,7 @@ public class EnnemyPatrolAI : MonoBehaviour
     private int direction = 1;
 
     private Transform target;
-    private int destPoint = 0;
+    //private int destPoint = 0;
     private Rigidbody2D rb;
     private bool canAttack = true;
     public int health = 40;
@@ -70,7 +70,7 @@ public class EnnemyPatrolAI : MonoBehaviour
         }
     }
 
-    private void AtackPlayer(PlayerHealth playerHealth)
+    private void AttackPlayer(PlayerHealth playerHealth)
     {
         speed = 0;
         // Deal damage to the player
@@ -89,7 +89,7 @@ public class EnnemyPatrolAI : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    IEnumerator AttackPlayer(PlayerHealth playerHealth)
+    IEnumerator Cooldown2 (PlayerHealth playerHealth)
     {
         // Bounce towards player
         Vector2 bounceDirection = (target.position - transform.position).normalized;

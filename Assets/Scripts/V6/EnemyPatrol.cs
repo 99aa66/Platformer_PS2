@@ -13,15 +13,14 @@ public class EnemyPatrol : MonoBehaviour
     private Transform target;
     private int destPoint = 0;
 
+    public int health = 40;
 
-    // Start is called before the first frame update
     void Start()
     {
         //Commencer par le premier waypoints de la liste
         target = waypoints[0]; 
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 dir = target.position - transform.position;
@@ -35,13 +34,24 @@ public class EnemyPatrol : MonoBehaviour
             graphics.flipX = !graphics.flipX;
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(col.transform.CompareTag("Player"))
+        if (collision.transform.CompareTag("Player"))
         {
-            PlayerHealth playerHealth = col.transform.GetComponent<PlayerHealth>();
+            PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
+            // AttackPlayer.(playerHealth);
             playerHealth.TakeDamage(damageOnCollision);
+
+            //health -= damageOnCollision;
+
+            if (health <= 0)
+            {
+                Die();
+            }
         }
+    }
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }
