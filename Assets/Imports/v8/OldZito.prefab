@@ -2992,7 +2992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7896015458069474560}
   m_Layer: 3
-  m_Name: Zito
+  m_Name: OldZito
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
