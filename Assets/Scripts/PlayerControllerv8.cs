@@ -28,18 +28,13 @@ public class PlayerControllerv8 : MonoBehaviour
     public Animator anim;
 
     private Rigidbody2D rb;
-    //public GameObject zito;
 
-
-
-    
+    public ParticleSystem particleSystem; 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //zito = GetComponent<GameObject>();
 
         cam = Camera.main;
-
 
         Collider2D[] colliders = transform.GetComponentsInChildren<Collider2D>();
         for (int i = 0; i < colliders.Length; i++)
@@ -58,6 +53,17 @@ public class PlayerControllerv8 : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
             is_jumping = true;
+        }
+
+        // Check if the player is moving and enable/disable particle system
+        float xDir = Input.GetAxisRaw("Horizontal");
+        if (xDir != 0 && particleSystem.isStopped)
+        {
+            particleSystem.Play();
+        }
+        else if (xDir == 0 && particleSystem.isPlaying)
+        {
+            particleSystem.Stop();
         }
     }
     private void FixedUpdate()
@@ -87,12 +93,8 @@ public class PlayerControllerv8 : MonoBehaviour
 
         if (xDir < 0)
         {
-            //zito.transform.localRotation = Quaternion.Euler(xDir, 180, 0);
-           
             anim.SetBool("Walk", false);
             anim.SetBool("WalkBack", true);
-           
-            
         }
 
         if (xDir == 0)
@@ -102,7 +104,21 @@ public class PlayerControllerv8 : MonoBehaviour
             anim.SetBool("WalkBack", false);
         }
 
-       
+        // Particle System
+        if (xDir != 0)
+        {
+            if (!particleSystem.isPlaying)
+            {
+                particleSystem.Play();
+            }
+        }
+        else
+        {
+            if (particleSystem.isPlaying)
+            {
+                particleSystem.Stop();
+            }
+        }
     }
     private void CameraFollow()
     {
