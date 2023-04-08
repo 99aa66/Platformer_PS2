@@ -1008,13 +1008,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468145034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.860199, y: 19.1066, z: 0}
-  m_LocalScale: {x: 4.972915, y: 2.2501125, z: 3.3335}
+  m_LocalPosition: {x: 24.6, y: 12.22, z: 0}
+  m_LocalScale: {x: 4.972915, y: 1.2938147, z: 3.3335}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1011147603}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &509347923 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2548540539474644672, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+  m_PrefabInstance: {fileID: 1784427328}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &517893882 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7313566033999457056, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
@@ -3275,7 +3280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1596274968
 Transform:
   m_ObjectHideFlags: 0
@@ -3653,6 +3658,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1730536945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2548540539715631855, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+  m_PrefabInstance: {fileID: 1784427328}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1784427328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3684,6 +3694,42 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2548540539395216517, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: m_UseMotor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548540539395216517, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 1.8680887
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548540539395216517, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: m_AngleLimits.m_LowerAngle
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548540539395216517, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: m_AngleLimits.m_UpperAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548540539395216517, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548540539395216518, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: mouseButton
+      value: 324
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548540539474644674, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: stretchPoint
+      value: 
+      objectReference: {fileID: 1730536945}
+    - target: {fileID: 2548540539474644674, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: boxColliderSize.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548540539474644674, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: selectedBoxCollider
+      value: 
+      objectReference: {fileID: 509347923}
     - target: {fileID: 2548540539474644675, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
       propertyPath: m_Interpolate
       value: 2
@@ -3716,6 +3762,14 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2548540540274977246, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: stretchPoint
+      value: 
+      objectReference: {fileID: 1730536945}
+    - target: {fileID: 2548540540274977246, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: selectedBoxCollider
+      value: 
+      objectReference: {fileID: 509347923}
     - target: {fileID: 2548540540274977247, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
       propertyPath: m_Interpolate
       value: 2

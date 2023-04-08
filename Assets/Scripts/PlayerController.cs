@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControllerv8 : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float movementForce;
     public float jumpForce = 7f;
     [Space(5)]
     [Range(0f, 100f)] public float raycastDistance = 1.5f;
-    
-    //public Vector2 jumpHeight;
 
     public float positionRadius;
     public bool can_jump;
@@ -21,7 +19,7 @@ public class PlayerControllerv8 : MonoBehaviour
 
     [Header("Camera Follow")]
     private Camera cam;
-    [Range(0f, 1f)] public float interpolation = 0.1f ;
+    [Range(0f, 1f)] public float interpolation = 0.1f;
     public Vector3 offset = new Vector3(0f, 2f, -7f);
 
     [Header("Animation")]
@@ -29,7 +27,6 @@ public class PlayerControllerv8 : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    public ParticleSystem particleSystem; 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -54,17 +51,6 @@ public class PlayerControllerv8 : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
             is_jumping = true;
         }
-
-        // Check if the player is moving and enable/disable particle system
-        float xDir = Input.GetAxisRaw("Horizontal");
-        if (xDir != 0 && particleSystem.isStopped)
-        {
-            particleSystem.Play();
-        }
-        else if (xDir == 0 && particleSystem.isPlaying)
-        {
-            particleSystem.Stop();
-        }
     }
     private void FixedUpdate()
     {
@@ -76,6 +62,8 @@ public class PlayerControllerv8 : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             is_jumping = false; // là on saute plus car on est déjà en saut (éviter le double saut)
         }
+
+
     }
 
     private void Movement()
@@ -104,21 +92,6 @@ public class PlayerControllerv8 : MonoBehaviour
             anim.SetBool("WalkBack", false);
         }
 
-        // Particle System
-        if (xDir != 0)
-        {
-            if (!particleSystem.isPlaying)
-            {
-                particleSystem.Play();
-            }
-        }
-        else
-        {
-            if (particleSystem.isPlaying)
-            {
-                particleSystem.Stop();
-            }
-        }
     }
     private void CameraFollow()
     {

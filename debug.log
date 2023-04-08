@@ -32,3 +32,6 @@
 [0406/225816.725:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0406/225821.735:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0406/225821.736:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0408/142828.647:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0408/180154.351:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0408/191011.939:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 

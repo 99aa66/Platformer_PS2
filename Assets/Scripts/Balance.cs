@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Balancev6 : MonoBehaviour
+public class Balance : MonoBehaviour
 {
     public float restingAngle = 0f ;
     public float force = 750f;
