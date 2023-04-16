@@ -45,13 +45,6 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         HealthBar.SetMaxHealth(maxHealth);
     }
-
-    
-    void Update()
-    {
-        
-    }
-
     public void HealPlayer(int amount)
     {
         if((currentHealth + amount) > maxHealth)

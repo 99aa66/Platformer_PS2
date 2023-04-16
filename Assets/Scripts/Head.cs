@@ -10,7 +10,7 @@ public class Head : MonoBehaviour
     [SerializeField] float distMax = 3;
     public GameObject playerPos;
     float restingAngle = 90f;
-
+    public bool isAttacking = false;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,12 +27,16 @@ public class Head : MonoBehaviour
         if (Input.GetButtonDown("Clic gauche") && rb.gameObject.name != "Top_Head")
         {
             joint.enabled = false;
+            isAttacking = true;
+            // On envoie un message aux objets pouvant être endommagés pour les prévenir de l'attaque.
+            SendMessage("OnAttacked", SendMessageOptions.DontRequireReceiver);
         }
         if (Input.GetButtonUp("Clic gauche") && rb.gameObject.name != "Top_Head")
         {
             rb.MovePosition((Vector2)playerPos.transform.position);
             rb.MoveRotation(0);
             joint.enabled = true;
+            isAttacking = false;
         }
 
         if (Input.GetButton("Clic gauche"))
