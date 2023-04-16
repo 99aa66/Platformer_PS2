@@ -17,6 +17,8 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer MainG;
     public SpriteRenderer JambeG;
     public SpriteRenderer PiedG;
+    public SpriteRenderer oeil;
+    public SpriteRenderer bouche;
 
     public float invicibilityTimeAfterHit = 3f;
     public float invincibilityFlashDelay = 0.2f;
@@ -89,6 +91,8 @@ public class PlayerHealth : MonoBehaviour
             MainG.color = new Color(1f, 1f, 1f, 0f);
             JambeG.color = new Color(1f, 1f, 1f, 0f);
             PiedG.color = new Color(1f, 1f, 1f, 0f);
+            oeil.color = new Color(1f, 1f, 1f, 0f);
+            bouche.color = new Color(1f, 1f, 1f, 0f);
             yield return new WaitForSeconds(invincibilityFlashDelay); 
 
             JambeD.color = new Color(1f, 1f, 1f, 1f); // réafficher le perso en opaque
@@ -100,6 +104,8 @@ public class PlayerHealth : MonoBehaviour
             MainG.color = new Color(1f, 1f, 1f, 1f);
             JambeG.color = new Color(1f, 1f, 1f, 1f);
             PiedG.color = new Color(1f, 1f, 1f, 1f);
+            oeil.color = new Color(1f, 1f, 1f, 1f);
+            bouche.color = new Color(1f, 1f, 1f, 1f);
             yield return new WaitForSeconds(invincibilityFlashDelay);
         }
     }

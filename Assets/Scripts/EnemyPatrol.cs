@@ -7,13 +7,11 @@ public class EnemyPatrol : MonoBehaviour
     public float speed;
     public Transform[] waypoints;
 
-    public int damageOnCollision = 10; //au moment de la collision il y a dégâts -20
+    public int damageOnCollision = 2; //au moment de la collision il y a dégâts -2
 
     public SpriteRenderer graphics;
     private Transform target;
     private int destPoint = 0;
-
-    public int health = 40;
 
     void Start()
     {
@@ -39,19 +37,8 @@ public class EnemyPatrol : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
-            // AttackPlayer.(playerHealth);
             playerHealth.TakeDamage(damageOnCollision);
-
-            //health -= damageOnCollision;
-
-            if (health <= 0)
-            {
-                Die();
-            }
         }
     }
-    private void Die()
-    {
-        Destroy(gameObject);
-    }
+ 
 }

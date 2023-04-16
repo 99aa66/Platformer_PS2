@@ -18,7 +18,7 @@ public class JumpFusilliAttacking : MonoBehaviour
     [SerializeField] float circleRadius;
 
     [Header("Jump Attaque")]
-    public float jumpHeight = 5f;
+    [SerializeField] float jumpHeight;
     [SerializeField] Transform Player;
     [SerializeField] Transform groundCheck;
     [SerializeField] Vector2 boxSize;
@@ -29,12 +29,14 @@ public class JumpFusilliAttacking : MonoBehaviour
     private bool isPlayerDetected;
     [SerializeField] LayerMask playerLayer;
 
-    private Rigidbody2D rb;
-    private Animator animator;
+    [Header("Paramètre Fusilli")]
+    public int damageOnCollision = 20; //au moment de la collision il y a dégâts -20
+    private Rigidbody2D fusilliRB;
+    private Animator fusilliAnim;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        fusilliRB = GetComponent<Rigidbody2D>();
+        fusilliAnim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -44,7 +46,7 @@ public class JumpFusilliAttacking : MonoBehaviour
         isObstacleAhead = Physics2D.OverlapCircle(obstacleDetection.position, circleRadius, groundLayer);
         isOnGround = Physics2D.OverlapBox(groundCheck.position, boxSize, 0, groundLayer);
         isPlayerDetected = Physics2D.OverlapBox(transform.position, lineOfSite, 0, playerLayer);
-        
+
         AnimationController();
        
         if(!isPlayerDetected && isOnGround) // Si on ne voit pas le joueur est qu'on est sur le sol, on continue à patrouiller
@@ -66,15 +68,14 @@ public class JumpFusilliAttacking : MonoBehaviour
                 Flip();
             }
         }
-        rb.velocity = new Vector2(moveSpeed * moveDirection, rb.velocity.y);
+        fusilliRB.velocity = new Vector2(moveSpeed * moveDirection, fusilliRB.velocity.y);
     }
     void JumpAttack()
-    {
-        float distanceFromPlayer = Player.position.x - transform.position.x;
+    {float distanceFromPlayer = Player.position.x - transform.position.x;
 
         if (isOnGround)
         {
-            rb.AddForce(new Vector2(distanceFromPlayer, jumpHeight), ForceMode2D.Impulse); // nouv vecteur (axe x, axe y, force non continue)
+            fusilliRB.AddForce(new Vector2(distanceFromPlayer, jumpHeight), ForceMode2D.Impulse); // nouv vecteur (axe x, axe y, force non continue)
         }
     }
 
@@ -99,8 +100,25 @@ public class JumpFusilliAttacking : MonoBehaviour
 
     void AnimationController()
     {
-        animator.SetBool("isPlayerDetected", isPlayerDetected);
-        animator.SetBool("IsOnGround", isOnGround);
+        fusilliAnim.SetBool("isPlayerDetected", isPlayerDetected);
+        fusilliAnim.SetBool("IsOnGround", isOnGround);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision detected with " + collision.gameObject.name); // Affiche le nom de l'objet entré en collision
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Player collision detected"); // Affiche un message si la collision concerne l'objet avec le tag "Player"
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damageOnCollision);
+            }
+            else
+            {
+                Debug.LogWarning("PlayerHealth component not found on object with tag 'Player'");
+            }
+        }
     }
 
     private void OnDrawGizmosSelected()

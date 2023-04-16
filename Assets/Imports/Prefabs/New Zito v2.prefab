@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3739000146631623372}
   m_Layer: 3
   m_Name: Pied D
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 144634155374094057}
   m_Layer: 3
   m_Name: oeil
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 6529477126394256791}
   m_Layer: 3
   m_Name: Main D
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 6975042774102288928}
   m_Layer: 3
   m_Name: Corps
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1112,7 +1112,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6745642, y: 0.033199817}
+  m_Offset: {x: 0.6745642, y: 0.036755502}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1123,7 +1123,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4593586, y: 0.99167246}
+  m_Size: {x: 1.4593586, y: 1.013006}
   m_EdgeRadius: 0
 --- !u!233 &2548540539474644673
 HingeJoint2D:
@@ -1176,7 +1176,7 @@ GameObject:
   - component: {fileID: 5581937398818428877}
   m_Layer: 3
   m_Name: Pied G
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1284,7 +1284,7 @@ GameObject:
   - component: {fileID: 1810248698882233463}
   m_Layer: 3
   m_Name: Bras G
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1473,7 +1473,7 @@ GameObject:
   - component: {fileID: 4533987855581324143}
   m_Layer: 3
   m_Name: Jambe D
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1767,12 +1767,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.040897068, y: 0.5469099}
+    - - {x: 0.051804483, y: 0.56872475}
       - {x: -0.11484748, y: 0.41500953}
       - {x: -0.13052274, y: -0.3283536}
-      - {x: -0.020239346, y: -0.4387913}
-      - {x: 1.1243027, y: -0.4492058}
-      - {x: 1.135119, y: 0.5338696}
+      - {x: -0.020239348, y: -0.45583346}
+      - {x: 1.1186596, y: -0.4633135}
+      - {x: 1.1314831, y: 0.55204904}
 --- !u!95 &2548540539852288307
 Animator:
   serializedVersion: 5
@@ -1816,6 +1816,8 @@ MonoBehaviour:
   MainG: {fileID: 5832322608909999586}
   JambeG: {fileID: 8815978795213322622}
   PiedG: {fileID: 5755839819833468431}
+  oeil: {fileID: 0}
+  bouche: {fileID: 0}
   invicibilityTimeAfterHit: 3
   invincibilityFlashDelay: 0.2
   isInvincible: 0
@@ -1873,7 +1875,7 @@ GameObject:
   - component: {fileID: 7540739219544063009}
   m_Layer: 3
   m_Name: Bras D
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2040,7 +2042,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.4235435, y: 0.038457304}
+  m_Offset: {x: 0.4235435, y: 0.04201299}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2051,7 +2053,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8813615, y: 0.98356956}
+  m_Size: {x: 0.8813615, y: 1.0120147}
   m_EdgeRadius: 0
 --- !u!233 &2548540538702773501
 HingeJoint2D:
@@ -2160,8 +2162,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.38540643, y: -0.1506062}
-  m_Size: {x: 1.0157385, y: 0.10766561}
+  m_Offset: {x: 0.44851178, y: -0.150606}
+  m_Size: {x: 1.1419472, y: 0.107665375}
   m_Direction: 1
 --- !u!233 &2548540538982166553
 HingeJoint2D:
@@ -2214,7 +2216,7 @@ GameObject:
   - component: {fileID: 9038768331790553432}
   m_Layer: 3
   m_Name: bouche
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2603,7 +2605,7 @@ GameObject:
   - component: {fileID: 7943743000735587110}
   m_Layer: 3
   m_Name: Main G
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2791,7 +2793,7 @@ GameObject:
   - component: {fileID: 7690954818453479042}
   m_Layer: 3
   m_Name: Jambe G
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3079,10 +3081,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.7809283, y: 0.52354294}
-      - {x: -0.01876855, y: 0.52625734}
-      - {x: -0.020952294, y: -0.46488664}
-      - {x: 1.797073, y: -0.47330505}
+    - - {x: 1.7809283, y: 0.54383093}
+      - {x: -0.026199818, y: 0.5448354}
+      - {x: -0.0320992, y: -0.47974965}
+      - {x: 1.788958, y: -0.493593}
       - {x: 1.9406115, y: -0.36591417}
       - {x: 1.9380736, y: 0.3993031}
 --- !u!233 &2548540540274977245
