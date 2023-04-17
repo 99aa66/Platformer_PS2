@@ -440,8 +440,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.27794805, y: -0.13261986}
-  m_Size: {x: 0.90631723, y: 0.088758074}
+  m_Offset: {x: 0.2779485, y: -0.08023312}
+  m_Size: {x: 0.90631723, y: 0.19353172}
   m_Direction: 1
 --- !u!233 &2548540539175286681
 HingeJoint2D:
@@ -1163,6 +1163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distMax: 3
   playerPos: {fileID: 2548540539715631855}
+  isAttacking: 0
 --- !u!1 &2997552647780834221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,8 +2163,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.44851178, y: -0.150606}
-  m_Size: {x: 1.1419472, y: 0.107665375}
+  m_Offset: {x: 0.44851276, y: -0.115746126}
+  m_Size: {x: 1.1419473, y: 0.18647988}
   m_Direction: 1
 --- !u!233 &2548540538982166553
 HingeJoint2D:
@@ -3125,3 +3126,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distMax: 3
   playerPos: {fileID: 2548540539715631855}
+  isAttacking: 0

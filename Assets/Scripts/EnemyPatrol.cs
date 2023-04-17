@@ -34,9 +34,13 @@ public class EnemyPatrol : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealth.instance.TakeDamage(damageOnCollision);
+            Head playerHead = collision.gameObject.GetComponent<Head>();
+            if (playerHead != null && playerHead.isAttacking)
+            {
+                PlayerHealth.instance.TakeDamage(damageOnCollision);
+            }
         }
     }
  

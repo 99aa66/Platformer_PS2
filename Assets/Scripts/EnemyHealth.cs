@@ -8,10 +8,10 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int maxHealth;
     public int currentHealth;
-    public Barredeviecoq healthBar;
+    public HealthBar healthBar;
     [SerializeField] GameObject HealthBarEnnemy;
 
-    public SpriteRenderer coquillette1;
+    public SpriteRenderer SpriteEnnemi;
     public float invincibilityFlashDelay = 0.2f;
     public bool TakenDamage = false;
 
@@ -43,17 +43,25 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D Player)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Player.transform.name == "Player" && !TakenDamage)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            TakeDamage(10);
-            StartCoroutine(ShowBar());
-            
+            Head playerHead = collision.gameObject.GetComponentInChildren<Head>();
+            if (playerHead != null && playerHead.isAttacking)
+            {
+                TakeDamage(10);
+                StartCoroutine(ShowBar());
+            }
+            else if (playerHead != null)
+            {
+                TakeDamage(5); // nouveau code pour les dégâts infligés en sautant sur l'ennemi
+                StartCoroutine(ShowBar());
+            }
         }
     }
 
-    private IEnumerator ShowBar()
+        private IEnumerator ShowBar()
     {
         HealthBarEnnemy.SetActive(true);
         yield return new WaitForSeconds(5f);
@@ -64,10 +72,10 @@ public class EnemyHealth : MonoBehaviour
     {
         while (TakenDamage)
         {
-            coquillette1.color = new Color(1f, 1f, 1f, 0f);
+            SpriteEnnemi.color = new Color(1f, 1f, 1f, 0f);
             yield return new WaitForSeconds(invincibilityFlashDelay);
 
-            coquillette1.color = new Color(1f, 1f, 1f, 1f);
+            SpriteEnnemi.color = new Color(1f, 1f, 1f, 1f);
             yield return new WaitForSeconds(invincibilityFlashDelay);
         }
     }

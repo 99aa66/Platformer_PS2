@@ -62,8 +62,6 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             is_jumping = false; // là on saute plus car on est déjà en saut (éviter le double saut)
         }
-
-
     }
 
     private void Movement()
@@ -97,7 +95,6 @@ public class PlayerController : MonoBehaviour
     {
         cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position + offset, interpolation);
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
