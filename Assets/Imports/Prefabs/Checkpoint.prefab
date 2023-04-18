@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4411065276587876385}
   - component: {fileID: 4411065276587876386}
   m_Layer: 0
-  m_Name: Drapeau
+  m_Name: HuileCheckPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4411065276587876384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.23, y: 4.25, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: -0.1, y: 3.79, z: 0}
+  m_LocalScale: {x: 2.33709, y: 2.33709, z: 0.77903}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4411065277457657106}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 234ff91bf002f9949bd971dd8b896361, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4c90957c53ded54f86d325292a80186, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.4567757, y: 4.252737}
+  m_Offset: {x: -0.14816284, y: 7.9162726}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -142,7 +142,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.6654434, y: 11.441223}
+  m_Size: {x: 7.8753204, y: 19.326183}
   m_EdgeRadius: 0
 --- !u!114 &4411065277457657104
 MonoBehaviour:
