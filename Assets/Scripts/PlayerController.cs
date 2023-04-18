@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float positionRadius;
     public bool can_jump;
     public LayerMask Default;
-    [SerializeField] bool is_jumping = false;
+    public bool is_jumping = false;
     [Range(0, 1)][SerializeField] float smooth_time = 0.5f;
     public Transform playerPos;
 
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     [Header("Animation")]
     public Animator anim;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     void Start()
     {

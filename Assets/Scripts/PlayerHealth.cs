@@ -39,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
 
         instance = this;
     }
+
     void Start()
     {
         // le joueur commence avec toute sa vie

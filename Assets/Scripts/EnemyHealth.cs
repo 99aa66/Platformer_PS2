@@ -8,22 +8,30 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int maxHealth;
     public int currentHealth;
-    public HealthBar healthBar;
-    [SerializeField] GameObject HealthBarEnnemy;
+    public HealthBar healthBarEnnemy;
+    [SerializeField] GameObject healthBarEnnemyObject;
 
     public SpriteRenderer SpriteEnnemi;
-    public float invincibilityFlashDelay = 0.2f;
     public bool TakenDamage = false;
 
-    // Start is called before the first frame update
+    public static EnemyHealth instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a déjà une instance de EnemyHealth dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
     void Start()
     {
-        HealthBarEnnemy.SetActive(false);
+        healthBarEnnemyObject.SetActive(false);
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        healthBarEnnemy.SetMaxHealth(maxHealth);
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (currentHealth <= 0)
@@ -34,49 +42,30 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        healthBarEnnemy.SetHealth(currentHealth);
 
         if (!TakenDamage)
         {
             TakenDamage = true;
-            StartCoroutine(InvincibilityFlash());
+            StartCoroutine(ShowBar());
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D Player)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (Player.gameObject.CompareTag("Player"))
         {
-            Head playerHead = collision.gameObject.GetComponentInChildren<Head>();
-            if (playerHead != null && playerHead.isAttacking)
+            Head head = Player.gameObject.GetComponent<Head>();
+            if (head != null && head.isAttacking)
             {
-                TakeDamage(10);
-                StartCoroutine(ShowBar());
-            }
-            else if (playerHead != null)
-            {
-                TakeDamage(5); // nouveau code pour les dégâts infligés en sautant sur l'ennemi
-                StartCoroutine(ShowBar());
+                EnemyHealth.instance.TakeDamage(10);
             }
         }
     }
 
-        private IEnumerator ShowBar()
+    private IEnumerator ShowBar()
     {
-        HealthBarEnnemy.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        HealthBarEnnemy.SetActive(false);
-    }
-
-    public IEnumerator InvincibilityFlash()
-    {
-        while (TakenDamage)
-        {
-            SpriteEnnemi.color = new Color(1f, 1f, 1f, 0f);
-            yield return new WaitForSeconds(invincibilityFlashDelay);
-
-            SpriteEnnemi.color = new Color(1f, 1f, 1f, 1f);
-            yield return new WaitForSeconds(invincibilityFlashDelay);
-        }
+        healthBarEnnemyObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        healthBarEnnemyObject.SetActive(false);
     }
 }

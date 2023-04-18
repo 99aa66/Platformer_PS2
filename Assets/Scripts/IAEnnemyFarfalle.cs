@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
+using static Unity.Burst.Intrinsics.X86.Sse4_2;
 
 public class IAEnnemyFarfalle : MonoBehaviour
 {
@@ -13,10 +14,10 @@ public class IAEnnemyFarfalle : MonoBehaviour
     public float speedb = 6f;
     float distancemax = 13f;
     public int damageOnCollision = 5;
-    // Start is called before the first frame update
+    private EnemyHealth enemyHealth;
 
     bool atckType1 = true;
-        private void function1()
+    private void function1()
     {
         transform.Translate(Vector2.right * speeda * Time.deltaTime);
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distancea);
@@ -44,6 +45,10 @@ public class IAEnnemyFarfalle : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        enemyHealth = GetComponent<EnemyHealth>();
+    }
     void Update()
     {
         if (Vector3.Distance(transform.position, target.transform.position) < distancemax)
@@ -69,7 +74,12 @@ public class IAEnnemyFarfalle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-          PlayerHealth.instance.TakeDamage(damageOnCollision);
+            PlayerHealth.instance.TakeDamage(damageOnCollision);
+            Head head = collision.gameObject.GetComponent<Head>();
+           if (head != null && head.isAttacking)
+           {
+             EnemyHealth.instance.TakeDamage(10);
+           }
         }
     }
 }
