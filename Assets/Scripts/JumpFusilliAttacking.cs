@@ -113,6 +113,10 @@ public class JumpFusilliAttacking : MonoBehaviour
                 playerHealth.TakeDamage(damageOnCollision);
             }
         }
+        if (collision.gameObject.CompareTag("Cafetière"))
+        {
+            EnemyHealthFusilli.instance.TakeDamage(15);
+        }
         if (collision.gameObject.CompareTag("Player") && (collision.gameObject.GetComponent<Head>() != null || collision.gameObject.GetComponent<Head1>() != null) && (collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking || collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking))
         {
             EnemyHealthFusilli.instance.TakeDamage(10);

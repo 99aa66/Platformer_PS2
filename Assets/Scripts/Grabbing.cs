@@ -11,8 +11,6 @@ public class Grabbing : MonoBehaviour
 
     private GameObject currentlyHolding;
 
-    // Start is called before the first frame update
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(mouseButton))
@@ -38,17 +36,38 @@ public class Grabbing : MonoBehaviour
             currentlyHolding = null;
         }
     }
-
     private void OnTriggerEnter2D(Collider2D col)
     {
-      if (canGrab && col.gameObject.GetComponent<Rigidbody2D>() != null && col.tag != "Player")
+        if (canGrab && col.gameObject.GetComponent<Rigidbody2D>() != null && col.tag != "Player")
         {
-            currentlyHolding = col.gameObject;
-            joint = currentlyHolding.AddComponent<FixedJoint2D>();
-            joint.connectedBody = head;
+            if (col.gameObject.CompareTag("Cafetière"))
+            {
+                if (col.gameObject.GetComponent<CafetiereController>().isBroken)
+                {
+                    return; // la cafetière est cassée, on ne peut pas la ramasser
+                }
+                currentlyHolding = col.gameObject;
+                joint = currentlyHolding.AddComponent<FixedJoint2D>();
+                joint.connectedBody = head;
+                col.gameObject.GetComponent<CafetiereController>().isBeingHeld = true;
+            }
+            else
+            {
+                currentlyHolding = col.gameObject;
+                joint = currentlyHolding.AddComponent<FixedJoint2D>();
+                joint.connectedBody = head;
+            }
         }
     }
 
-
-
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (currentlyHolding != null && col.gameObject == currentlyHolding)
+        {
+            currentlyHolding.GetComponent<CafetiereController>()?.ResetPosition(); // on remet la cafetière à sa position de départ si c'est une cafetière
+            if (currentlyHolding.GetComponent<CafetiereController>()?.isBroken == true)
+            joint = null;
+            currentlyHolding = null;
+        }
+    }
 }
