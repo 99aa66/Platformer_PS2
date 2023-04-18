@@ -1036,7 +1036,7 @@ Transform:
   - {fileID: 2426177868649548166}
   - {fileID: 3936279768886096843}
   - {fileID: 8864055596252796654}
-  - {fileID: 7313566033999457056}
+  - {fileID: 6488809438169303407}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1693,7 +1693,6 @@ GameObject:
   - component: {fileID: 2548540539852288308}
   - component: {fileID: 2548540539852288319}
   - component: {fileID: 2548540539852288307}
-  - component: {fileID: 2548540539852288306}
   - component: {fileID: 2548540539852288305}
   - component: {fileID: 2548540539852288304}
   m_Layer: 3
@@ -1710,7 +1709,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3431277837837900048}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1719,8 +1718,8 @@ Transform:
   - {fileID: 2861382767938012196}
   - {fileID: 3540437251127766928}
   - {fileID: 2548540540054259988}
-  m_Father: {fileID: 3779058939815774936}
-  m_RootOrder: 11
+  m_Father: {fileID: 6488809438169303407}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!50 &2548540539852288308
 Rigidbody2D:
@@ -1794,35 +1793,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &2548540539852288306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3431277837837900048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ba341e6cc5a7c9499143f32299af75c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  JambeD: {fileID: 7637462588361313154}
-  PiedD: {fileID: 3614224235526297148}
-  BrasD: {fileID: 1606387620320110786}
-  MainD: {fileID: 7334618952895085633}
-  Corps: {fileID: 5492205032087661849}
-  BrasG: {fileID: 8566462287986788374}
-  MainG: {fileID: 5832322608909999586}
-  JambeG: {fileID: 8815978795213322622}
-  PiedG: {fileID: 5755839819833468431}
-  oeil: {fileID: 0}
-  bouche: {fileID: 0}
-  invicibilityTimeAfterHit: 3
-  invincibilityFlashDelay: 0.2
-  isInvincible: 0
-  HealthBar: {fileID: 0}
 --- !u!114 &2548540539852288305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1849,6 +1819,7 @@ MonoBehaviour:
   interpolation: 0.1
   offset: {x: 0, y: 2, z: -10}
   anim: {fileID: 2548540539852288307}
+  rb: {fileID: 0}
 --- !u!114 &2548540539852288304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2436,6 +2407,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restingAngle: 0
   force: 550
+--- !u!1 &5337237381500467852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6488809438169303407}
+  - component: {fileID: 6900261171283443170}
+  m_Layer: 3
+  m_Name: Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6488809438169303407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5337237381500467852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7313566033999457056}
+  m_Father: {fileID: 3779058939815774936}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6900261171283443170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5337237381500467852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba341e6cc5a7c9499143f32299af75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  JambeD: {fileID: 7637462588361313154}
+  PiedD: {fileID: 3614224235526297148}
+  BrasD: {fileID: 1606387620320110786}
+  MainD: {fileID: 7334618952895085633}
+  Corps: {fileID: 5492205032087661849}
+  BrasG: {fileID: 8566462287986788374}
+  MainG: {fileID: 5832322608909999586}
+  JambeG: {fileID: 8815978795213322622}
+  PiedG: {fileID: 5755839819833468431}
+  oeil: {fileID: 0}
+  bouche: {fileID: 0}
+  invicibilityTimeAfterHit: 3
+  invincibilityFlashDelay: 0.2
+  isInvincible: 0
+  HealthBar: {fileID: 0}
 --- !u!1 &5476865187056810725
 GameObject:
   m_ObjectHideFlags: 0
@@ -3012,7 +3045,7 @@ GameObject:
   - component: {fileID: 2548540540274977247}
   - component: {fileID: 2548540540274977244}
   - component: {fileID: 2548540540274977245}
-  - component: {fileID: 2548540540274977246}
+  - component: {fileID: 7415893384231903238}
   m_Layer: 3
   m_Name: Top_Head
   m_TagString: Player
@@ -3112,7 +3145,7 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -90
     m_UpperAngle: 90
---- !u!114 &2548540540274977246
+--- !u!114 &7415893384231903238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3121,7 +3154,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9111264785845360893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d579f47735c069d46a5ca78677b10731, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cceb215713a8b44a9e4fcae64d24d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   distMax: 3

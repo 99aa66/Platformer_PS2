@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -29,8 +29,8 @@ public class JumpFusilliAttacking : MonoBehaviour
     private bool isPlayerDetected;
     [SerializeField] LayerMask playerLayer;
 
-    [Header("Paramètre Fusilli")]
-    public int damageOnCollision = 20; //au moment de la collision il y a dégâts -20
+    [Header("ParamÃ¨tre Fusilli")]
+    public int damageOnCollision = 20; //au moment de la collision il y a dÃ©gÃ¢ts -20
     private Rigidbody2D fusilliRB;
     private Animator fusilliAnim;
     void Start()
@@ -41,7 +41,7 @@ public class JumpFusilliAttacking : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Détection du sol, des obstacles et du joueur
+        // DÃ©tection du sol, des obstacles et du joueur
         isGrounded = Physics2D.OverlapCircle(groundDetection.position, circleRadius, groundLayer);
         isObstacleAhead = Physics2D.OverlapCircle(obstacleDetection.position, circleRadius, groundLayer);
         isOnGround = Physics2D.OverlapBox(groundCheck.position, boxSize, 0, groundLayer);
@@ -49,7 +49,7 @@ public class JumpFusilliAttacking : MonoBehaviour
 
         AnimationController();
        
-        if(!isPlayerDetected && isOnGround) // Si on ne voit pas le joueur est qu'on est sur le sol, on continue à patrouiller
+        if(!isPlayerDetected && isOnGround) // Si on ne voit pas le joueur est qu'on est sur le sol, on continue Ã  patrouiller
         {
             Patrouille();
         }
@@ -105,19 +105,17 @@ public class JumpFusilliAttacking : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision detected with " + collision.gameObject.name); // Affiche le nom de l'objet entré en collision
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player collision detected"); // Affiche un message si la collision concerne l'objet avec le tag "Player"
             PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damageOnCollision);
             }
-            else
-            {
-                Debug.LogWarning("PlayerHealth component not found on object with tag 'Player'");
-            }
+        }
+        if (collision.gameObject.CompareTag("Player") && (collision.gameObject.GetComponent<Head>() != null || collision.gameObject.GetComponent<Head1>() != null) && (collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking || collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking))
+        {
+            EnemyHealthFusilli.instance.TakeDamage(10);
         }
     }
 

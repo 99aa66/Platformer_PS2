@@ -12,9 +12,9 @@ public class IAEnnemyFarfalle : MonoBehaviour
     public Transform groundDetection;
     public Transform target;
     public float speedb = 6f;
-    float distancemax = 13f;
+    float distancemax = 14f;
     public int damageOnCollision = 5;
-    private EnemyHealth enemyHealth;
+    private EnemyHealthFarfalle enemyHealth;
 
     bool atckType1 = true;
     private void function1()
@@ -47,7 +47,7 @@ public class IAEnnemyFarfalle : MonoBehaviour
 
     private void Start()
     {
-        enemyHealth = GetComponent<EnemyHealth>();
+        enemyHealth = GetComponent<EnemyHealthFarfalle>();
     }
     void Update()
     {
@@ -74,13 +74,15 @@ public class IAEnnemyFarfalle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealth.instance.TakeDamage(damageOnCollision);
-            Head head = collision.gameObject.GetComponent<Head>();
-           if (head != null && head.isAttacking)
-           {
-             EnemyHealth.instance.TakeDamage(10);
-           }
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damageOnCollision);
+            }
+        }
+        if (collision.gameObject.CompareTag("Player") && (collision.gameObject.GetComponent<Head>() != null || collision.gameObject.GetComponent<Head1>() != null) && (collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking || collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking))
+        {
+            EnemyHealthFarfalle.instance.TakeDamage(10);
         }
     }
 }
-

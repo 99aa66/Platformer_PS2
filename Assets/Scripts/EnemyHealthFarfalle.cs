@@ -4,7 +4,7 @@ using System.Net.NetworkInformation;
 using UnityEngine;
 using static Unity.Burst.Intrinsics.X86.Sse4_2;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealthFarfalle : MonoBehaviour
 {
     [SerializeField] int maxHealth;
     public int currentHealth;
@@ -14,7 +14,7 @@ public class EnemyHealth : MonoBehaviour
     public SpriteRenderer SpriteEnnemi;
     public bool TakenDamage = false;
 
-    public static EnemyHealth instance;
+    public static EnemyHealthFarfalle instance;
 
     private void Awake()
     {
@@ -57,7 +57,7 @@ public class EnemyHealth : MonoBehaviour
             Head head = Player.gameObject.GetComponent<Head>();
             if (head != null && head.isAttacking)
             {
-                EnemyHealth.instance.TakeDamage(10);
+                EnemyHealthFarfalle.instance.TakeDamage(10);
             }
         }
     }
@@ -65,7 +65,7 @@ public class EnemyHealth : MonoBehaviour
     private IEnumerator ShowBar()
     {
         healthBarEnnemyObject.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         healthBarEnnemyObject.SetActive(false);
     }
 }
