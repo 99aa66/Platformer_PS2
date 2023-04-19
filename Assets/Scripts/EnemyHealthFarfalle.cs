@@ -48,17 +48,6 @@ public class EnemyHealthFarfalle : MonoBehaviour
             StartCoroutine(ShowBar());
         }
     }
-    private void OnTriggerEnter2D(Collider2D Player)
-    {
-        if (Player.gameObject.CompareTag("Player"))
-        {
-            Head head = Player.gameObject.GetComponent<Head>();
-            if (head != null && head.isAttacking)
-            {
-                EnemyHealthFarfalle.instance.TakeDamage(10);
-            }
-        }
-    }
 
     private IEnumerator ShowBar()
     {

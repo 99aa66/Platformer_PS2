@@ -38,7 +38,7 @@ public class Grabbing : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (canGrab && col.gameObject.GetComponent<Rigidbody2D>() != null && col.tag != "Player")
+        if (canGrab && col.gameObject.GetComponent<Rigidbody2D>() != null && col.tag != "Player" && col.tag != "Ennemi")
         {
             if (col.gameObject.CompareTag("Cafetière"))
             {

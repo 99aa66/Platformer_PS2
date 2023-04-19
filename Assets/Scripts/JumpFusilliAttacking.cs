@@ -109,19 +109,15 @@ public class JumpFusilliAttacking : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damageOnCollision);
-            }
+            playerHealth.TakeDamage(damageOnCollision);
         }
         if (collision.gameObject.CompareTag("Cafetière"))
         {
             GetComponent<EnemyHealthFusilli>().TakeDamage(15);
         }
-        if (collision.gameObject.CompareTag("Player") && (collision.gameObject.GetComponent<Head>() != null || collision.gameObject.GetComponent<Head1>() != null) && (collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking || collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking))
+        if (collision.gameObject.CompareTag("Player") && (collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking || collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking))
         {
-            EnemyHealthFusilli ennemyHealthFusilli = collision.gameObject.GetComponent<EnemyHealthFusilli>();
-            ennemyHealthFusilli.TakeDamage(10);
+            GetComponent<EnemyHealthFusilli>().TakeDamage(10);
         }
     }
 

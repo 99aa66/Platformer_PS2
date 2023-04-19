@@ -14,7 +14,6 @@ public class IAEnnemyFarfalle : MonoBehaviour
     public float speedb = 6f;
     float distancemax = 14f;
     public int damageOnCollision = 5;
-    private EnemyHealthFarfalle enemyHealth;
 
     bool atckType1 = true;
     private void function1()
@@ -44,11 +43,6 @@ public class IAEnnemyFarfalle : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
     }
-
-    private void Start()
-    {
-        enemyHealth = GetComponent<EnemyHealthFarfalle>();
-    }
     void Update()
     {
         if (Vector3.Distance(transform.position, target.transform.position) < distancemax)
@@ -75,14 +69,15 @@ public class IAEnnemyFarfalle : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damageOnCollision);
-            }
+            playerHealth.TakeDamage(damageOnCollision);
         }
-        if (collision.gameObject.CompareTag("Player") && (collision.gameObject.GetComponent<Head>() != null || collision.gameObject.GetComponent<Head1>() != null) && (collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking || collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking))
+        if (collision.gameObject.CompareTag("Player") && (collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking || collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking))
         {
-            EnemyHealthFarfalle.instance.TakeDamage(10);
+            GetComponent<EnemyHealthFarfalle>().TakeDamage(10);
+        }
+        if (collision.gameObject.CompareTag("Cafetière"))
+        {
+            GetComponent<EnemyHealthFusilli>().TakeDamage(15);
         }
     }
 }
