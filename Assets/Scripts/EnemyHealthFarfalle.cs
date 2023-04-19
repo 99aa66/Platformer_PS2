@@ -9,7 +9,6 @@ public class EnemyHealthFarfalle : MonoBehaviour
     [SerializeField] int maxHealth;
     public int currentHealth;
     public HealthBar healthBarEnnemy;
-    [SerializeField] GameObject healthBarEnnemyObject;
 
     public SpriteRenderer SpriteEnnemi;
     public bool TakenDamage = false;
@@ -20,7 +19,6 @@ public class EnemyHealthFarfalle : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogWarning("Il y a déjà une instance de EnemyHealth dans la scène");
             return;
         }
 
@@ -28,7 +26,7 @@ public class EnemyHealthFarfalle : MonoBehaviour
     }
     void Start()
     {
-        healthBarEnnemyObject.SetActive(false);
+        healthBarEnnemy.gameObject.SetActive(false);
         currentHealth = maxHealth;
         healthBarEnnemy.SetMaxHealth(maxHealth);
     }
@@ -64,8 +62,8 @@ public class EnemyHealthFarfalle : MonoBehaviour
 
     private IEnumerator ShowBar()
     {
-        healthBarEnnemyObject.SetActive(true);
+        healthBarEnnemy.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
-        healthBarEnnemyObject.SetActive(false);
+        healthBarEnnemy.gameObject.SetActive(false);
     }
 }

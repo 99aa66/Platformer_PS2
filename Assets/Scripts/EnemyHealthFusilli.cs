@@ -9,10 +9,10 @@ public class EnemyHealthFusilli : MonoBehaviour
     [SerializeField] int maxHealth;
     public int currentHealth;
     public HealthBar healthBarEnnemy;
-    [SerializeField] GameObject healthBarEnnemyObject;
 
     public SpriteRenderer SpriteEnnemi;
-    public bool TakenDamage = false;
+    public bool isInvincible = false;
+    public float invicibilityTimeAfterHit = 0.5f;
 
     public static EnemyHealthFusilli instance;
 
@@ -28,7 +28,7 @@ public class EnemyHealthFusilli : MonoBehaviour
     }
     void Start()
     {
-        healthBarEnnemyObject.SetActive(false);
+        healthBarEnnemy.gameObject.SetActive(false);
         currentHealth = maxHealth;
         healthBarEnnemy.SetMaxHealth(maxHealth);
     }
@@ -44,28 +44,22 @@ public class EnemyHealthFusilli : MonoBehaviour
         currentHealth -= damage;
         healthBarEnnemy.SetHealth(currentHealth);
 
-        if (!TakenDamage)
+        if (!isInvincible)
         {
-            TakenDamage = true;
+            isInvincible = true;
             StartCoroutine(ShowBar());
+            StartCoroutine(HandleInvincibilityDelay());
         }
     }
-    private void OnTriggerEnter2D(Collider2D Player)
-    {
-        if (Player.gameObject.CompareTag("Player"))
-        {
-            Head head = Player.gameObject.GetComponent<Head>();
-            if (head != null && head.isAttacking)
-            {
-                EnemyHealthFusilli.instance.TakeDamage(10);
-            }
-        }
-    }
-
     private IEnumerator ShowBar()
     {
-        healthBarEnnemyObject.SetActive(true);
+        healthBarEnnemy.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
-        healthBarEnnemyObject.SetActive(false);
+        healthBarEnnemy.gameObject.SetActive(false);
+    }
+    public IEnumerator HandleInvincibilityDelay()
+    {
+        yield return new WaitForSeconds(invicibilityTimeAfterHit);
+        isInvincible = false;
     }
 }

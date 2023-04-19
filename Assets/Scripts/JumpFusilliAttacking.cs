@@ -33,6 +33,7 @@ public class JumpFusilliAttacking : MonoBehaviour
     public int damageOnCollision = 20; //au moment de la collision il y a dégâts -20
     private Rigidbody2D fusilliRB;
     private Animator fusilliAnim;
+    private EnemyHealthFusilli ennemyHealthFusilli;
     void Start()
     {
         fusilliRB = GetComponent<Rigidbody2D>();
@@ -115,11 +116,12 @@ public class JumpFusilliAttacking : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Cafetière"))
         {
-            EnemyHealthFusilli.instance.TakeDamage(15);
+            GetComponent<EnemyHealthFusilli>().TakeDamage(15);
         }
         if (collision.gameObject.CompareTag("Player") && (collision.gameObject.GetComponent<Head>() != null || collision.gameObject.GetComponent<Head1>() != null) && (collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking || collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking))
         {
-            EnemyHealthFusilli.instance.TakeDamage(10);
+            EnemyHealthFusilli ennemyHealthFusilli = collision.gameObject.GetComponent<EnemyHealthFusilli>();
+            ennemyHealthFusilli.TakeDamage(10);
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CafetiereController : MonoBehaviour
 {
-    public int durability = 3;
+    [SerializeField]public int durability = 10;
     public bool isBeingHeld = false;
     private Vector3 startPosition;
     private Quaternion startRotation;
@@ -34,10 +34,14 @@ public class CafetiereController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") && !isBeingHeld && collision.relativeVelocity.magnitude > 1f)
+        if (!isBeingHeld && collision.relativeVelocity.magnitude > 5f)
         {
             Destroy(gameObject);
             Respawn();
+        }
+        if (collision.gameObject.CompareTag("Ennemi"))
+        {
+            TakeDamage(1);
         }
     }
     public void ResetPosition()
@@ -64,7 +68,7 @@ public class CafetiereController : MonoBehaviour
     private void RespawnObject()
     {
         // Reset the durability
-        durability = 3;
+        durability = 10;
         // Reset the position and rotation of the object
         transform.position = startPosition;
         transform.rotation = startRotation;
