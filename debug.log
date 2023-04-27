@@ -50,3 +50,4 @@
 [0417/194617.428:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
 [0418/091836.570:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
 [0418/092144.313:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0422/191218.656:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
