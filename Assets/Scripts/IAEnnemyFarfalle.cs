@@ -69,7 +69,13 @@ public class IAEnnemyFarfalle : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            playerHealth.TakeDamage(damageOnCollision);
+
+            bool isAttacking = collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking || collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking;
+
+            if (!isAttacking)
+            {
+                playerHealth.TakeDamage(damageOnCollision);
+            }
         }
         if (collision.gameObject.CompareTag("Player") && (collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking || collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking))
         {

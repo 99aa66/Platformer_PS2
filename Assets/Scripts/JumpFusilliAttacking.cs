@@ -79,7 +79,6 @@ public class JumpFusilliAttacking : MonoBehaviour
             fusilliRB.AddForce(new Vector2(distanceFromPlayer, jumpHeight), ForceMode2D.Impulse); // nouv vecteur (axe x, axe y, force non continue)
         }
     }
-
     void FlipTowardsPlayer()
     {
         float playerPosition = Player.position.x - transform.position.x;
@@ -98,7 +97,6 @@ public class JumpFusilliAttacking : MonoBehaviour
         isFacingRight = !isFacingRight;
         transform.Rotate(0, 180, 0);
     }
-
     void AnimationController()
     {
         fusilliAnim.SetBool("isPlayerDetected", isPlayerDetected);
@@ -109,18 +107,23 @@ public class JumpFusilliAttacking : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            playerHealth.TakeDamage(damageOnCollision);
+
+            bool isAttacking = collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking || collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking;
+
+            if (!isAttacking)
+            {
+                playerHealth.TakeDamage(damageOnCollision);
+            }
         }
         if (collision.gameObject.CompareTag("Cafetière"))
         {
             GetComponent<EnemyHealthFusilli>().TakeDamage(15);
         }
-        if (collision.gameObject.CompareTag("Player") && (collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking || collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking))
+        if (collision.gameObject.CompareTag("Player") && ((collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking) || (collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking)))
         {
             GetComponent<EnemyHealthFusilli>().TakeDamage(10);
         }
     }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
@@ -134,4 +137,3 @@ public class JumpFusilliAttacking : MonoBehaviour
         Gizmos.DrawWireCube(transform.position, lineOfSite);
     }
 }
-
