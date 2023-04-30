@@ -11,6 +11,7 @@ TagManager:
   - Glass
   - "Cafeti\xE8re"
   - PowerUp
+  - PlayerPos
   layers:
   - Default
   - TransparentFX

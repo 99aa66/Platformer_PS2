@@ -53,3 +53,6 @@
 [0422/191218.656:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
 [0429/123535.785:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
 [0430/112546.517:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0430/184730.035:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0430/201054.952:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
+[0430/201054.963:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.

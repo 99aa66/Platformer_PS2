@@ -977,7 +977,7 @@ GameObject:
   - component: {fileID: 2548540540054259988}
   m_Layer: 3
   m_Name: Playerpos
-  m_TagString: Untagged
+  m_TagString: PlayerPos
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1820,6 +1820,7 @@ MonoBehaviour:
   offset: {x: 0, y: 2, z: -10}
   anim: {fileID: 2548540539852288307}
   rb: {fileID: 0}
+  camFollow: {fileID: 0}
 --- !u!114 &2548540539852288304
 MonoBehaviour:
   m_ObjectHideFlags: 0

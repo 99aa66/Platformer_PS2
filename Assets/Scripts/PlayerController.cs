@@ -26,12 +26,12 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
 
     public Rigidbody2D rb;
-
+    public CameraFollow camFollow;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        cam = Camera.main;
+        camFollow = Camera.main.GetComponent<CameraFollow>();
 
         Collider2D[] colliders = transform.GetComponentsInChildren<Collider2D>();
         for (int i = 0; i < colliders.Length; i++)
@@ -55,13 +55,13 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Movement();
-        CameraFollow();
 
         if (is_jumping == true)
         {
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             is_jumping = false; // là on saute plus car on est déjà en saut (éviter le double saut)
         }
+        camFollow.UpdatePosition(transform.position);
     }
 
     private void Movement()
