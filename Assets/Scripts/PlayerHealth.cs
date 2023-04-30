@@ -20,10 +20,9 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer oeil;
     public SpriteRenderer bouche;
 
-    public float invicibilityTimeAfterHit = 3f;
+    public float invicibilityTimeAfterHit = 2f;
     public float invincibilityFlashDelay = 0.2f;
     public bool isInvincible = false; //perso pas invincible par défaut
-
 
     public HealthBar HealthBar;
 
@@ -46,6 +45,14 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         HealthBar.SetMaxHealth(maxHealth);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            TakeDamage(60);
+        }
+    }
     public void HealPlayer(int amount)
     {
         if((currentHealth + amount) > maxHealth)
@@ -65,11 +72,47 @@ public class PlayerHealth : MonoBehaviour
         if(!isInvincible)
         {
             currentHealth -= damage;  // si on prend des degats on retire de la vie a la vie actuelle
-            HealthBar.SetHealth(currentHealth); // pour mettre a jour le visuel de la barre de vie
+            HealthBar.SetHealth(currentHealth); // mettre a jour le visuel de la barre de vie
+            //vérifier si le joueur est toujours vivant
+            if(currentHealth <= 0) //si personnage a un point de vie, peut prendre des vies en négative
+            {
+                Die();
+                return;//on a pas envie de rejouer le flash et le delay, mais direct animation de mort
+            }
             isInvincible = true;
             StartCoroutine(InvincibilityFlash());
             StartCoroutine(HandleInvincibilityDelay());
         }
+    }
+
+    public void Die()
+    {
+        PlayerController.instance.enabled = false; //bloquer les mouvements du personnage en désactivant le script PlayerController
+        Head.instance.enabled = false;
+        Head1.instance.enabled = false;
+        JambeD.color = new Color(1f, 1f, 1f, 0f);
+        PiedD.color = new Color(1f, 1f, 1f, 0f);
+        BrasD.color = new Color(1f, 1f, 1f, 0f);
+        MainD.color = new Color(1f, 1f, 1f, 0f);
+        Corps.color = new Color(1f, 1f, 1f, 0f);
+        BrasG.color = new Color(1f, 1f, 1f, 0f);
+        MainG.color = new Color(1f, 1f, 1f, 0f);
+        JambeG.color = new Color(1f, 1f, 1f, 0f);
+        PiedG.color = new Color(1f, 1f, 1f, 0f);
+        oeil.color = new Color(1f, 1f, 1f, 0f);
+        bouche.color = new Color(1f, 1f, 1f, 0f);
+        PlayerController.instance.anim.SetTrigger("Die");// jouer l'animation de mort dont l'animator a été récupérer du script PlayerController
+        PlayerController.instance.rb.bodyType = RigidbodyType2D.Kinematic;//empêcher les interactions physique avec les autres éléments de la scène
+        PlayerController.instance.Hanchecol.enabled = false;
+        PlayerController.instance.Bustecol.enabled = false;
+        PlayerController.instance.Headcol.enabled = false;
+        PlayerController.instance.Top_Headcol.enabled = false;
+        PlayerController.instance.JambeDcol.enabled = false;
+        PlayerController.instance.TibiaDcol.enabled = false;
+        PlayerController.instance.PiedDcol.enabled = false;
+        PlayerController.instance.JambeGcol.enabled = false;
+        PlayerController.instance.TibiaGcol.enabled = false;
+        PlayerController.instance.PiedGcol.enabled = false;
     }
 
     public IEnumerator InvincibilityFlash()

@@ -27,6 +27,30 @@ public class PlayerController : MonoBehaviour
 
     public Rigidbody2D rb;
     public CameraFollow camFollow;
+
+    public static PlayerController instance;
+
+    [Header("Collider")]
+    public PolygonCollider2D Hanchecol;
+    public BoxCollider2D Bustecol;
+    public BoxCollider2D Headcol;
+    public PolygonCollider2D Top_Headcol;
+    public PolygonCollider2D JambeDcol;
+    public PolygonCollider2D TibiaDcol;
+    public CapsuleCollider2D PiedDcol;
+    public PolygonCollider2D JambeGcol;
+    public PolygonCollider2D TibiaGcol;
+    public CapsuleCollider2D PiedGcol;
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il n'y a plus d'instance de PlayerController dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

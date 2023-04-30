@@ -106,13 +106,13 @@ public class JumpFusilliAttacking : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            PlayerHealth playerhealth = collision.transform.GetComponent<PlayerHealth>();
 
             bool isAttacking = collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking || collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking;
 
             if (!isAttacking)
             {
-                playerHealth.TakeDamage(damageOnCollision);
+                PlayerHealth.instance.TakeDamage(damageOnCollision);
             }
         }
         if (collision.gameObject.CompareTag("Cafetière"))

@@ -34,10 +34,13 @@ public class EnemyPatrol : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.transform.CompareTag("Player"))
         {
-            Head playerHead = collision.gameObject.GetComponent<Head>();
-            if (playerHead != null && playerHead.isAttacking)
+            PlayerHealth playerhealth = collision.transform.GetComponent<PlayerHealth>();
+
+            bool isAttacking = collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking || collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking;
+
+            if (!isAttacking)
             {
                 PlayerHealth.instance.TakeDamage(damageOnCollision);
             }

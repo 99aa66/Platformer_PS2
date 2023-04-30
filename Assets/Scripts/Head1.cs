@@ -12,6 +12,18 @@ public class Head1 : MonoBehaviour
     float restingAngle = 90f;
     public bool isAttacking = false;
 
+    public static Head1 instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il n'y a plus d'instance de Head1 dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
