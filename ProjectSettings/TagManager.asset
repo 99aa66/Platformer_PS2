@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - Glass
   - "Cafeti\xE8re"
+  - PowerUp
   layers:
   - Default
   - TransparentFX

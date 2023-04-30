@@ -16,11 +16,27 @@ public class LasagneAttack : MonoBehaviour
         Vector3 pos = transform.position;
         pos += transform.right * attackOffset.x;
         pos += transform.up * attackOffset.y;
-
-        Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-        if (colInfo != null)
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
-            colInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+
+            bool isAttacking = collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking || collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking;
+
+            if (!isAttacking)
+            {
+                playerHealth.TakeDamage(attackDamage);
+            }
+        }
+        if (collision.gameObject.CompareTag("Cafetière"))
+        {
+            GetComponent<LasagneHealth>().TakeDamage(20);
+        }
+        if (collision.gameObject.CompareTag("Player") && ((collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking) || (collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking)))
+        {
+            GetComponent<LasagneHealth>().TakeDamage(10);
         }
     }
     public void EnragedAttack()
@@ -28,12 +44,6 @@ public class LasagneAttack : MonoBehaviour
         Vector3 pos = transform.position;
         pos += transform.right * attackOffset.x;
         pos += transform.up * attackOffset.y;
-
-        Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-        if (colInfo != null)
-        {
-            colInfo.GetComponent<PlayerHealth>().TakeDamage(enragedAttackDamage);
-        }
     }
 
     void OnDrawGizmosSelected()

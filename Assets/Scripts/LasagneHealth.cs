@@ -4,35 +4,68 @@ using UnityEngine;
 
 public class LasagneHealth : MonoBehaviour
 {
+    [SerializeField] int maxHealth;
+    public int currentHealth;
+    public HealthBar healthBarEnnemy;
 
-    public int health = 100;
+    public SpriteRenderer SpriteEnnemi;
+    public bool TakenDamage = false;
 
-    public GameObject deathEffect;
-
+    public static LasagneHealth instance;
     public bool isInvulnerable = false;
 
+    public Rigidbody2D HealPowerUp_1;
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            return;
+        }
+
+        instance = this;
+    }
+    void Start()
+    {
+        currentHealth = maxHealth;
+        healthBarEnnemy.SetMaxHealth(maxHealth);
+    }
+    void Update()
+    {
+        if (currentHealth <= 0)
+        {
+            Object.Destroy(gameObject);
+        }
+    }
     public void TakeDamage(int damage)
     {
         if (isInvulnerable)
             return;
 
-        health -= damage;
+        currentHealth -= damage;
+        healthBarEnnemy.SetHealth(currentHealth);
 
-        if (health <= 40)
+        if (!TakenDamage)
+        {
+            TakenDamage = true;
+        }
+        if (currentHealth <= 170)
         {
             GetComponent<Animator>().SetBool("IsEnraged", true);
         }
-
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
     }
-
     void Die()
     {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        for (int i =0; i<= Random.Range(0,5);i++)
+        {
+            Rigidbody2D H_HealPowerUp = Instantiate(HealPowerUp_1, transform.position, Quaternion.identity);
+            H_HealPowerUp.velocity = new Vector2(Random.Range(-10, 10), 15);
+        }
+        GetComponent<BoxCollider2D>().enabled = false;
+        this.enabled = false;
         Destroy(gameObject);
     }
-
 }

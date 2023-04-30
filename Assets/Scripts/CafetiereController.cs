@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CafetiereController : MonoBehaviour
 {
-    [SerializeField]public int durability = 4;
+    [SerializeField]public int durability = 5;
     public bool isBeingHeld = false;
     private Vector3 startPosition;
     private Quaternion startRotation;
@@ -63,9 +63,8 @@ public class CafetiereController : MonoBehaviour
     {
         // Disable the object for a few seconds
         gameObject.SetActive(false);
-        Invoke("RespawnObject", 2f);
+        Invoke("RespawnObject", 1.5f);
     }
-
     private void RespawnObject()
     {
         // Reset the durability

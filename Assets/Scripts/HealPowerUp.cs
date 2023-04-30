@@ -15,8 +15,6 @@ public class HealPowerUp : MonoBehaviour
                 PlayerHealth.instance.HealPlayer(healthPoints);
                 Destroy(gameObject);
             }
-            
-            
         }
     }
 }
