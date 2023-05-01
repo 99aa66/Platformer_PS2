@@ -103,6 +103,7 @@ public class PlayerHealth : MonoBehaviour
         bouche.color = new Color(1f, 1f, 1f, 0f);
         PlayerController.instance.anim.SetTrigger("Die");// jouer l'animation de mort dont l'animator a été récupérer du script PlayerController
         PlayerController.instance.rb.bodyType = RigidbodyType2D.Kinematic;//empêcher les interactions physique avec les autres éléments de la scène
+        PlayerController.instance.rb.velocity = Vector3.zero; //velocité rb à 0
         PlayerController.instance.Hanchecol.enabled = false;
         PlayerController.instance.Bustecol.enabled = false;
         PlayerController.instance.Headcol.enabled = false;
@@ -113,6 +114,28 @@ public class PlayerHealth : MonoBehaviour
         PlayerController.instance.JambeGcol.enabled = false;
         PlayerController.instance.TibiaGcol.enabled = false;
         PlayerController.instance.PiedGcol.enabled = false;
+        GameOverManager.instance.OnPlayerDeath();
+    }
+
+    public void Respawn() //pas sure de moi là
+    {
+        PlayerController.instance.enabled = true; //bloquer les mouvements du personnage en désactivant le script PlayerController
+        Head.instance.enabled = true;
+        Head1.instance.enabled = true;
+        PlayerController.instance.anim.SetTrigger("Respawn");// jouer l'animation de mort dont l'animator a été récupérer du script PlayerController
+        PlayerController.instance.rb.bodyType = RigidbodyType2D.Dynamic;//empêcher les interactions physique avec les autres éléments de la scène
+        PlayerController.instance.Hanchecol.enabled = true;
+        PlayerController.instance.Bustecol.enabled = true;
+        PlayerController.instance.Headcol.enabled = true;
+        PlayerController.instance.Top_Headcol.enabled = true;
+        PlayerController.instance.JambeDcol.enabled = true;
+        PlayerController.instance.TibiaDcol.enabled = true;
+        PlayerController.instance.PiedDcol.enabled = true;
+        PlayerController.instance.JambeGcol.enabled = true;
+        PlayerController.instance.TibiaGcol.enabled = true;
+        PlayerController.instance.PiedGcol.enabled = true;
+        currentHealth = maxHealth;
+        HealthBar.SetHealth(currentHealth);
     }
 
     public IEnumerator InvincibilityFlash()

@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: a05c9f910925ca449ae21b1f3c72582d
+  - enabled: 1
     path: Assets/Scenes/Level01.unity
     guid: 20d21916c9a66844188593a4dc43d491
   - enabled: 1
     path: Assets/Scenes/LevelLasagneFight.unity
+    guid: 6ba37fbb7ccf87c41bf561c3dfa4abd1
+  - enabled: 1
+    path: Assets/Scenes/LevelMama.unity
     guid: b20ff22e29a7ca2469250d5f37d92e51
   m_configObjects: {}
