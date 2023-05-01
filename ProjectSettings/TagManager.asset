@@ -12,6 +12,7 @@ TagManager:
   - "Cafeti\xE8re"
   - PowerUp
   - PlayerPos
+  - Obstacle
   layers:
   - Default
   - TransparentFX
