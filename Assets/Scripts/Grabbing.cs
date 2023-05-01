@@ -10,7 +10,9 @@ public class Grabbing : MonoBehaviour
     private FixedJoint2D joint;
 
     private GameObject currentlyHolding;
-    private CafetiereController heldCafetiere;
+
+    // Start is called before the first frame update
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(mouseButton))
@@ -20,34 +22,19 @@ public class Grabbing : MonoBehaviour
         if (Input.GetKeyUp(mouseButton))
         {
             canGrab = false;
-            if (joint != null && currentlyHolding != null)
+            if (joint != null)
             {
-                DestroyImmediate(joint); // supprimer immédiatement le joint et ne pas attendre la fin de frame
-                if (heldCafetiere != null) // la cafetière a été lâchée
-                {
-                    if (heldCafetiere.isBroken) // si la cafetière est cassée, on la remet à sa position de départ
-                    {
-                        heldCafetiere.ResetPosition();
-                    }
-                    heldCafetiere.isBeingHeld = false; // on indique que la cafetière n'est plus tenue
-                    heldCafetiere = null;
-                }
+                Destroy(joint);
                 joint = null;
-                currentlyHolding = null;
             }
         }
 
-        if (!canGrab && currentlyHolding != null && joint != null)
+        if (!canGrab && currentlyHolding != null)
         {
-            if (heldCafetiere != null) // la cafetière a été lâchée
-            {
-                heldCafetiere.isBeingHeld = false; // on indique que la cafetière n'est plus tenue
-                heldCafetiere = null;
-            }
             FixedJoint2D[] joints = currentlyHolding.GetComponents<FixedJoint2D>();
             for (int i = 0; i < joints.Length; i++)
             {
-                if (joints[i].connectedBody == head)
+                if (joints[i].connectedBody == head && joints[i].isActiveAndEnabled)
                 {
                     Destroy(joints[i]);
                 }
@@ -58,63 +45,26 @@ public class Grabbing : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (canGrab && col.gameObject.GetComponent<Rigidbody2D>() != null && !col.CompareTag("Player") && !col.CompareTag("Ennemi") && !col.CompareTag("Glass"))
+        if (canGrab && col.gameObject.GetComponent<Rigidbody2D>() != null && col.tag != "Player")
         {
-            if (col.gameObject.CompareTag("Cafetière"))
+            currentlyHolding = col.gameObject;
+            
+            FixedJoint2D[] joints = currentlyHolding.GetComponents<FixedJoint2D>(); // Vérifier si l'objet n'est pas déjà connecté à head
+            bool alreadyConnected = false;
+            for (int i = 0; i < joints.Length; i++)
             {
-                if (col.gameObject.GetComponent<CafetiereController>().isBroken)
+                if (joints[i].connectedBody == head)
                 {
-                    return; // la cafetière est cassée, on ne peut pas la ramasser
+                    alreadyConnected = true;
+                    break;
                 }
-                currentlyHolding = col.gameObject;
+            }
+           
+            if (!alreadyConnected) // Créer le joint si l'objet n'est pas déjà connecté à head
+            {
                 joint = currentlyHolding.AddComponent<FixedJoint2D>();
                 joint.connectedBody = head;
-                heldCafetiere = currentlyHolding.GetComponent<CafetiereController>();
-                if (heldCafetiere != null)
-                {
-                    heldCafetiere.isBeingHeld = true;
-                }
-                Physics2D.SyncTransforms(); // synchroniser les positions et rotations des objets avant de créer le joint
             }
-            else if (col.gameObject.CompareTag("Untagged")) // Ajout de cette condition pour détacher la cafetière si elle entre en collision avec un objet dont le tag est "Untagged"
-            {
-                if (heldCafetiere != null) // la cafetière a été lâchée
-                {
-                    if (heldCafetiere.isBroken) // si la cafetière est cassée, on la remet à sa position de départ
-                    {
-                        heldCafetiere.ResetPosition();
-                    }
-                    heldCafetiere.isBeingHeld = false; // on indique que la cafetière n'est plus tenue
-                    heldCafetiere = null;
-                }
-                DestroyImmediate(joint); // supprimer immédiatement le joint et ne pas attendre la fin de frame
-                joint = null;
-                currentlyHolding = null;
-            }
-            else
-            {
-                currentlyHolding = col.gameObject;
-                joint = currentlyHolding.AddComponent<FixedJoint2D>();
-                joint.connectedBody = head;
-                Physics2D.SyncTransforms(); // synchroniser les positions et rotations des objets avant de créer le joint
-            }
-        }
-    }
-    private void OnTriggerExit2D(Collider2D col)
-    {
-        if (currentlyHolding != null && col.gameObject == currentlyHolding)
-        {
-            if (heldCafetiere != null) //
-            {
-                if (heldCafetiere.isBroken)
-                {
-                    heldCafetiere.ResetPosition();
-                }
-                heldCafetiere.isBeingHeld = false;
-                heldCafetiere = null;
-            }
-            joint = null;
-            currentlyHolding = null;
         }
     }
 }

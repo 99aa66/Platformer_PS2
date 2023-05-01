@@ -4,75 +4,57 @@ using UnityEngine;
 
 public class CafetiereController : MonoBehaviour
 {
-    [SerializeField]public int durability = 5;
-    public bool isBeingHeld = false;
-    private Vector3 startPosition;
-    private Quaternion startRotation;
-    public bool isBroken
-    {
-        get
-        {
-            return durability <= 0;
-        }
-    }
-    private void Start()
-    {
-        // Store the starting position and rotation of the object
-        startPosition = transform.position;
-        startRotation = transform.rotation;
+    public int durability = 3;
+    public bool isBroken { get { return durability <= 0; } }
+    public bool isBeingHeld;
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
 
-        // Set the object active at the start of the game
-        gameObject.SetActive(true);
+    private SpriteRenderer sr;
+    private Rigidbody2D rb;
+
+    //private const string defaultLayerName = "Cafetière";
+    private const string brokenLayerName = "BrokenCafetiere";
+    private const float transparentAlpha = 0.5f;
+
+    void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>(); // Récupération du composant Rigidbody2D
+    }
+    void Start()
+    {
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
+    }
+    public void DecrementDurability()
+    {
+        durability--;
+        if (isBroken)
+        {
+            gameObject.layer = LayerMask.NameToLayer("BrokenCafetiere");
+            sr.color = new Color(1f, 1f, 1f, transparentAlpha);
+            ResetPosition();
+        }
+    }
+    void ResetPosition()
+    {
+        transform.position = initialPosition;
+        transform.rotation = initialRotation;
+        durability = 3;
+        sr.color = Color.white;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Ennemi"))
         {
-            isBeingHeld = true;
+            DecrementDurability();
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (!isBeingHeld && collision.gameObject.CompareTag("Ground") && collision.relativeVelocity.magnitude > 10f)
+        else if (col.gameObject.CompareTag("Ground") && col.relativeVelocity.magnitude > 10f)
         {
-            gameObject.SetActive(false);
-            Respawn();
+            ResetPosition();
         }
-        if (collision.gameObject.CompareTag("Ennemi"))
-        {
-            TakeDamage(1);
-        }
-    }
-    public void ResetPosition()
-    {
-        transform.position = startPosition;
-        transform.rotation = startRotation;
-    }
-    public void TakeDamage(int damage)
-    {
-        durability -= damage;
-        if (durability <= 0)
-        {
-            gameObject.SetActive(false);
-            Respawn();
-        }
-    }
-    private void Respawn()
-    {
-        // Disable the object for a few seconds
-        gameObject.SetActive(false);
-        Invoke("RespawnObject", 1.5f);
-    }
-    private void RespawnObject()
-    {
-        // Reset the durability
-        durability = 4;
-        // Reset the position and rotation of the object
-        transform.position = startPosition;
-        transform.rotation = startRotation;
-        // Re-enable the object
-        gameObject.SetActive(true);
     }
 }
