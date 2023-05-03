@@ -27,7 +27,6 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar HealthBar;
 
     public static PlayerHealth instance;
-
     private void Awake()
     {
         if (instance != null)

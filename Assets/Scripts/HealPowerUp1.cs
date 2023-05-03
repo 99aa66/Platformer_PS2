@@ -10,15 +10,12 @@ public class HealPowerUp1 : MonoBehaviour
     private void Start()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(Random.Range(-8, 8), 15);
-        rb.freezeRotation = true;
     }
 
     private void FixedUpdate()
     {
-        if (isMoving && Vector2.Distance(transform.position, PlayerHealth.instance.transform.position) < 2f)
+        if (isMoving && PlayerHealth.instance != null && Vector2.Distance(transform.position, PlayerHealth.instance.transform.position) < 2f)
         {
-            GetComponent<Rigidbody2D>().isKinematic = true;
             isMoving = false;
         }
     }

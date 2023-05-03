@@ -62,7 +62,7 @@ public class LasagneHealth : MonoBehaviour
         for (int i =0; i<= Random.Range(0,5);i++)
         {
             Rigidbody2D H_HealPowerUp = Instantiate(HealPowerUp_1, transform.position, Quaternion.identity);
-            H_HealPowerUp.velocity = new Vector2(Random.Range(-10, 10), 15);
+            H_HealPowerUp.velocity = new Vector2(Random.Range(-8, 8), 15);
         }
         GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;

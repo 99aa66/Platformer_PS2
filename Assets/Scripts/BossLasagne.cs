@@ -17,13 +17,13 @@ public class BossLasagne : MonoBehaviour
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
 
-        if (transform.position.x > playerPos.transform.position.x && isFlipped)
+        if (transform.position.x > playerPos.x && isFlipped)
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
             isFlipped = false;
         }
-        else if (transform.position.x < playerPos.transform.position.x && !isFlipped)
+        else if (transform.position.x < playerPos.x && !isFlipped)
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
