@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -7,8 +8,14 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    private Animator fadeSystem;
+
     //public GameObject settingsWindow;
 
+    private void Awake()
+    {
+        fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
+    }
     void Update()
     {
         if (Input.GetButtonDown("Cancel")) //touche échap + bouton start xbox
@@ -53,6 +60,14 @@ public class PauseMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         Resume();
+        StartCoroutine(loadSceneMenu());
+    }
+
+    public IEnumerator loadSceneMenu()
+    {
+        fadeSystem.SetTrigger("FadeIn");
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("MainMenu");
+        fadeSystem.ResetTrigger("FadeIn");
     }
 }
