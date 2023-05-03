@@ -146,5 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aba6fed19b05f84fbe97632ed0517b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durability: 5
+  durability: 3
   isBeingHeld: 0
