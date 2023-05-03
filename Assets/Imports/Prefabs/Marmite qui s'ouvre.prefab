@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0080c9139da05154e93ea941cf59259d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPos: {fileID: 0}
+  playerPos: {fileID: 8846855792238885194, guid: f080bcb006f252d4cb04d75a17540a34, type: 3}
   speed: 4
   waypoints:
   - {fileID: 3467995891240023627}

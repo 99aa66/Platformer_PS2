@@ -4,12 +4,10 @@ using Unity.VisualScripting;
 
 public class DeathZone : MonoBehaviour
 {
-    private Transform playerSpawn;
     private Animator fadeSystem;
     private bool triggered = false;
     private void Awake()
     {
-        playerSpawn = GameObject.FindGameObjectWithTag("PlayerSpawn").transform;
         fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
 
     }
@@ -42,7 +40,7 @@ public class DeathZone : MonoBehaviour
     {
         fadeSystem.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
-        hancheRef.transform.position = playerSpawn.position; //position objet collision replacer au position du PlayerSpawn
+        hancheRef.transform.position = CurrentSceneManager.instance.respawnPoint; //position objet collision replacer au position de respawn
         hancheRef.isKinematic = false;
         triggered = false;
     }

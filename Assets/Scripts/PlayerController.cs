@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public bool can_jump;
     public LayerMask Default;
     public bool is_jumping = false;
-    [Range(0, 1)][SerializeField] float smooth_time = 0.5f;
+    //[Range(0, 1)][SerializeField] float smooth_time = 0.5f;
     public Transform playerPos;
 
     [Header("Camera Follow")]

@@ -114,7 +114,6 @@ public class PlayerHealth : MonoBehaviour
         PlayerController.instance.JambeGcol.enabled = false;
         PlayerController.instance.TibiaGcol.enabled = false;
         PlayerController.instance.PiedGcol.enabled = false;
-        GameOverManager.instance.OnPlayerDeath();
     }
 
     public void Respawn() //pas sure de moi là

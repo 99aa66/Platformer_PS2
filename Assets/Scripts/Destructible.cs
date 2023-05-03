@@ -10,7 +10,7 @@ public class Destructible : MonoBehaviour
     public int damageOnCollision = 3;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<Head>().isAttacking)
+        if (collision.gameObject.CompareTag("Player") && (collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking || collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking))
         {
             PlayerHealth.instance.TakeDamage(damageOnCollision);
             GameObject brokenObject = Instantiate(destroyedVersion,transform.position,transform.rotation);

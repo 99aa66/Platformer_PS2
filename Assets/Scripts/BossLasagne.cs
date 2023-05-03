@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class BossLasagne : MonoBehaviour
 {
-    public GameObject playerPos;
+    public Vector3 playerPos;
 
     public bool isFlipped = false;
 
     private void Start()
     {
-        playerPos = GameObject.FindGameObjectWithTag("PlayerPos").GetComponent<GameObject>();
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
     }
     public void LookAtPlayer()
     {

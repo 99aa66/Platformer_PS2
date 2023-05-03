@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class CurrentSceneManager : MonoBehaviour
 {
-    public bool isPlayerPresentByDefault = false;
+    public Vector3 respawnPoint;
+
     public static CurrentSceneManager instance;
     private void Awake()
     {
@@ -13,5 +14,7 @@ public class CurrentSceneManager : MonoBehaviour
         }
 
         instance = this;
+
+        respawnPoint = GameObject.FindGameObjectWithTag("Player").transform.position; //l'endroit où le joueur commence
     }
 }

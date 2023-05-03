@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d933532c2c6bdae429eb5610703b98c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPos: {fileID: 2646414268600193723, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+  playerPos: {fileID: 0}
   isFlipped: 0
 --- !u!114 &7737165740119939802
 MonoBehaviour:
