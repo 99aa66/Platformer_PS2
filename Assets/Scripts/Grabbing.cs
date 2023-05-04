@@ -65,6 +65,12 @@ public class Grabbing : MonoBehaviour
                 joint = currentlyHolding.AddComponent<FixedJoint2D>();
                 joint.connectedBody = head;
             }
+            // Rendre le rigidbody de la cafetière dynamique
+            Rigidbody2D rb = currentlyHolding.GetComponent<Rigidbody2D>();
+            if (rb != null && rb.isKinematic)
+            {
+                rb.isKinematic = false;
+            }
         }
     }
 }

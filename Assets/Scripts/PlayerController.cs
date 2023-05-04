@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float movementForce;
-    public float jumpForce = 7f;
+    public float jumpForce;
     [Space(5)]
     [Range(0f, 100f)] public float raycastDistance = 1.5f;
 
@@ -54,8 +54,6 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        camFollow = Camera.main.GetComponent<CameraFollow>();
-
         Collider2D[] colliders = transform.GetComponentsInChildren<Collider2D>();
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -74,6 +72,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
             is_jumping = true;
         }
+ 
     }
     private void FixedUpdate()
     {
@@ -84,9 +83,9 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             is_jumping = false; // là on saute plus car on est déjà en saut (éviter le double saut)
         }
+
         camFollow.UpdatePosition(transform.position);
     }
-
     private void Movement()
     {
         float xDir = Input.GetAxisRaw("Horizontal");
@@ -113,10 +112,6 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("WalkBack", false);
         }
 
-    }
-    private void CameraFollow()
-    {
-        cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position + offset, interpolation);
     }
     private void OnDrawGizmos()
     {

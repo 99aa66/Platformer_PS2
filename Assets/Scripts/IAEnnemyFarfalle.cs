@@ -83,7 +83,7 @@ public class IAEnnemyFarfalle : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Cafetière"))
         {
-            GetComponent<EnemyHealthFusilli>().TakeDamage(15);
+            GetComponent<EnemyHealthFarfalle>().TakeDamage(15);
         }
     }
 }

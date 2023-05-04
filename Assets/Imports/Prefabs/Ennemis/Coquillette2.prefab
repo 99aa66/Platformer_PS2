@@ -157,11 +157,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd076896cb679243a769d4e7c3193e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   waypoints:
   - {fileID: 7028945277201290489}
   - {fileID: 7028945277875400781}
-  damageOnCollision: 2
+  damageOnCollision: 5
   graphics: {fileID: 7028945277588295881}
 --- !u!95 &7028945277588295887
 Animator:
@@ -311,7 +311,7 @@ Transform:
   m_GameObject: {fileID: 7028945278891784059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11, y: -4.93, z: -0.0005652979}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7028945277201290489}

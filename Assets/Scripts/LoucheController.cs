@@ -9,10 +9,21 @@ public class LoucheController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 initialPosition;
     private Quaternion initialRotation;
-    private void Start()
+    private void Awake()
     {
         col = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+    }
+    void Start()
+    {
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
+    }
+    public void ResetPosition()
+    {
+        transform.position = initialPosition;
+        transform.rotation = initialRotation;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

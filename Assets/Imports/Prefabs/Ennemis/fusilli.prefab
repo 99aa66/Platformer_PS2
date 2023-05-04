@@ -474,7 +474,7 @@ Transform:
   m_GameObject: {fileID: 7755642886805874813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.1, z: 0}
-  m_LocalScale: {x: 13, y: 5, z: 1}
+  m_LocalScale: {x: 15, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7755642887177968766}
@@ -665,7 +665,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   groundCheck: {fileID: 7755642885862000741}
   boxSize: {x: 2.36, y: 0.21}
-  lineOfSite: {x: 11, y: 1}
+  lineOfSite: {x: 25, y: 1}
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -682,12 +682,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6faddcb06b4898943a4950461892d5fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
+  maxHealth: 90
   currentHealth: 0
   healthBarEnnemy: {fileID: 1271409930}
-  healthBarEnnemyObject: {fileID: 1271409928}
   SpriteEnnemi: {fileID: 7755642887177968767}
-  TakenDamage: 0
+  isInvincible: 0
+  invicibilityTimeAfterHit: 0.5
 --- !u!1 &7755642887651500006
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,6 +46,18 @@ public class DeathZone : MonoBehaviour
                 }
             }
         }
+        if (collision.CompareTag("Louche"))
+        {
+            if (!triggered)
+            {
+                triggered = true;
+                LoucheController louche = collision.GetComponent<LoucheController>();
+                if (louche != null)
+                {
+                    louche.ResetPosition();
+                }
+            }
+        }
     }
     private IEnumerator ReplacePlayer(Rigidbody2D hancheRef)
     {

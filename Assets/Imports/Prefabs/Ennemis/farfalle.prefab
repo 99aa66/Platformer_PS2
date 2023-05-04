@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 5899858425202050816}
   m_Layer: 7
   m_Name: farfalle
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -262,10 +262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44076038c5d19ff4787b2930ca8bc366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 60
   currentHealth: 0
   healthBarEnnemy: {fileID: 1319901571569585013}
-  healthBarEnnemyObject: {fileID: 1319901571569585008}
   SpriteEnnemi: {fileID: 1319901570565435778}
   TakenDamage: 0
 --- !u!1 &1319901570818901903

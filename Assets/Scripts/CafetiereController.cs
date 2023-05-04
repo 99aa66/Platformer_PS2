@@ -48,11 +48,11 @@ public class CafetiereController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Ennemi"))
+        if (col.gameObject.CompareTag("Ennemi") || col.gameObject.CompareTag("Glass"))
         {
             DecrementDurability();
         }
-        else if (col.gameObject.CompareTag("Ground") && col.relativeVelocity.magnitude > 10f)
+        else if (col.gameObject.CompareTag("Ground") && col.relativeVelocity.magnitude > 50f)
         {
             ResetPosition();
         }
