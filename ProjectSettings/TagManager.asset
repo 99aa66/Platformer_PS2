@@ -13,6 +13,7 @@ TagManager:
   - PowerUp
   - PlayerPos
   - Obstacle
+  - Louche
   layers:
   - Default
   - TransparentFX

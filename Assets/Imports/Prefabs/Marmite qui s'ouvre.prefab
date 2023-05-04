@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3467995891514159400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.05, y: 6.07, z: 0}
+  m_LocalPosition: {x: 3.05, y: 14.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 3467995891731568539}
   m_Layer: 8
   m_Name: "marmite ouvert sans fum\xE9e"
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,7 +88,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3467995891731568537}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.0299988, y: -1.6699998, z: 0}
+  m_LocalPosition: {x: 3.0299988, y: -3.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -160,10 +160,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.019079208, y: 0}
+  m_Offset: {x: 0.059329033, y: 1.7065508}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 5.02, y: 3.78}
     newSize: {x: 5.02, y: 3.78}
     adaptiveTilingThreshold: 0.5
@@ -171,7 +171,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.264801, y: 3.78}
+  m_Size: {x: 5.008974, y: 3.3249192}
   m_EdgeRadius: 0
 --- !u!1 &3467995892928638177
 GameObject:
@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3467995892928638177}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.0499992, y: 0, z: 0}
+  m_LocalPosition: {x: 3.02, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0080c9139da05154e93ea941cf59259d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPos: {fileID: 8846855792238885194, guid: f080bcb006f252d4cb04d75a17540a34, type: 3}
+  playerPos: {fileID: 0}
   speed: 4
   waypoints:
   - {fileID: 3467995891240023627}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 3141206302983925396}
   m_Layer: 6
   m_Name: Marmite qui s'ouvre
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -315,7 +315,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4907180820694511676}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 32.57, y: -4.05, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0

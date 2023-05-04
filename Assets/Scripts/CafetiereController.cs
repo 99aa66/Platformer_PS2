@@ -37,7 +37,7 @@ public class CafetiereController : MonoBehaviour
             ResetPosition();
         }
     }
-    void ResetPosition()
+    public void ResetPosition()
     {
         transform.position = initialPosition;
         transform.rotation = initialRotation;

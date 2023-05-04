@@ -13,7 +13,7 @@ public class DeathZone : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player")) //vérifier si c'est le joueur qui est entré en contact dans la zone, collision = player
+        if (collision.CompareTag("Player")) //vérifier si c'est le joueur qui est entré en contact dans la zone, collision = player
         {
             if (!triggered)
             {
@@ -34,8 +34,19 @@ public class DeathZone : MonoBehaviour
                 StartCoroutine(ReplacePlayer(hancheRef));
             }
         }
+        if (collision.CompareTag("Cafetière"))
+        {
+            if (!triggered)
+            {
+                triggered = true;
+                CafetiereController cafetiere = collision.GetComponent<CafetiereController>();
+                if (cafetiere != null)
+                {
+                    cafetiere.ResetPosition();
+                }
+            }
+        }
     }
-
     private IEnumerator ReplacePlayer(Rigidbody2D hancheRef)
     {
         fadeSystem.SetTrigger("FadeIn");
