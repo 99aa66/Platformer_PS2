@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
     private Vector3 lastCheckpoint;
 
     public static PlayerHealth instance;
-    private void Awake()
+    public void Awake()
     {
         if (instance != null)
         {
@@ -46,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
         fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
     }
 
-    void Start()
+    public void Start()
     {
         // le joueur commence avec toute sa vie
         currentHealth = maxHealth;

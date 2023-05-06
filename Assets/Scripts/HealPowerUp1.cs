@@ -12,25 +12,22 @@ public class HealPowerUp1 : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        int playerLayer = LayerMask.NameToLayer("Player");
-        if (collision.gameObject.layer == playerLayer)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealth playerhealth = collision.transform.GetComponent<PlayerHealth>();
-            // si la barre de vie est pleine, désactivez la gravité et la collision de l'orbe de vie
-            if (playerhealth.currentHealth == playerhealth.maxHealth)
+            // rendre de la vie au joueur + garder coeur sur map si max de vie
+            if (PlayerHealth.instance.currentHealth != PlayerHealth.instance.maxHealth)
+            {
+                PlayerHealth.instance.HealPlayer(healthPoints);
+                Destroy(gameObject);
+            }
+            else
             {
                 Rigidbody2D rb = GetComponent<Rigidbody2D>();
                 rb.isKinematic = true;
                 GetComponent<Collider2D>().isTrigger = true;
             }
-            // si la barre de vie n'est pas pleine, guérissez le joueur et détruisez l'orbe de vie
-            else
-            {
-                playerhealth.HealPlayer(healthPoints);
-                Destroy(gameObject);
-            }
         }
-        else if (collision.gameObject.layer != playerLayer)
+        else if (!collision.gameObject.CompareTag("Player"))
         {
             // L'orbe ne doit pas être détruite si elle touche un objet autre que "Player"
             return;
