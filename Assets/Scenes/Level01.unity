@@ -18166,17 +18166,25 @@ PrefabInstance:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 401094739}
+    - target: {fileID: 3363774953546493206, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3363774953546493206, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: fadeSystem
+      value: 
+      objectReference: {fileID: 1856424787}
     - target: {fileID: 3779058939815774936, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3779058939815774936, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 728.9
+      value: 97
       objectReference: {fileID: 0}
     - target: {fileID: 3779058939815774936, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.4
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 3779058939815774936, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18214,15 +18222,60 @@ PrefabInstance:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 401094739}
+    - target: {fileID: 5250416530314922002, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250416530314922002, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: fadeSystem
+      value: 
+      objectReference: {fileID: 1856424787}
+    - target: {fileID: 6353479301601267443, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353479301601267443, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: m_Size.x
+      value: 0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353479301601267443, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: m_Size.y
+      value: 5.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353479301601267443, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353479301601267443, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6944789176377703777, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 401094739}
+    - target: {fileID: 6944789176377703777, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944789176377703777, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: fadeSystem
+      value: 
+      objectReference: {fileID: 1856424787}
     - target: {fileID: 7856983367885522330, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 401094739}
-    m_RemovedComponents: []
+    - target: {fileID: 7856983367885522330, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856983367885522330, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: fadeSystem
+      value: 
+      objectReference: {fileID: 1856424787}
+    m_RemovedComponents:
+    - {fileID: 2302554280039528690, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
 --- !u!1001 &1809557883
 PrefabInstance:
@@ -18730,6 +18783,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1856424787 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1846082997129847515, guid: 0462868ac1f12d249b209b0b566f8690, type: 3}
+  m_PrefabInstance: {fileID: 1846082995525047446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1857632981
 GameObject:
   m_ObjectHideFlags: 0

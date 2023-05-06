@@ -118,3 +118,5 @@
 [0505/183452.489:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0505/183452.489:WARNING:dns_config_service_win.cc(583)] Failed to read DnsConfig.
 [0505/221936.269:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0506/174937.988:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0506/215201.669:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
