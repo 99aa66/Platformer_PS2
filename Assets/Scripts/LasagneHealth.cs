@@ -48,7 +48,7 @@ public class LasagneHealth : MonoBehaviour
         {
             TakenDamage = true;
         }
-        if (currentHealth <= 170)
+        if (currentHealth <= 110)
         {
             GetComponent<Animator>().SetBool("IsEnraged", true);
         }
@@ -59,7 +59,7 @@ public class LasagneHealth : MonoBehaviour
     }
     void Die()
     {
-        for (int i =0; i<= Random.Range(0,5);i++)
+        for (int i =0; i<= Random.Range(0,8);i++)
         {
             Rigidbody2D H_HealPowerUp = Instantiate(HealPowerUp_1, transform.position, Quaternion.identity);
             H_HealPowerUp.velocity = new Vector2(Random.Range(-8, 8), 15);

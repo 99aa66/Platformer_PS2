@@ -17,13 +17,11 @@ public class CafetiereController : MonoBehaviour
     private const string brokenLayerName = "BrokenCafetiere";
     private const float transparentAlpha = 0.5f;
 
+    public Animator anim;
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>(); // Récupération du composant Rigidbody2D
-    }
-    void Start()
-    {
         initialPosition = transform.position;
         initialRotation = transform.rotation;
     }
@@ -32,6 +30,7 @@ public class CafetiereController : MonoBehaviour
         durability--;
         if (isBroken)
         {
+            anim.SetTrigger("break");
             gameObject.layer = LayerMask.NameToLayer("BrokenCafetiere");
             sr.color = new Color(1f, 1f, 1f, transparentAlpha);
             ResetPosition();

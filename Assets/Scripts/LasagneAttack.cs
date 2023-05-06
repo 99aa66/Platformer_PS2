@@ -27,7 +27,7 @@ public class LasagneAttack : MonoBehaviour
 
             if (!isAttacking)
             {
-                playerHealth.TakeDamage(attackDamage);
+                PlayerHealth.instance.TakeDamage(attackDamage);
             }
         }
         if (collision.gameObject.CompareTag("Cafetière"))
@@ -36,7 +36,7 @@ public class LasagneAttack : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Player") && ((collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking) || (collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking)))
         {
-            GetComponent<LasagneHealth>().TakeDamage(10);
+            GetComponent<LasagneHealth>().TakeDamage(15);
         }
     }
     public void EnragedAttack()

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2750057742312184142}
   - component: {fileID: 2750057742312184137}
   - component: {fileID: 2750057742312184136}
+  - component: {fileID: 943199363}
   m_Layer: 0
   m_Name: Grille-Pain
   m_TagString: Obstacle
@@ -117,3 +118,15 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &943199363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750057742312184139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf68b1de19b1f04087061b82dba783d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

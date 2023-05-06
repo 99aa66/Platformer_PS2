@@ -34,28 +34,28 @@ public class DeathZone : MonoBehaviour
                 StartCoroutine(ReplacePlayer(hancheRef));
             }
         }
-        if (collision.CompareTag("Cafetière"))
+        if (collision.CompareTag("Cafetière") || collision.CompareTag("Louche"))
         {
             if (!triggered)
             {
                 triggered = true;
-                CafetiereController cafetiere = collision.GetComponent<CafetiereController>();
-                if (cafetiere != null)
+                if (collision.CompareTag("Cafetière"))
                 {
-                    cafetiere.ResetPosition();
+                    CafetiereController cafetiere = collision.GetComponent<CafetiereController>();
+                    if (cafetiere != null)
+                    {
+                        cafetiere.ResetPosition();
+                    }
                 }
-            }
-        }
-        if (collision.CompareTag("Louche"))
-        {
-            if (!triggered)
-            {
-                triggered = true;
-                LoucheController louche = collision.GetComponent<LoucheController>();
-                if (louche != null)
+                else if (collision.CompareTag("Louche"))
                 {
-                    louche.ResetPosition();
+                    LoucheController louche = collision.GetComponent<LoucheController>();
+                    if (louche != null)
+                    {
+                        louche.ResetPosition();
+                    }
                 }
+                StartCoroutine(RespawnObject(collision.gameObject, collision.GetComponent<Rigidbody2D>()));
             }
         }
     }
@@ -65,6 +65,23 @@ public class DeathZone : MonoBehaviour
         yield return new WaitForSeconds(1f);
         hancheRef.transform.position = CurrentSceneManager.instance.respawnPoint; //position objet collision replacer au position de respawn
         hancheRef.isKinematic = false;
+        triggered = false;
+    }
+    private IEnumerator RespawnObject(GameObject obj, Rigidbody2D rb)
+    {
+        // Désactive l'objet et attend un certain délai
+        obj.SetActive(false);
+        yield return new WaitForSeconds(1f);
+
+        // Réinitialise la position et la vélocité de l'objet
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+
+        // Réactive l'objet après un court délai
+        yield return new WaitForSeconds(0.5f);
+        obj.SetActive(true);
+
+        // Réinitialise le déclencheur pour permettre une nouvelle collision
         triggered = false;
     }
 }

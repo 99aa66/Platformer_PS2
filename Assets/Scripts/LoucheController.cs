@@ -13,9 +13,6 @@ public class LoucheController : MonoBehaviour
     {
         col = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
-    }
-    void Start()
-    {
         initialPosition = transform.position;
         initialRotation = transform.rotation;
     }

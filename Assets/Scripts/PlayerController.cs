@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask Default;
     public bool is_jumping = false;
     public Transform playerPos;
+    public PlayerHealth playerHealth;
 
     [Header("Camera Follow")]
     private Camera cam;
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+        playerHealth = GetComponent<PlayerHealth>();
         rb = GetComponent<Rigidbody2D>();
 
         Collider2D[] colliders = transform.GetComponentsInChildren<Collider2D>();
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
                 Physics2D.IgnoreCollision(colliders[i], colliders[k]);
             }
         }
+
     }
 
     void Update()
