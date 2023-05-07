@@ -22,6 +22,7 @@ public class CafetiereController : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>(); // Récupération du composant Rigidbody2D
+        anim = GetComponent<Animator>();
         initialPosition = transform.position;
         initialRotation = transform.rotation;
     }
@@ -38,9 +39,10 @@ public class CafetiereController : MonoBehaviour
     }
     public void ResetPosition()
     {
+        anim.SetTrigger("ResetPosition");
         transform.position = initialPosition;
         transform.rotation = initialRotation;
-        durability = 3;
+        //durability = 3;
         sr.color = Color.white;
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
@@ -53,6 +55,7 @@ public class CafetiereController : MonoBehaviour
         }
         else if (col.gameObject.CompareTag("Ground") && col.relativeVelocity.magnitude > 50f)
         {
+            anim.SetTrigger("break");
             ResetPosition();
         }
     }

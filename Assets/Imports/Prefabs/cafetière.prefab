@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7749013120450250720}
   - component: {fileID: 7749013120450250721}
   - component: {fileID: 641521222167547487}
+  - component: {fileID: 1434274487}
   m_Layer: 10
   m_Name: "cafeti\xE8re"
   m_TagString: "Cafeti\xE8re"
@@ -148,3 +149,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   durability: 3
   isBeingHeld: 0
+  anim: {fileID: 1434274487}
+--- !u!95 &1434274487
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749013120450250750}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 927e87dd5a355d64b91981ff9a20cdc3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

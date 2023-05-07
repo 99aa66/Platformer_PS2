@@ -405,6 +405,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7333814759691635383, guid: 29304349380c3474d9d600d0335f946d, type: 3}
+      propertyPath: offset.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333814759691635383, guid: 29304349380c3474d9d600d0335f946d, type: 3}
+      propertyPath: offset.z
+      value: -7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29304349380c3474d9d600d0335f946d, type: 3}
 --- !u!1001 &280604690
@@ -843,10 +851,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1846082995670638899, guid: 0462868ac1f12d249b209b0b566f8690, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1846082996106828963, guid: 0462868ac1f12d249b209b0b566f8690, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3191,9 +3195,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2548540539852288305, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: offset.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548540539852288305, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: offset.z
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548540539852288305, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
       propertyPath: camFollow
       value: 
       objectReference: {fileID: 1358406445}
+    - target: {fileID: 2548540539852288305, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
+      propertyPath: interpolation
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2646414268600193723, guid: ade08ceedbeb3b641a4dcaa85ce4a019, type: 3}
       propertyPath: m_Name
       value: New Zito v2 (1)
@@ -3448,10 +3464,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1358406446}
-    - target: {fileID: 1858828112, guid: df3837849816a6d4793df561d4144fd7, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7737165740119939780, guid: df3837849816a6d4793df561d4144fd7, type: 3}
       propertyPath: player
       value: 

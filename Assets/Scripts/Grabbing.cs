@@ -10,12 +10,13 @@ public class Grabbing : MonoBehaviour
     private FixedJoint2D joint;
 
     private GameObject currentlyHolding;
+    private bool isHoldingObject;
 
     // Start is called before the first frame update
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(mouseButton))
+        if (Input.GetKeyDown(mouseButton) && !isHoldingObject)
         {
             canGrab = true;
         }
@@ -41,14 +42,16 @@ public class Grabbing : MonoBehaviour
             }
             joint = null;
             currentlyHolding = null;
+            isHoldingObject = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (canGrab && col.gameObject.GetComponent<Rigidbody2D>() != null && col.tag != "Player")
+        if (canGrab && col.gameObject.GetComponent<Rigidbody2D>() != null && col.tag != "Player" && !isHoldingObject)
         {
             currentlyHolding = col.gameObject;
-            
+            isHoldingObject = true;
+
             FixedJoint2D[] joints = currentlyHolding.GetComponents<FixedJoint2D>(); // Vérifier si l'objet n'est pas déjà connecté à head
             bool alreadyConnected = false;
             for (int i = 0; i < joints.Length; i++)
@@ -59,7 +62,7 @@ public class Grabbing : MonoBehaviour
                     break;
                 }
             }
-           
+
             if (!alreadyConnected) // Créer le joint si l'objet n'est pas déjà connecté à head
             {
                 joint = currentlyHolding.AddComponent<FixedJoint2D>();
