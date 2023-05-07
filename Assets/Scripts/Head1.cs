@@ -18,7 +18,7 @@ public class Head1 : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogWarning("Il n'y a plus d'instance de Head1 dans la scène");
+            Debug.LogWarning("Il n'y a plus d'instance de Head dans la scène");
             return;
         }
 
@@ -32,7 +32,7 @@ public class Head1 : MonoBehaviour
     }
     void Update()
     {
-        Vector2 mousePos = new Vector3(cam.ScreenToWorldPoint(Input.mousePosition).x, cam.ScreenToWorldPoint(Input.mousePosition).y, 0); // Récupération de la position de la souris
+        Vector2 mousePos = new Vector3(cam.ScreenToWorldPoint(Input.mousePosition).x, cam.ScreenToWorldPoint(Input.mousePosition).y, 0);  // Récupération de la position de la souris
         Vector2 difference = (mousePos - (Vector2)playerPos.transform.position).normalized; // Calcul de la direction entre la position du joueur et celle de la souris
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; // Calcul de l'angle de rotation de la tête en fonction de la direction de la souris
         Debug.DrawRay((Vector2)playerPos.transform.position, difference); // Dessin d'un rayon pour visualiser la direction de la tête
@@ -40,7 +40,8 @@ public class Head1 : MonoBehaviour
         if (Input.GetButtonDown("Clic gauche") && rb.gameObject.name != "Top_Head") // Si le bouton gauche de la souris est enfoncé et que la tête n'est pas la tête du haut du personnage
         {
             joint.enabled = false; // Désactivation du joint qui relie la tête au corps
-            SendMessage("OnAttacked", SendMessageOptions.DontRequireReceiver); // On envoie un message aux objets pouvant être endommagés pour les prévenir de l'attaque.
+            isAttacking = true; // Indique que la tête est en train d'attaquer
+            SendMessage("OnAttacked", SendMessageOptions.DontRequireReceiver); // On envoie un message aux objets pouvant être endommagés pour les prévenir de l'attaque
         }
 
         if (Input.GetButtonUp("Clic gauche") && rb.gameObject.name != "Top_Head") // Si le bouton gauche de la souris est relâché et que la tête n'est pas la tête du haut du personnage
@@ -48,6 +49,7 @@ public class Head1 : MonoBehaviour
             rb.MovePosition((Vector2)playerPos.transform.position); // La tête revient à sa position de départ
             rb.MoveRotation(0);
             joint.enabled = true; // Réactivation du joint qui relie la tête au corps
+            isAttacking = false; // Indique que la tête a fini d'attaquer
         }
 
         if (Input.GetButton("Clic gauche")) // Si le bouton gauche de la souris est enfoncé
@@ -56,13 +58,11 @@ public class Head1 : MonoBehaviour
             if (rb.gameObject.name == "Top_Head") // Si la tête est la tête du haut du personnage
             {
                 rb.MovePosition((Vector2)playerPos.transform.position + difference * distMax); // Déplacement de la tête dans la direction de la souris jusqu'à une certaine distance
-                isAttacking = true; // Indique que la tête est en train d'attaquer
             }
         }
         else
         {
             rb.MoveRotation(Mathf.LerpAngle(rb.rotation, restingAngle, 1500 * Time.deltaTime));  // Si le bouton gauche de la souris n'est pas enfoncé, la tête revient à sa position
-            isAttacking = false; // Indique que la tête a fini d'attaquer
         }
     }
 }
