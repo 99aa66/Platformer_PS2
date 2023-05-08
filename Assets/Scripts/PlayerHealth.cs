@@ -171,7 +171,7 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(invicibilityTimeAfterHit);
         isInvincible = false;
     }
-    private IEnumerator RespawnPlayer(Rigidbody2D hancheRef)
+    public IEnumerator RespawnPlayer(Rigidbody2D hancheRef)
     {
         yield return new WaitForSeconds(1.5f);
         fadeSystem.SetTrigger("FadeIn");
