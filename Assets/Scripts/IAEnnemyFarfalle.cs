@@ -6,12 +6,12 @@ using static Unity.Burst.Intrinsics.X86.Sse4_2;
 
 public class IAEnnemyFarfalle : MonoBehaviour
 {
-    float speeda = 3f;
-    float distancea = 5f;
+    float speeda = 4f;
+    float distancea = 2f;
     private bool movingRight = true;
     public Transform groundDetection;
     public Transform target;
-    public float speedb = 6f;
+    public float speedb = 7f;
     float distancemax = 14f;
     public int damageOnCollision = 5;
 
@@ -46,7 +46,6 @@ public class IAEnnemyFarfalle : MonoBehaviour
     void Update()
     {
         if (Vector3.Distance(transform.position, target.transform.position) < distancemax)
-
         {
             atckType1 = false;
         }
@@ -62,7 +61,6 @@ public class IAEnnemyFarfalle : MonoBehaviour
         {
             function2();
         }
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
