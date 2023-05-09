@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
-    public float movementForce;
-    public float jumpForce;
+    [SerializeField] float movementForce;
+    [SerializeField] float jumpForce;
     [Space(5)]
     [Range(0f, 100f)] public float raycastDistance = 1.5f;
 
@@ -75,8 +75,13 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
             is_jumping = true;
         }
- 
+        if (rb.velocity.y < -3f)
+        {
+            rb.gravityScale = 25;
+        }
+        else rb.gravityScale = 20;
     }
+
     private void FixedUpdate()
     {
         Movement();

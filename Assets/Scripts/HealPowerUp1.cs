@@ -5,10 +5,24 @@ using UnityEngine;
 public class HealPowerUp1 : MonoBehaviour
 {
     public int healthPoints;
+    Rigidbody2D rb;
+    [SerializeField] bool OnGround;
+    [SerializeField] Transform ground_check;
+    [SerializeField] LayerMask what_is_ground;
+    float check_radius = 0.7f;
 
     private void Start()
     {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+       rb = GetComponent<Rigidbody2D>();
+    }
+    void Update()
+    {
+        OnGround = Physics2D.OverlapCircle(ground_check.position, check_radius, what_is_ground); // vérfier si objet de soin est au sol
+
+        if (OnGround)
+        {
+            rb.bodyType = RigidbodyType2D.Static; // au contact du sol, objet de soin devient immobile
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -20,17 +34,6 @@ public class HealPowerUp1 : MonoBehaviour
                 PlayerHealth.instance.HealPlayer(healthPoints);
                 Destroy(gameObject);
             }
-            else
-            {
-                Rigidbody2D rb = GetComponent<Rigidbody2D>();
-                rb.isKinematic = true;
-                GetComponent<Collider2D>().isTrigger = true;
-            }
-        }
-        else if (!collision.gameObject.CompareTag("Player"))
-        {
-            // L'orbe ne doit pas être détruite si elle touche un objet autre que "Player"
-            return;
         }
     }
 }

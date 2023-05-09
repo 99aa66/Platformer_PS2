@@ -59,10 +59,10 @@ public class LasagneHealth : MonoBehaviour
     }
     void Die()
     {
-        for (int i =0; i<= Random.Range(0,8);i++)
+        for (int i =0; i<= Random.Range(0,4);i++)
         {
-            Rigidbody2D H_HealPowerUp = Instantiate(HealPowerUp_1, transform.position, Quaternion.identity);
-            H_HealPowerUp.velocity = new Vector2(Random.Range(-8, 8), 15);
+            Rigidbody2D H_HealPowerUp = Instantiate(HealPowerUp_1, transform.position, transform.rotation);
+            H_HealPowerUp.velocity = new Vector2(Random.Range(-15, 15), 25);
         }
         GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;

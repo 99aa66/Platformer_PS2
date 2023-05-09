@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 
 public class DeathZone : MonoBehaviour

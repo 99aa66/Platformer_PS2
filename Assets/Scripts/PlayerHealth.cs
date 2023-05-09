@@ -1,9 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using static Unity.Burst.Intrinsics.X86.Sse4_2;
-using UnityEditor;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 
 public class PlayerHealth : MonoBehaviour
 {

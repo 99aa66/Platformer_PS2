@@ -6,82 +6,45 @@ using static Unity.Burst.Intrinsics.X86.Sse4_2;
 
 public class IAEnnemyFarfalle : MonoBehaviour
 {
-    float speeda = 4f;
-    float distancea = 2f;
-    private bool movingRight = true;
-    public Transform groundDetection;
+    Rigidbody2D rb;
+
+    [SerializeField] float speed;
     public Transform target;
-    public float speedb = 7f;
-    float distancemax = 14f;
-    public int damageOnCollision = 5;
+    public float height;
+    Transform mob_transform;
+    [SerializeField] bool is_attacking;
 
-    bool atckType1 = true;
-    private void function1()
-    {
-        transform.Translate(Vector2.right * speeda * Time.deltaTime);
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distancea);
-        if (groundInfo.collider == false)
-        {
-            if (movingRight == true)
-            {
-                transform.eulerAngles = new Vector3(0, -180, 0);
-                movingRight = false;
-            }
-            else
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                movingRight = true;
-            }
-        }
-    }
-    private void function2()
-    {
+    [Header("Attacque")]
+    [SerializeField] int damage_point = 5;
+    [SerializeField] Transform attack_point;
+    [SerializeField] LayerMask enemy_layers;
+    float attack_range = 1.2f;
+    float next_attack_time = 0f;
 
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speedb * Time.deltaTime);
-        if (transform.position.y == 3)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        }
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        mob_transform = transform;
     }
+
+    // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, target.transform.position) < distancemax)
+        if (Vector2.Distance(transform.position, target.position) < 15)
         {
-            atckType1 = false;
-        }
-        else
-        {
-            atckType1 = true;
-        }
-        if (atckType1)
-        {
-            function1();
-        }
-        else
-        {
-            function2();
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, height), speed * Time.deltaTime); // Suivre le joueur
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    void Attack()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        Collider2D[] hit_player = Physics2D.OverlapCircleAll(attack_point.position, attack_range, enemy_layers); // Liste des ennemis
+        foreach (Collider2D player in hit_player) // Si joueur est touché
         {
-            PlayerHealth playerhealth = collision.transform.GetComponent<PlayerHealth>();
-
-            bool isAttacking = collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking || collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking;
-
-            if (!isAttacking)
-            {
-                PlayerHealth.instance.TakeDamage(damageOnCollision);
-            }
+            player.GetComponent<PlayerHealth>().TakeDamage(damage_point); // Faire des dégâts au player
         }
-        if (collision.gameObject.CompareTag("Player") && (collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking || collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking))
-        {
-            GetComponent<EnemyHealthFarfalle>().TakeDamage(10);
-        }
-        if (collision.gameObject.CompareTag("Cafetière"))
-        {
-            GetComponent<EnemyHealthFarfalle>().TakeDamage(15);
-        }
+        next_attack_time = Time.time + 2f; // Limitation d'attaque (4 par secondes)
+        is_attacking = false;
     }
 }

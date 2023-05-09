@@ -103,8 +103,8 @@ MonoBehaviour:
   - {fileID: 2738534979356519642}
   - {fileID: 2861382767938012196}
   m_Bounds:
-    m_Center: {x: 0.11009544, y: -1.1959529, z: 0}
-    m_Extent: {x: 0.58016557, y: 0.2443906, z: 0}
+    m_Center: {x: 0.11009532, y: -1.1959529, z: 0}
+    m_Extent: {x: 0.58016574, y: 0.2443906, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3004152867912265466}
   m_Bounds:
-    m_Center: {x: 0.14743374, y: -1.1985505, z: 0}
+    m_Center: {x: 0.14743374, y: -1.19855, z: 0}
     m_Extent: {x: 0.13512607, y: 0.27502757, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -585,7 +585,7 @@ MonoBehaviour:
   - {fileID: 733634137834164059}
   m_Bounds:
     m_Center: {x: 0.15567027, y: -1.186888, z: 0}
-    m_Extent: {x: 0.16160415, y: 0.17666703, z: 0}
+    m_Extent: {x: 0.16160415, y: 0.17666739, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -694,8 +694,8 @@ MonoBehaviour:
   - {fileID: 2118500053637794803}
   - {fileID: 733634137834164059}
   m_Bounds:
-    m_Center: {x: 0.14353085, y: -1.1982784, z: 0}
-    m_Extent: {x: 0.5013963, y: 2.782456, z: 0}
+    m_Center: {x: 0.14353013, y: -1.1982784, z: 0}
+    m_Extent: {x: 0.50139606, y: 2.782456, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1267,8 +1267,8 @@ MonoBehaviour:
   - {fileID: 539195534311312084}
   - {fileID: 3540437251127766928}
   m_Bounds:
-    m_Center: {x: 0.11005539, y: -1.2019024, z: 0}
-    m_Extent: {x: 0.58016527, y: 0.24439055, z: 0}
+    m_Center: {x: 0.11005622, y: -1.2019024, z: 0}
+    m_Extent: {x: 0.5801655, y: 0.24439055, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1377,8 +1377,8 @@ MonoBehaviour:
   - {fileID: 3004152867912265466}
   - {fileID: 733634137834164059}
   m_Bounds:
-    m_Center: {x: 0.075975, y: -1.1296343, z: 0}
-    m_Extent: {x: 0.3074331, y: 0.24454388, z: 0}
+    m_Center: {x: 0.075975016, y: -1.1296341, z: 0}
+    m_Extent: {x: 0.3074331, y: 0.24454376, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1565,8 +1565,8 @@ MonoBehaviour:
   - {fileID: 7313566033999457056}
   - {fileID: 7659215604447771364}
   m_Bounds:
-    m_Center: {x: 0.11831261, y: -1.1947101, z: 0}
-    m_Extent: {x: 0.21759312, y: 0.44842172, z: 0}
+    m_Center: {x: 0.1183119, y: -1.1947101, z: 0}
+    m_Extent: {x: 0.21759288, y: 0.44842172, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -1584,7 +1584,7 @@ GameObject:
   - component: {fileID: 2548540540727812914}
   m_Layer: 3
   m_Name: Tibia_D
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1711,7 +1711,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3431277837837900048}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1808,19 +1808,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312cdd4bf67db4d428b52edebcb7bf56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementForce: 350
-  jumpForce: 270
+  movementForce: 420
+  jumpForce: 350
   raycastDistance: 2
   positionRadius: 0.59
   can_jump: 0
   Default:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 960
   is_jumping: 0
   playerPos: {fileID: 2548540540054259988}
   playerHealth: {fileID: 5250416530314922002}
   interpolation: 0.1
-  offset: {x: 0, y: 6, z: -5}
+  offset: {x: 0, y: 9, z: -5}
   anim: {fileID: 2548540539852288307}
   rb: {fileID: 2548540539852288308}
   camFollow: {fileID: 0}
@@ -1924,7 +1924,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.98, y: 5.57}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -2034,8 +2034,8 @@ MonoBehaviour:
   - {fileID: 3004152867912265466}
   - {fileID: 5172090630818712917}
   m_Bounds:
-    m_Center: {x: 0.19280085, y: -1.1743703, z: 0}
-    m_Extent: {x: 0.11923671, y: 0.3421102, z: 0}
+    m_Center: {x: 0.19280034, y: -1.17437, z: 0}
+    m_Extent: {x: 0.119237214, y: 0.3421102, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -2403,7 +2403,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3004152867912265466}
   m_Bounds:
-    m_Center: {x: 0.14709541, y: -1.1983073, z: 0}
+    m_Center: {x: 0.14709494, y: -1.198307, z: 0}
     m_Extent: {x: 0.119740896, y: 0.13948685, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -2827,7 +2827,7 @@ MonoBehaviour:
   - {fileID: 178010394174417651}
   - {fileID: 3004152867912265466}
   m_Bounds:
-    m_Center: {x: 0.07225567, y: -1.1408659, z: 0}
+    m_Center: {x: 0.072255194, y: -1.1408652, z: 0}
     m_Extent: {x: 0.18778437, y: 0.16391972, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -3015,7 +3015,7 @@ MonoBehaviour:
   - {fileID: 7313566033999457056}
   - {fileID: 6880566525542374550}
   m_Bounds:
-    m_Center: {x: 0.12336473, y: -1.2009764, z: 0}
+    m_Center: {x: 0.12336521, y: -1.2009764, z: 0}
     m_Extent: {x: 0.20089725, y: 0.40895987, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -3034,7 +3034,7 @@ GameObject:
   - component: {fileID: 2548540539116870452}
   m_Layer: 3
   m_Name: Tibia_G
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
