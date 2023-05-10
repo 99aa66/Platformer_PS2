@@ -14,7 +14,7 @@ public class IAEnnemyFarfalle : MonoBehaviour
     Transform mob_transform;
     [SerializeField] bool is_attacking;
 
-    [Header("Attacque")]
+    [Header("Attaque")]
     [SerializeField] int damage_point = 5;
     [SerializeField] Transform attack_point;
     [SerializeField] LayerMask enemy_layers;

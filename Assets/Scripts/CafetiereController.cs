@@ -39,12 +39,12 @@ public class CafetiereController : MonoBehaviour
     }
     public void ResetPosition()
     {
+        rb.velocity = Vector2.zero;
         anim.SetTrigger("ResetPosition");
         transform.position = initialPosition;
         transform.rotation = initialRotation;
-        //durability = 3;
         sr.color = Color.white;
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
     }
 
     void OnCollisionEnter2D(Collision2D col)
