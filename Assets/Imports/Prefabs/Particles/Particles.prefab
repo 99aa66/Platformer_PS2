@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouvementParticle: {fileID: 1363588070518262861}
-  occurAfterVelocity: 3
+  occurAfterVelocity: 5
   dustFormationPeriod: 0.4
   fallParticle: {fileID: 1598307115877419658}
   playerRb: {fileID: 0}
