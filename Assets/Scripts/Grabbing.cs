@@ -12,8 +12,6 @@ public class Grabbing : MonoBehaviour
     private GameObject currentlyHolding;
     private bool isHoldingObject;
 
-    // Start is called before the first frame update
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(mouseButton) && !isHoldingObject)

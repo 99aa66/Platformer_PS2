@@ -11,9 +11,9 @@ public class PlayerController : MonoBehaviour
     [Range(0f, 100f)] public float raycastDistance = 1.5f;
 
     public float positionRadius;
-    public bool can_jump;
+    public bool isGrounded;
     public LayerMask Default;
-    public bool is_jumping = false;
+    public bool can_jump = false;
     public Transform playerPos;
     public PlayerHealth playerHealth;
 
@@ -69,11 +69,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        can_jump = Physics2D.OverlapCircle(playerPos.position, positionRadius, Default);
-        if (can_jump == true && Input.GetButtonDown("Jump"))
+        isGrounded = Physics2D.OverlapCircle(playerPos.position, positionRadius, Default);
+        if (isGrounded == true && Input.GetButtonDown("Jump"))
         {
-            rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
-            is_jumping = true;
+            can_jump = true;
         }
         if (rb.velocity.y < -3f)
         {
@@ -86,10 +85,10 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
 
-        if (is_jumping == true)
+        if (can_jump == true)
         {
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            is_jumping = false; // là on saute plus car on est déjà en saut (éviter le double saut)
+            can_jump = false; // là on saute plus car on est déjà en saut (éviter le double saut)
         }
 
         camFollow.UpdatePosition(transform.position);
