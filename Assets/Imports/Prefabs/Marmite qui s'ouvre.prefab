@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 3467995891731568538}
   - component: {fileID: 3467995891731568532}
   - component: {fileID: 3467995891731568539}
+  - component: {fileID: 3319173471219472379}
   m_Layer: 8
   m_Name: "marmite ouvert sans fum\xE9e"
   m_TagString: Obstacle
@@ -173,6 +174,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.008974, y: 3.3249192}
   m_EdgeRadius: 0
+--- !u!114 &3319173471219472379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467995891731568537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf68b1de19b1f04087061b82dba783d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverCanvas: {fileID: 6562939899883332814, guid: 0233e4791541c214c857cf7a4ffee63a, type: 3}
 --- !u!1 &3467995892928638177
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0080c9139da05154e93ea941cf59259d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPos: {fileID: 0}
+  playerPos: {fileID: 8846855792238885194, guid: f080bcb006f252d4cb04d75a17540a34, type: 3}
   speed: 4
   waypoints:
   - {fileID: 3467995891240023627}
