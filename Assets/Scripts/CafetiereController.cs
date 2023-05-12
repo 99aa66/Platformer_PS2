@@ -13,8 +13,6 @@ public class CafetiereController : MonoBehaviour
     private SpriteRenderer sr;
     private Rigidbody2D rb;
 
-    //private const string defaultLayerName = "Cafetière";
-    private const string brokenLayerName = "BrokenCafetiere";
     private const float transparentAlpha = 0.5f;
 
     public Animator anim;
@@ -32,19 +30,17 @@ public class CafetiereController : MonoBehaviour
         if (isBroken)
         {
             anim.SetTrigger("break");
-            gameObject.layer = LayerMask.NameToLayer("BrokenCafetiere");
             sr.color = new Color(1f, 1f, 1f, transparentAlpha);
             ResetPosition();
         }
     }
     public void ResetPosition()
     {
-        rb.velocity = Vector2.zero;
         anim.SetTrigger("ResetPosition");
         transform.position = initialPosition;
         transform.rotation = initialRotation;
         sr.color = Color.white;
-        rb.velocity = Vector2.zero;
+        StartCoroutine(Static());
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -58,5 +54,15 @@ public class CafetiereController : MonoBehaviour
             anim.SetTrigger("break");
             ResetPosition();
         }
+    }
+    private IEnumerator Static()
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+
+        // Attendre 0,5 seconde pour que l'objet s'immobilise complètement
+        yield return new WaitForSeconds(0.5f);
+
+        // Réaffecter le rb par défaut à l'objet
+        rb.bodyType = RigidbodyType2D.Dynamic;
     }
 }

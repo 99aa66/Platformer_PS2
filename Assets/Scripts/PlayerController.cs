@@ -76,9 +76,9 @@ public class PlayerController : MonoBehaviour
         }
         if (rb.velocity.y < -3f)
         {
-            rb.gravityScale = 25;
+            rb.gravityScale = 50;
         }
-        else rb.gravityScale = 20;
+        else rb.gravityScale = 25;
     }
 
     private void FixedUpdate()

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3467995891240023626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0499992, y: 0, z: 0}
+  m_LocalPosition: {x: 3.0499992, y: 0.079, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3467995891514159400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.05, y: 14.6, z: 0}
+  m_LocalPosition: {x: 3.05, y: 16.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -183,8 +183,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3467995892928638178}
   - component: {fileID: 3467995892928638205}
-  - component: {fileID: 3467995892928638204}
   - component: {fileID: 3467995892928638179}
+  - component: {fileID: 4860044656501863712}
   m_Layer: 6
   m_Name: couvercle marmite
   m_TagString: Untagged
@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3467995892928638177}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.02, y: 0.12, z: 0}
+  m_LocalPosition: {x: 3.01, y: 0.229, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -259,22 +259,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &3467995892928638204
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3467995892928638177}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.006598727, y: -0.12809749}
-  m_Size: {x: 3.26761, y: 0.83910084}
-  m_Direction: 1
 --- !u!114 &3467995892928638179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +276,32 @@ MonoBehaviour:
   waypoints:
   - {fileID: 3467995891240023627}
   - {fileID: 3467995891514159401}
+--- !u!61 &4860044656501863712
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467995892928638177}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 1e53a406b094e684db2eb67b100581ab, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.28482}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.33, y: 0.9}
+    newSize: {x: 3.36, y: 1.17}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.33, y: 0.3500027}
+  m_EdgeRadius: 0
 --- !u!1 &4907180820694511676
 GameObject:
   m_ObjectHideFlags: 0

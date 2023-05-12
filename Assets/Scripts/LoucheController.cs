@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class LoucheController : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class LoucheController : MonoBehaviour
     {
         transform.position = initialPosition;
         transform.rotation = initialRotation;
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        StartCoroutine(Static());
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -26,5 +27,15 @@ public class LoucheController : MonoBehaviour
                 rb.bodyType = RigidbodyType2D.Dynamic;
             }
         }
+    }
+    private IEnumerator Static()
+    {
+        rb.bodyType = RigidbodyType2D.Static;
+
+        // Attendre 0,5 seconde pour que l'objet s'immobilise complètement
+        yield return new WaitForSeconds(0.5f);
+
+        // Réaffecter le rb par défaut à l'objet
+        rb.bodyType = RigidbodyType2D.Dynamic;
     }
 }
