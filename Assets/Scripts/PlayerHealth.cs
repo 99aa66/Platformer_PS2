@@ -29,6 +29,10 @@ public class PlayerHealth : MonoBehaviour
 
     private Vector3 lastCheckpoint;
 
+    [Header("Damage")]
+    public int damageOnCollisionCoquillettes = 5;
+    public int damageOnCollisionFusilli = 20;
+
     public static PlayerHealth instance;
     public void Awake()
     {
@@ -49,13 +53,13 @@ public class PlayerHealth : MonoBehaviour
         HealthBar.SetMaxHealth(maxHealth);
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
             TakeDamage(60);
         }
-    }
+    }*/
     public void HealPlayer(int amount)
     {
         if ((currentHealth + amount) > maxHealth)
@@ -130,8 +134,22 @@ public class PlayerHealth : MonoBehaviour
         hancheRef.velocity = Vector3.zero;
         StartCoroutine(RespawnPlayer(hancheRef));
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ennemi"))
+        {
+            PlayerHealth playerhealth = collision.transform.GetComponent<PlayerHealth>();
 
-    public IEnumerator InvincibilityFlash()
+            bool isAttacking = (collision.gameObject.GetComponent<Head1>()?.isAttacking ?? false) || (collision.gameObject.GetComponent<Head>()?.isAttacking ?? false);
+
+            if (!isAttacking)
+            {
+                PlayerHealth.instance.TakeDamage(damageOnCollisionCoquillettes);
+                PlayerHealth.instance.TakeDamage(damageOnCollisionFusilli);
+            }
+        }
+    }
+            public IEnumerator InvincibilityFlash()
     {
         while (isInvincible)
         {

@@ -8,6 +8,7 @@ public class IAEnnemyFarfalle : MonoBehaviour
 {
     Rigidbody2D rb;
 
+    [Header("Mouvement")]
     [SerializeField] float speed;
     public Transform target;
     public float height;

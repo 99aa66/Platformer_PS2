@@ -7,17 +7,17 @@ public class EnemyHealthFusilli : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBarEnnemy;
 
-    public SpriteRenderer SpriteEnnemi;
-    public bool isInvincible = false;
-    public float invicibilityTimeAfterHit = 0.5f;
+    private SpriteRenderer SpriteEnnemi;
+    public bool takeDamage = false;
+    public int damageOnCollision = 20;
 
-    public static EnemyHealthFusilli instance;
+    private static EnemyHealthFusilli instance;
 
     private void Awake()
     {
         if (instance != null)
         {
-            Debug.LogWarning("Il y a déjà une instance de EnemyHealth dans la scène");
+            Debug.LogWarning("Il y a déjà une instance de EnemyHealthFusilli dans la scène");
             return;
         }
 
@@ -36,27 +36,45 @@ public class EnemyHealthFusilli : MonoBehaviour
             Object.Destroy(gameObject);
         }
     }
-    public void TakeDamage(int damage)
+    private void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBarEnnemy.SetHealth(currentHealth);
 
-        if (!isInvincible)
+        if (!takeDamage)
         {
-            isInvincible = true;
+            takeDamage = true;
             StartCoroutine(ShowBar());
-            StartCoroutine(HandleInvincibilityDelay());
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerHealth playerhealth = collision.transform.GetComponent<PlayerHealth>();
+
+            bool isAttacking = (collision.gameObject.GetComponent<Head1>()?.isAttacking ?? false) || (collision.gameObject.GetComponent<Head>()?.isAttacking ?? false);
+
+            if (!isAttacking)
+            {
+                PlayerHealth.instance.TakeDamage(damageOnCollision);
+            }
+            else
+            {
+                Debug.Log("Player is attacking");
+                GetComponent<EnemyHealthFusilli>().TakeDamage(10);
+            }
+            if (collision.gameObject.CompareTag("Cafetière") && collision.gameObject.GetComponent<CafetiereController>().GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
+            {
+                GetComponent<EnemyHealthFusilli>().TakeDamage(15);
+            }
         }
     }
     private IEnumerator ShowBar()
     {
         healthBarEnnemy.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         healthBarEnnemy.gameObject.SetActive(false);
-    }
-    public IEnumerator HandleInvincibilityDelay()
-    {
-        yield return new WaitForSeconds(invicibilityTimeAfterHit);
-        isInvincible = false;
+        takeDamage = false;
     }
 }

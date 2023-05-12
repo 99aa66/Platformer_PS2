@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CafetiereController : MonoBehaviour
 {
-    public int durability = 3;
+    public int durability = 5;
     public bool isBroken { get { return durability <= 0; } }
     public bool isBeingHeld;
     private Vector3 initialPosition;

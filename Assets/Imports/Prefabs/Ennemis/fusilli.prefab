@@ -655,13 +655,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundDetection: {fileID: 7755642887651500005}
   obstacleDetection: {fileID: 7755642885734488443}
-  playerDetection: {fileID: 0}
-  groundLayer:
+  Default:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1857
   moveSpeed: 5
   circleRadius: 0.5
-  jumpHeight: 20
+  jumpHeight: 18
   Player: {fileID: 0}
   groundCheck: {fileID: 7755642885862000741}
   boxSize: {x: 2.36, y: 0.21}
@@ -685,9 +684,7 @@ MonoBehaviour:
   maxHealth: 90
   currentHealth: 0
   healthBarEnnemy: {fileID: 1271409930}
-  SpriteEnnemi: {fileID: 7755642887177968767}
-  isInvincible: 0
-  invicibilityTimeAfterHit: 0.5
+  takeDamage: 0
 --- !u!1 &7755642887651500006
 GameObject:
   m_ObjectHideFlags: 0

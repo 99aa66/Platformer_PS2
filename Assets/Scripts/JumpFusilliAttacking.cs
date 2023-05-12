@@ -8,9 +8,9 @@ public class JumpFusilliAttacking : MonoBehaviour
     [Header("Patrouille")]
     public Transform groundDetection;
     public Transform obstacleDetection;
-    public Transform playerDetection;
+    private Transform target;
     private bool isFacingRight = true;
-    [SerializeField] LayerMask groundLayer;
+    public LayerMask Default;
     private bool isGrounded;
     private bool isObstacleAhead;
     public float moveSpeed = 3f;
@@ -30,22 +30,21 @@ public class JumpFusilliAttacking : MonoBehaviour
     [SerializeField] LayerMask playerLayer;
 
     [Header("Paramètre Fusilli")]
-    public int damageOnCollision = 20; //au moment de la collision il y a dégâts -20
     private Rigidbody2D fusilliRB;
     private Animator fusilliAnim;
-    private EnemyHealthFusilli ennemyHealthFusilli;
     void Start()
     {
         fusilliRB = GetComponent<Rigidbody2D>();
         fusilliAnim = GetComponent<Animator>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     void FixedUpdate()
     {
         // Détection du sol, des obstacles et du joueur
-        isGrounded = Physics2D.OverlapCircle(groundDetection.position, circleRadius, groundLayer);
-        isObstacleAhead = Physics2D.OverlapCircle(obstacleDetection.position, circleRadius, groundLayer);
-        isOnGround = Physics2D.OverlapBox(groundCheck.position, boxSize, 0, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(groundDetection.position, circleRadius, Default);
+        isObstacleAhead = Physics2D.OverlapCircle(obstacleDetection.position, circleRadius, Default);
+        isOnGround = Physics2D.OverlapBox(groundCheck.position, boxSize, 0, Default);
         isPlayerDetected = Physics2D.OverlapBox(transform.position, lineOfSite, 0, playerLayer);
 
         AnimationController();
@@ -101,28 +100,6 @@ public class JumpFusilliAttacking : MonoBehaviour
     {
         fusilliAnim.SetBool("isPlayerDetected", isPlayerDetected);
         fusilliAnim.SetBool("IsOnGround", isOnGround);
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            PlayerHealth playerhealth = collision.transform.GetComponent<PlayerHealth>();
-
-            bool isAttacking = collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking || collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking;
-
-            if (!isAttacking)
-            {
-                PlayerHealth.instance.TakeDamage(damageOnCollision);
-            }
-        }
-        if (collision.gameObject.CompareTag("Cafetière"))
-        {
-            GetComponent<EnemyHealthFusilli>().TakeDamage(15);
-        }
-        if (collision.gameObject.CompareTag("Player") && ((collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking) || (collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking)))
-        {
-            GetComponent<EnemyHealthFusilli>().TakeDamage(10);
-        }
     }
     private void OnDrawGizmosSelected()
     {

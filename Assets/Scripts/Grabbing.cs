@@ -28,7 +28,7 @@ public class Grabbing : MonoBehaviour
             }
         }
 
-        if (!canGrab && currentlyHolding != null)
+        if (!canGrab && currentlyHolding != null )
         {
             FixedJoint2D[] joints = currentlyHolding.GetComponents<FixedJoint2D>();
             for (int i = 0; i < joints.Length; i++)
@@ -43,6 +43,24 @@ public class Grabbing : MonoBehaviour
             isHoldingObject = false;
         }
     }
+    void FixedUpdate()
+    {
+        if (currentlyHolding != null && currentlyHolding.CompareTag("Cafetière"))
+        {
+            CafetiereController cafetiereController = currentlyHolding.GetComponent<CafetiereController>();
+            if (cafetiereController != null && cafetiereController.durability <= 0)
+            {
+                if (joint != null)
+                {
+                    Destroy(joint);
+                    joint = null;
+                }
+                isHoldingObject = false;
+                currentlyHolding = null;
+            }
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (canGrab && col.gameObject.GetComponent<Rigidbody2D>() != null && col.tag != "Player" && !isHoldingObject && col.tag != "BossMama")
