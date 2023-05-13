@@ -6,10 +6,10 @@ public class EnemyHealthFarfalle : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBarEnnemy;
 
-    public SpriteRenderer SpriteEnnemi;
-    public bool TakenDamage = false;
+    private SpriteRenderer SpriteEnnemi;
+    public bool takeDamage = false;
 
-    public static EnemyHealthFarfalle instance;
+    private static EnemyHealthFarfalle instance;
 
     private void Awake()
     {
@@ -33,22 +33,42 @@ public class EnemyHealthFarfalle : MonoBehaviour
             Object.Destroy(gameObject);
         }
     }
-    public void TakeDamage(int damage)
+    private void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBarEnnemy.SetHealth(currentHealth);
 
-        if (!TakenDamage)
+        if (!takeDamage)
         {
-            TakenDamage = true;
+            takeDamage = true;
             StartCoroutine(ShowBar());
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Head1 head1 = collision.gameObject.GetComponent<Head1>();
+            Head head = collision.gameObject.GetComponent<Head>();
+            bool isAttacking = (head1 != null && head1.isAttacking) || (head != null && head.isAttacking);
 
+            EnemyHealthFarfalle enemyHealth = GetComponent<EnemyHealthFarfalle>();
+
+            if (isAttacking)
+            {
+                enemyHealth.TakeDamage(10);
+            }
+            else if (collision.gameObject.CompareTag("Cafetière") && collision.gameObject.GetComponent<CafetiereController>().GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
+            {
+                enemyHealth.TakeDamage(15);
+            }
+        }
+    }
     private IEnumerator ShowBar()
     {
         healthBarEnnemy.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         healthBarEnnemy.gameObject.SetActive(false);
+        takeDamage = false;
     }
 }

@@ -9,7 +9,6 @@ public class EnemyHealthFusilli : MonoBehaviour
 
     private SpriteRenderer SpriteEnnemi;
     public bool takeDamage = false;
-    private int damageOnCollision = 20;
 
     private static EnemyHealthFusilli instance;
 
@@ -17,7 +16,6 @@ public class EnemyHealthFusilli : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogWarning("Il y a déjà une instance de EnemyHealthFusilli dans la scène");
             return;
         }
 

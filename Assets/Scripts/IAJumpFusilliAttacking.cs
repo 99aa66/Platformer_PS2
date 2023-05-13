@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class JumpFusilliAttacking : MonoBehaviour
+public class IAJumpFusilliAttacking : MonoBehaviour
 {
     [Header("Patrouille")]
     public Transform groundDetection;
