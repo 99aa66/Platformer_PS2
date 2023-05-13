@@ -23,6 +23,7 @@ public class JumpFusilliAttacking : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField] Vector2 boxSize;
     private bool isOnGround;
+    private int damageOnCollision = 20;
 
     [Header("Player vu")]
     [SerializeField] Vector2 lineOfSite;
@@ -71,7 +72,8 @@ public class JumpFusilliAttacking : MonoBehaviour
         fusilliRB.velocity = new Vector2(moveSpeed * moveDirection, fusilliRB.velocity.y);
     }
     void JumpAttack()
-    {float distanceFromPlayer = Player.position.x - transform.position.x;
+    {
+        float distanceFromPlayer = Player.position.x - transform.position.x;
 
         if (isOnGround)
         {
@@ -100,6 +102,18 @@ public class JumpFusilliAttacking : MonoBehaviour
     {
         fusilliAnim.SetBool("isPlayerDetected", isPlayerDetected);
         fusilliAnim.SetBool("IsOnGround", isOnGround);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            bool isAttacking = (collision.gameObject.GetComponent<Head1>()?.isAttacking ?? false) || (collision.gameObject.GetComponent<Head>()?.isAttacking ?? false);
+
+            if (!isAttacking)
+            {
+                PlayerHealth.instance.TakeDamage(damageOnCollision);
+            }
+        }
     }
     private void OnDrawGizmosSelected()
     {

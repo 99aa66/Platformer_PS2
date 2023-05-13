@@ -10,7 +10,7 @@ public class Head1 : MonoBehaviour
     [SerializeField] float distMax = 3;
     public GameObject playerPos;
     float restingAngle = 90f;
-    public bool isAttacking = false;
+    public bool isAttacking;
 
     public static Head1 instance;
 
@@ -29,8 +29,9 @@ public class Head1 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
         joint = GetComponent<HingeJoint2D>();
+        isAttacking = false;
     }
-    void Update()
+   void Update()
     {
 
         Vector2 mousePos = new Vector3(cam.ScreenToWorldPoint(Input.mousePosition).x, cam.ScreenToWorldPoint(Input.mousePosition).y, 0);  // Récupération de la position de la souris
@@ -59,6 +60,7 @@ public class Head1 : MonoBehaviour
             if (rb.gameObject.name == "Top_Head") // Si la tête est la tête du haut du personnage
             {
                 rb.MovePosition((Vector2)playerPos.transform.position + difference * distMax); // Déplacement de la tête dans la direction de la souris jusqu'à une certaine distance
+                isAttacking = true;
             }
         }
         else
@@ -102,6 +104,7 @@ public class Head1 : MonoBehaviour
             if (rb.gameObject.name == "Top_Head") // Si la tête est la tête du haut du personnage
             {
                 rb.MovePosition((Vector2)playerPos.transform.position + difference * distMax); // Déplacement de la tête dans la direction de la souris jusqu'à une certaine distance
+                isAttacking = true;
             }
         }
         else

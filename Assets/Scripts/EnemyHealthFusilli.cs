@@ -9,7 +9,7 @@ public class EnemyHealthFusilli : MonoBehaviour
 
     private SpriteRenderer SpriteEnnemi;
     public bool takeDamage = false;
-    public int damageOnCollision = 20;
+    private int damageOnCollision = 20;
 
     private static EnemyHealthFusilli instance;
 
@@ -51,22 +51,19 @@ public class EnemyHealthFusilli : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealth playerhealth = collision.transform.GetComponent<PlayerHealth>();
+            Head1 head1 = collision.gameObject.GetComponent<Head1>();
+            Head head = collision.gameObject.GetComponent<Head>();
+            bool isAttacking = (head1 != null && head1.isAttacking) || (head != null && head.isAttacking);
 
-            bool isAttacking = (collision.gameObject.GetComponent<Head1>()?.isAttacking ?? false) || (collision.gameObject.GetComponent<Head>()?.isAttacking ?? false);
+            EnemyHealthFusilli enemyHealth = GetComponent<EnemyHealthFusilli>();
 
-            if (!isAttacking)
+            if (isAttacking)
             {
-                PlayerHealth.instance.TakeDamage(damageOnCollision);
+                enemyHealth.TakeDamage(10);
             }
-            else
+            else if (collision.gameObject.CompareTag("Cafetière") && collision.gameObject.GetComponent<CafetiereController>().GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
             {
-                Debug.Log("Player is attacking");
-                GetComponent<EnemyHealthFusilli>().TakeDamage(10);
-            }
-            if (collision.gameObject.CompareTag("Cafetière") && collision.gameObject.GetComponent<CafetiereController>().GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
-            {
-                GetComponent<EnemyHealthFusilli>().TakeDamage(15);
+                enemyHealth.TakeDamage(15);
             }
         }
     }

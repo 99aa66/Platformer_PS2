@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coquilettes : MonoBehaviour
+public class Coquillettes : MonoBehaviour
 {
     public float speed;
     public Transform[] waypoints;
 
-    //public int damageOnCollision = 2; //au moment de la collision il y a dégâts -2
+    public int damageOnCollision = 5; //au moment de la collision il y a dégâts -2
 
     public SpriteRenderer graphics;
     private Transform target;
@@ -32,19 +32,16 @@ public class Coquilettes : MonoBehaviour
             graphics.flipX = !graphics.flipX;
         }
     }
-    /*private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealth playerhealth = collision.transform.GetComponent<PlayerHealth>();
-
-            bool isAttacking = collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking || collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking;
+            bool isAttacking = (collision.gameObject.GetComponent<Head1>()?.isAttacking ?? false) || (collision.gameObject.GetComponent<Head>()?.isAttacking ?? false);
 
             if (!isAttacking)
             {
                 PlayerHealth.instance.TakeDamage(damageOnCollision);
             }
         }
-    }*/
- 
+    }
 }
