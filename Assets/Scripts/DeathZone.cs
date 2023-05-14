@@ -71,7 +71,7 @@ public class DeathZone : MonoBehaviour
         // Afficher le canvas GameOver
         gameOverCanvas.SetActive(true);
         // Attendre 2 secondes avant de relancer le jeu
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameOverCanvas.SetActive(false);
     }

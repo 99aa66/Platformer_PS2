@@ -71,4 +71,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cf68b1de19b1f04087061b82dba783d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverCanvas: {fileID: 0}
+  gameOverCanvas: {fileID: 6562939899883332814, guid: 0233e4791541c214c857cf7a4ffee63a, type: 3}
