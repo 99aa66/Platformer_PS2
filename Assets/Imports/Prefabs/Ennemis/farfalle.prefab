@@ -295,7 +295,7 @@ MonoBehaviour:
   attack_point: {fileID: 6059785635356767827}
   enemy_layers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!114 &5899858425202050816
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PlayerSpawn
   - FadeSystem
   - Ennemi
   - Ground
@@ -29,7 +28,7 @@ TagManager:
   - Props
   - Glass
   - "Cafeti\xE8re"
-  - 
+  - BrokenCafetiere
   - 
   - 
   - 

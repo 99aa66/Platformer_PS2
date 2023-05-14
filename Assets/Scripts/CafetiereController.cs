@@ -23,6 +23,10 @@ public class CafetiereController : MonoBehaviour
         anim = GetComponent<Animator>();
         initialPosition = transform.position;
         initialRotation = transform.rotation;
+
+        // Ajuster la force de restitution et la force de collision sur le rigidbody
+       //rb.sharedMaterial.bounciness = 0.2f;
+        //rb.sharedMaterial.friction = 0.5f;
     }
     public void DecrementDurability()
     {
@@ -49,7 +53,7 @@ public class CafetiereController : MonoBehaviour
         {
             DecrementDurability();
         }
-        else if (col.gameObject.CompareTag("Ground") && col.relativeVelocity.magnitude > 50f)
+        else if (col.gameObject.CompareTag("Ground") && col.relativeVelocity.magnitude > 40f)
         {
             anim.SetTrigger("break");
             ResetPosition();

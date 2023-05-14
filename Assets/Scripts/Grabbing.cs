@@ -42,13 +42,11 @@ public class Grabbing : MonoBehaviour
             currentlyHolding = null;
             isHoldingObject = false;
         }
-    }
-    void FixedUpdate()
-    {
+        // Vérifier si la cafetière est cassée
         if (currentlyHolding != null && currentlyHolding.CompareTag("Cafetière"))
         {
             CafetiereController cafetiereController = currentlyHolding.GetComponent<CafetiereController>();
-            if (cafetiereController != null && cafetiereController.durability <= 0)
+            if (cafetiereController == null || (cafetiereController != null && cafetiereController.durability <= 0))
             {
                 if (joint != null)
                 {
@@ -60,42 +58,48 @@ public class Grabbing : MonoBehaviour
             }
         }
     }
-
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (canGrab && col.gameObject.GetComponent<Rigidbody2D>() != null && col.tag != "Player" && !isHoldingObject && col.tag != "BossMama")
+        if (canGrab && !isHoldingObject)
         {
-            currentlyHolding = col.gameObject;
-            isHoldingObject = true;
+            if (col.CompareTag("Cafetière"))
+            {
+                currentlyHolding = col.gameObject;
+                isHoldingObject = true;
 
-            if (col.tag == "BossLasagne")
-            {
-                currentlyHolding = null;
-                isHoldingObject = false;
-                return;
-            }
-                FixedJoint2D[] joints = currentlyHolding.GetComponents<FixedJoint2D>(); // Vérifier si l'objet n'est pas déjà connecté à head
-            bool alreadyConnected = false;
-            for (int i = 0; i < joints.Length; i++)
-            {
-                if (joints[i].connectedBody == head)
+                FixedJoint2D[] joints = currentlyHolding.GetComponents<FixedJoint2D>();
+                bool alreadyConnected = false;
+                for (int i = 0; i < joints.Length; i++)
                 {
-                    alreadyConnected = true;
-                    break;
+                    if (joints[i].connectedBody == head)
+                    {
+                        alreadyConnected = true;
+                        break;
+                    }
+                }
+
+                if (!alreadyConnected)
+                {
+                    joint = currentlyHolding.AddComponent<FixedJoint2D>();
+                    joint.connectedBody = head;
+                }
+
+                Rigidbody2D rb = currentlyHolding.GetComponent<Rigidbody2D>();
+                if (rb != null && rb.isKinematic)
+                {
+                    rb.isKinematic = false;
                 }
             }
-
-            if (!alreadyConnected) // Créer le joint si l'objet n'est pas déjà connecté à head
+            else if (col.CompareTag("Player") || col.CompareTag("BossMama") || col.CompareTag("BossLasagne"))
             {
-                joint = currentlyHolding.AddComponent<FixedJoint2D>();
-                joint.connectedBody = head;
+                // Do nothing
             }
-            // Rendre le rigidbody de la cafetière dynamique
-            Rigidbody2D rb = currentlyHolding.GetComponent<Rigidbody2D>();
-            if (rb != null && rb.isKinematic)
+            else
             {
-                rb.isKinematic = false;
+                // ne rien faire si l'objet ne correspond à aucune condition
+                return;
             }
         }
     }
+
 }
