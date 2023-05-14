@@ -23,8 +23,11 @@ public class CafetiereController : MonoBehaviour
         anim = GetComponent<Animator>();
         initialPosition = transform.position;
         initialRotation = transform.rotation;
+    }
 
-
+    private void Start()
+    {
+        ResetDurability();
     }
     public void DecrementDurability()
     {
@@ -45,8 +48,12 @@ public class CafetiereController : MonoBehaviour
         sr.color = Color.white;
         StartCoroutine(Static());
         rb.simulated = true;
+        ResetDurability(); // Réinitialiser la durabilité
     }
-
+    private void ResetDurability()
+    {
+        durability = 5;
+    }
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Ennemi") || col.gameObject.CompareTag("Glass"))

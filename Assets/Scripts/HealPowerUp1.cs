@@ -11,6 +11,7 @@ public class HealPowerUp1 : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
