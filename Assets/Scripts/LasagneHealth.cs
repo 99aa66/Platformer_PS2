@@ -13,7 +13,6 @@ public class LasagneHealth : MonoBehaviour
 
     public static LasagneHealth instance;
     public bool isInvulnerable = false;
-
     public Rigidbody2D HealPowerUp_1;
     public GameObject objectToDestroy;
     private void Awake()
@@ -37,10 +36,11 @@ public class LasagneHealth : MonoBehaviour
             Object.Destroy(gameObject);
         }
     }
-    public void TakeDamage(int damage)
+    void TakeDamage(int damage)
     {
         if (isInvulnerable)
-            return;
+
+        return;
 
         currentHealth -= damage;
         healthBarEnnemy.SetHealth(currentHealth);
@@ -68,5 +68,25 @@ public class LasagneHealth : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;
         Destroy(objectToDestroy);
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Head1 head1 = collision.gameObject.GetComponent<Head1>();
+            Head head = collision.gameObject.GetComponent<Head>();
+            bool isAttacking = (head1 != null && head1.isAttacking) || (head != null && head.isAttacking);
+
+            LasagneHealth lasagneHealth = GetComponent<LasagneHealth>();
+
+            if (isAttacking)
+            {
+                lasagneHealth.TakeDamage(10);
+            }
+            else if (collision.gameObject.CompareTag("Cafetière") && collision.gameObject.GetComponent<CafetiereController>().GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
+            {
+                lasagneHealth.TakeDamage(15);
+            }
+        }
     }
 }

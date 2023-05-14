@@ -49,13 +49,13 @@ public class PlayerHealth : MonoBehaviour
         HealthBar.SetMaxHealth(maxHealth);
     }
 
-    /*private void Update()
+   private void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
             TakeDamage(60);
         }
-    }*/
+    }
     public void HealPlayer(int amount)
     {
         if ((currentHealth + amount) > maxHealth)

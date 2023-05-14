@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LasagneAttack : MonoBehaviour
 {
-    public int attackDamage = 20;
+    public int damageOnCollision = 20;
     public int enragedAttackDamage = 40;
 
     public Vector3 attackOffset;
@@ -21,24 +21,10 @@ public class LasagneAttack : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-
-            bool isAttacking = collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking || collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking;
-
-            if (!isAttacking)
-            {
-                PlayerHealth.instance.TakeDamage(attackDamage);
-            }
-        }
-        if (collision.gameObject.CompareTag("Cafetière"))
-        {
-            GetComponent<LasagneHealth>().TakeDamage(20);
-        }
-        if (collision.gameObject.CompareTag("Player") && ((collision.gameObject.GetComponent<Head>() != null && collision.gameObject.GetComponent<Head>().isAttacking) || (collision.gameObject.GetComponent<Head1>() != null && collision.gameObject.GetComponent<Head1>().isAttacking)))
-        {
-            GetComponent<LasagneHealth>().TakeDamage(15);
+          PlayerHealth.instance.TakeDamage(damageOnCollision);
         }
     }
+
     public void EnragedAttack()
     {
         Vector3 pos = transform.position;
