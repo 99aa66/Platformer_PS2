@@ -15,6 +15,7 @@ public class LasagneHealth : MonoBehaviour
     public bool isInvulnerable = false;
 
     public Rigidbody2D HealPowerUp_1;
+    public GameObject objectToDestroy;
     private void Awake()
     {
         if (instance != null)
@@ -62,10 +63,10 @@ public class LasagneHealth : MonoBehaviour
         for (int i =0; i<= Random.Range(0,6);i++)
         {
             Rigidbody2D H_HealPowerUp = Instantiate(HealPowerUp_1, transform.position, transform.rotation);
-            H_HealPowerUp.velocity = new Vector2(Random.Range(-10, 10), 30);
+            H_HealPowerUp.velocity = new Vector2(Random.Range(-10, 10), 20);
         }
         GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;
-        Destroy(gameObject);
+        Destroy(objectToDestroy);
     }
 }

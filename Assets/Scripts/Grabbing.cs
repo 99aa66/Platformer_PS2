@@ -68,7 +68,13 @@ public class Grabbing : MonoBehaviour
             currentlyHolding = col.gameObject;
             isHoldingObject = true;
 
-            FixedJoint2D[] joints = currentlyHolding.GetComponents<FixedJoint2D>(); // Vérifier si l'objet n'est pas déjà connecté à head
+            if (col.tag == "BossLasagne")
+            {
+                currentlyHolding = null;
+                isHoldingObject = false;
+                return;
+            }
+                FixedJoint2D[] joints = currentlyHolding.GetComponents<FixedJoint2D>(); // Vérifier si l'objet n'est pas déjà connecté à head
             bool alreadyConnected = false;
             for (int i = 0; i < joints.Length; i++)
             {

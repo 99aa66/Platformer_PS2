@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7737165740119939783}
   m_Layer: 7
   m_Name: Lasagne
-  m_TagString: Ennemi
+  m_TagString: BossLasagne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,6 +190,7 @@ MonoBehaviour:
   TakenDamage: 0
   isInvulnerable: 0
   HealPowerUp_1: {fileID: 8180144399753906735, guid: cc318843fa9cd174fbe2a0a65dad7882, type: 3}
+  objectToDestroy: {fileID: 0}
 --- !u!114 &7737165740119939783
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     [Header("Camera Follow")]
     private Camera cam;
     [Range(0f, 1f)] public float interpolation = 0.1f;
-    public Vector3 offset = new Vector3(0f, 2f, -7f);
 
     [Header("Animation")]
     public Animator anim;
