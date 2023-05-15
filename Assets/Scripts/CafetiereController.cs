@@ -36,6 +36,10 @@ public class CafetiereController : MonoBehaviour
 
         switch (durability)
         {
+            case 5:
+                sr.color = Color.white;
+                Debug.Log("Color changed to yellow");
+                break;
             case 4:
                 sr.color = Color.yellow;
                 Debug.Log("Color changed to yellow");

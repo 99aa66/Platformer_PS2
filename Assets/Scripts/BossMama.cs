@@ -85,7 +85,7 @@ public class BossMama : MonoBehaviour
         // Afficher le canvas GameOver
         gameOverCanvas.SetActive(true);
         // Attendre 2 secondes avant de relancer le jeu
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 2966353219143019167}
   m_Layer: 7
   m_Name: coquillette1
-  m_TagString: Ennemi
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
