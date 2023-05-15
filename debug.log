@@ -199,3 +199,4 @@
 [0514/203144.150:WARNING:value_store_frontend.cc(47)] Reading mhjfbmdgcfjbbpaeojofohoefgiehjai.alarms from  failed: IO error: .../LOCK: File currently in use. (ChromeMethodBFE: 15::LockFile::2)
 [0514/203238.238:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
 [0515/002242.510:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 
+[0515/043327.317:ERROR:gpu_init.cc(523)] Passthrough is not supported, GL is disabled, ANGLE is 

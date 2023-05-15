@@ -53,6 +53,10 @@ public class Head1 : MonoBehaviour
             joint.enabled = true; // Réactivation du joint qui relie la tête au corps
             isAttacking = false; // Indique que la tête a fini d'attaquer
         }
+        else if (Input.GetButtonUp("Clic gauche") && rb.gameObject.name == "Top_Head")
+        {
+            isAttacking = false;
+        }
 
         if (Input.GetButton("Clic gauche")) // Si le bouton gauche de la souris est enfoncé
         {

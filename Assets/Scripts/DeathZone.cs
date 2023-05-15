@@ -6,14 +6,16 @@ public class DeathZone : MonoBehaviour
 {
     private Animator fadeSystem;
     public GameObject gameOverCanvas;
+    private bool isReplacingPlayer = false;
     private void Awake()
     {
         fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !isReplacingPlayer)
         {
+            isReplacingPlayer = true;
             Rigidbody2D[] rigidbodies = collision.transform.root.GetComponentsInChildren<Rigidbody2D>();
             Rigidbody2D hancheRef = null;
             for (int i = 0; i < rigidbodies.Length; i++)
@@ -60,5 +62,6 @@ public class DeathZone : MonoBehaviour
         yield return new WaitForSeconds(2f);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameOverCanvas.SetActive(false);
+        isReplacingPlayer = false;
     }
 }

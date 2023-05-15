@@ -38,15 +38,19 @@ public class CafetiereController : MonoBehaviour
         {
             case 4:
                 sr.color = Color.yellow;
+                Debug.Log("Color changed to yellow");
                 break;
             case 3:
                 sr.color = new Color(1f, 0.5f, 0f);
+                Debug.Log("Color changed to orange");
                 break;
             case 2:
                 sr.color = new Color(1f, 0.3f, 0f);
+                Debug.Log("Color changed to dark orange");
                 break;
             case 1:
                 sr.color = Color.red;
+                Debug.Log("Color changed to red");
                 break;
             default:
                 anim.SetTrigger("break");
