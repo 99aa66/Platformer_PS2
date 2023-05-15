@@ -7,9 +7,9 @@ public class LasagneAttack : MonoBehaviour
     public int damageOnCollision = 20;
     //public int enragedAttackDamage = 40;
 
-    public Vector3 attackOffset;
-    public float attackRange = 1f;
-    public LayerMask attackMask;
+    [SerializeField] Vector3 attackOffset;
+    [SerializeField] float attackRange = 1f;
+    [SerializeField] LayerMask attackMask;
 
     public void Attack()
     {

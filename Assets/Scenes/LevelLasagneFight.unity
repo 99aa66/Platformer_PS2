@@ -3978,7 +3978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7737165740119939802, guid: df3837849816a6d4793df561d4144fd7, type: 3}
       propertyPath: maxHealth
-      value: 20
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7737165740119939802, guid: df3837849816a6d4793df561d4144fd7, type: 3}
       propertyPath: healthBarEnnemy
@@ -3994,7 +3994,7 @@ PrefabInstance:
       objectReference: {fileID: 7306696103580165350, guid: 99317523dda640d408cc1404925465e6, type: 3}
     - target: {fileID: 7737165740119939802, guid: df3837849816a6d4793df561d4144fd7, type: 3}
       propertyPath: invicibilityTimeAfterHit
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7737165740119939804, guid: df3837849816a6d4793df561d4144fd7, type: 3}
       propertyPath: m_RootOrder

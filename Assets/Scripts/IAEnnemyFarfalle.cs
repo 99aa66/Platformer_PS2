@@ -5,14 +5,14 @@ using UnityEngine;
 public class IAEnnemyFarfalle : MonoBehaviour
 {
     [Header("Patrouille")]
-    public Transform groundDetection;
-    public Transform obstacleDetection;
+    [SerializeField] Transform groundDetection;
+    [SerializeField] Transform obstacleDetection;
     private Transform playerPos;
     private bool isFacingRight = true;
     public LayerMask Default;
     private bool isGrounded;
     private bool isObstacleAhead;
-    public float moveSpeed = 3f;
+    [SerializeField] float moveSpeed = 3f;
     private float moveDirection = 1;
     [SerializeField] float circleRadius;
 

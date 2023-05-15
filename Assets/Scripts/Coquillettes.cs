@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Coquillettes : MonoBehaviour
 {
-    public float speed;
-    public Transform[] waypoints;
+    [SerializeField] float speed;
+    [SerializeField] Transform[] waypoints;
 
     public int damageOnCollision = 5; //au moment de la collision il y a dégâts -2
 
-    public SpriteRenderer graphics;
+    [SerializeField] SpriteRenderer graphics;
     private Transform target;
     private int destPoint = 0;
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Balance : MonoBehaviour
 {
-    public float restingAngle = 0f ;
-    public float force = 750f;
+    [SerializeField] float restingAngle = 0f ;
+    [SerializeField] float force = 750f;
  
     private Rigidbody2D rb;
 
@@ -18,6 +18,5 @@ public class Balance : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MoveRotation(Mathf.LerpAngle(rb.rotation, restingAngle, force * Time.deltaTime));
-    
     }
 }

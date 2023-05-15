@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BossLasagne : MonoBehaviour
 {
-    public Transform player;
+    [SerializeField] Transform player;
 
-    public bool isFlipped = false;
+    [SerializeField] bool isFlipped = false;
 
     public void LookAtPlayer()
     {

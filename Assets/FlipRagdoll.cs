@@ -2,46 +2,34 @@ using UnityEngine;
 
 public class FlipRagdoll : MonoBehaviour
 {
-    private Rigidbody2D[] rigidbodies;
+    public Transform ragdollParent;
+    public float flipSpeed = 5f;
 
-    private void Start()
+    private bool isFacingRight = true;
+
+    private void Update()
     {
-        rigidbodies = GetComponentsInChildren<Rigidbody2D>();
+        float xDir = Input.GetAxis("Horizontal");
+
+        if (xDir < 0 && isFacingRight)
+        {
+            FlipCharacter();
+        }
+        else if (xDir > 0 && !isFacingRight)
+        {
+            FlipCharacter();
+        }
+
+        // Appliquer les forces de mouvement sur le personnage en fonction de la direction actuelle
+        // ...
     }
-    public void Flip(bool flipX)
+
+    private void FlipCharacter()
     {
-        // Désactive tous les joints
-        Joint2D[] joints = GetComponentsInChildren<Joint2D>();
-        foreach (Joint2D joint in joints)
-        {
-            joint.enabled = false;
-        }
+        isFacingRight = !isFacingRight;
 
-        // Arrête tous les mouvements des rigidbodies
-        foreach (Rigidbody2D rb in rigidbodies)
-        {
-            rb.velocity = Vector2.zero;
-        }
-
-        // Inverse l'axe x de l'objet si flipX est vrai
-        Vector3 scale = transform.localScale;
-        if (flipX)
-        {
-            scale.x *= -1;
-        }
-        scale.z += 180;
-        transform.localScale = scale;
-
-        // Réactive tous les rigidbodies
-        foreach (Rigidbody2D rb in rigidbodies)
-        {
-            rb.isKinematic = false;
-        }
-
-        // Réactive tous les joints
-        foreach (Joint2D joint in joints)
-        {
-            joint.enabled = true;
-        }
+        Vector3 newScale = ragdollParent.localScale;
+        newScale.x *= -1;
+        ragdollParent.localScale = newScale;
     }
 }
