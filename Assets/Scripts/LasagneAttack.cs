@@ -5,7 +5,7 @@ using UnityEngine;
 public class LasagneAttack : MonoBehaviour
 {
     public int damageOnCollision = 20;
-    public int enragedAttackDamage = 40;
+    //public int enragedAttackDamage = 40;
 
     public Vector3 attackOffset;
     public float attackRange = 1f;

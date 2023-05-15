@@ -7,21 +7,21 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
 
     [Header("Sprite Renderer")]
-    public SpriteRenderer JambeD;
-    public SpriteRenderer PiedD;
-    public SpriteRenderer BrasD;
-    public SpriteRenderer MainD;
-    public SpriteRenderer Corps;
-    public SpriteRenderer BrasG;
-    public SpriteRenderer MainG;
-    public SpriteRenderer JambeG;
-    public SpriteRenderer PiedG;
-    public SpriteRenderer oeil;
-    public SpriteRenderer bouche;
+    [SerializeField] SpriteRenderer JambeD;
+    [SerializeField] SpriteRenderer PiedD;
+    [SerializeField] SpriteRenderer BrasD;
+    [SerializeField] SpriteRenderer MainD;
+    [SerializeField] SpriteRenderer Corps;
+    [SerializeField] SpriteRenderer BrasG;
+    [SerializeField] SpriteRenderer MainG;
+    [SerializeField] SpriteRenderer JambeG;
+    [SerializeField] SpriteRenderer PiedG;
+    [SerializeField] SpriteRenderer oeil;
+    [SerializeField] SpriteRenderer bouche;
 
-    public float invicibilityTimeAfterHit = 2f;
-    public float invincibilityFlashDelay = 0.2f;
-    public bool isInvincible = false; //perso pas invincible par défaut
+    [SerializeField] float invicibilityTimeAfterHit = 2f;
+    [SerializeField] float invincibilityFlashDelay = 0.2f;
+    [SerializeField] bool isInvincible = false; //perso pas invincible par défaut
 
     public HealthBar HealthBar;
 
@@ -49,13 +49,13 @@ public class PlayerHealth : MonoBehaviour
         HealthBar.SetMaxHealth(maxHealth);
     }
 
-   private void Update()
+   /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
             TakeDamage(60);
         }
-    }
+    }*/
     public void HealPlayer(int amount)
     {
         if ((currentHealth + amount) > maxHealth)
@@ -130,7 +130,7 @@ public class PlayerHealth : MonoBehaviour
         hancheRef.velocity = Vector3.zero;
         StartCoroutine(RespawnPlayer(hancheRef));
     }
-            public IEnumerator InvincibilityFlash()
+    public IEnumerator InvincibilityFlash()
     {
         while (isInvincible)
         {

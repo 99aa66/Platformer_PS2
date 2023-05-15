@@ -8,13 +8,15 @@ public class LasagneHealth : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBarEnnemy;
 
-    public SpriteRenderer SpriteEnnemi;
+    [SerializeField] SpriteRenderer SpriteEnnemi;
     public bool TakenDamage = false;
 
     public static LasagneHealth instance;
     public bool isInvulnerable = false;
     public Rigidbody2D HealPowerUp_1;
     public GameObject objectToDestroy;
+    [SerializeField] bool isInvincible;
+    [SerializeField] float invicibilityTimeAfterHit = 2f;
     private void Awake()
     {
         if (instance != null)
@@ -28,6 +30,7 @@ public class LasagneHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBarEnnemy.SetMaxHealth(maxHealth);
+        isInvincible = false;
     }
     void Update()
     {
@@ -38,10 +41,11 @@ public class LasagneHealth : MonoBehaviour
     }
     void TakeDamage(int damage)
     {
-        if (isInvulnerable)
-
-        return;
-
+        if (isInvulnerable || isInvincible)
+        {
+            return;
+        }
+        
         currentHealth -= damage;
         healthBarEnnemy.SetHealth(currentHealth);
 
@@ -57,6 +61,8 @@ public class LasagneHealth : MonoBehaviour
         {
             Die();
         }
+        isInvincible = true;
+        Invoke("EndInvincibility", invicibilityTimeAfterHit); // Démarre un minuteur pour désactiver l'invincibilité après 0,3 seconde.
     }
     void Die()
     {
@@ -88,5 +94,9 @@ public class LasagneHealth : MonoBehaviour
                 lasagneHealth.TakeDamage(15);
             }
         }
+    }
+    void EndInvincibility()
+    {
+        isInvincible = false;
     }
 }
