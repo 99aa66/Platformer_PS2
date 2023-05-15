@@ -16,7 +16,10 @@ public class LasagneHealth : MonoBehaviour
     public Rigidbody2D HealPowerUp_1;
     public GameObject objectToDestroy;
     [SerializeField] bool isInvincible;
-    [SerializeField] float invicibilityTimeAfterHit = 2f;
+    [SerializeField] float invicibilityTimeAfterHit = 0.5f;
+
+    [SerializeField] private GameObject porteLevel02Prefab;
+    private GameObject porteLevel02Instance;
     private void Awake()
     {
         if (instance != null)
@@ -71,8 +74,16 @@ public class LasagneHealth : MonoBehaviour
             Rigidbody2D H_HealPowerUp = Instantiate(HealPowerUp_1, transform.position, transform.rotation);
             H_HealPowerUp.velocity = new Vector2(Random.Range(-10, 10), 20);
         }
+        // Instancier la porte
+        porteLevel02Instance = Instantiate(porteLevel02Prefab, transform.position, Quaternion.identity);
+
+        // Désactiver le collider de l'ennemi
         GetComponent<BoxCollider2D>().enabled = false;
+
+        // Désactiver le script LasagneHealth
         this.enabled = false;
+
+        // Détruire l'objet parent de l'ennemi (qui contient les animations et autres composants)
         Destroy(objectToDestroy);
     }
     void OnCollisionEnter2D(Collision2D collision)
@@ -89,9 +100,10 @@ public class LasagneHealth : MonoBehaviour
             {
                 lasagneHealth.TakeDamage(10);
             }
-            else if (collision.gameObject.CompareTag("Cafetière") && collision.gameObject.GetComponent<CafetiereController>().GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
+            CafetiereController cafetiere = collision.gameObject.GetComponent<CafetiereController>();
+           if (collision.gameObject.CompareTag("Cafetière") && collision.gameObject.GetComponent<CafetiereController>().GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
             {
-                lasagneHealth.TakeDamage(15);
+                lasagneHealth.TakeDamage(20);
             }
         }
     }
