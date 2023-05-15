@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7749013120450250723}
   - component: {fileID: 7749013120450250720}
   - component: {fileID: 7749013120450250721}
-  - component: {fileID: 641521222167547487}
   - component: {fileID: 1434274487}
+  - component: {fileID: 4412144787114989218}
   m_Layer: 10
   m_Name: "cafeti\xE8re"
   m_TagString: "Cafeti\xE8re"
@@ -135,21 +135,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &641521222167547487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7749013120450250750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aba6fed19b05f84fbe97632ed0517b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  durability: 5
-  isBeingHeld: 0
-  anim: {fileID: 1434274487}
 --- !u!95 &1434274487
 Animator:
   serializedVersion: 5
@@ -170,3 +155,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &4412144787114989218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749013120450250750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aba6fed19b05f84fbe97632ed0517b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  durability: 5
+  grabbingScript: {fileID: 0}
+  anim: {fileID: 1434274487}
