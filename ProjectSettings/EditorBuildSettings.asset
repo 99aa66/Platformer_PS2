@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelLasagneFight.unity
     guid: 6ba37fbb7ccf87c41bf561c3dfa4abd1
   - enabled: 1
+    path: Assets/Scenes/Level02.unity
+    guid: a4a6bce200b1768428cfd3e02cdb3456
+  - enabled: 1
     path: Assets/Scenes/LevelMama.unity
     guid: b20ff22e29a7ca2469250d5f37d92e51
   - enabled: 1

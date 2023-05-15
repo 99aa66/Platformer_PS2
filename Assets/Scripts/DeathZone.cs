@@ -6,7 +6,6 @@ public class DeathZone : MonoBehaviour
 {
     private Animator fadeSystem;
     public GameObject gameOverCanvas;
-    private bool triggered = false;
     private void Awake()
     {
         fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
@@ -54,13 +53,12 @@ public class DeathZone : MonoBehaviour
         yield return new WaitForSeconds(1f);
         hancheRef.transform.position = CurrentSceneManager.instance.respawnPoint;
         hancheRef.isKinematic = false;
-        triggered = false;
 
         // Afficher le canvas GameOver
         gameOverCanvas.SetActive(true);
         // Attendre 2 secondes avant de relancer le jeu
-        //yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2f);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //gameOverCanvas.SetActive(false);
+        gameOverCanvas.SetActive(false);
     }
 }

@@ -43,10 +43,10 @@ public class Grabbing : MonoBehaviour
             isHoldingObject = false;
         }
         // Vérifier si la cafetière est cassée
-        if (currentlyHolding != null && currentlyHolding.CompareTag("Cafetière"))
+        /*if (currentlyHolding != null && currentlyHolding.CompareTag("Cafetière"))
         {
             CafetiereController cafetiereController = currentlyHolding.GetComponent<CafetiereController>();
-            if (cafetiereController == null || (cafetiereController != null && cafetiereController.durability <= 0))
+            if (cafetiereController == null || cafetiereController.durability <= 0)
             {
                 if (joint != null)
                 {
@@ -56,7 +56,7 @@ public class Grabbing : MonoBehaviour
                 isHoldingObject = false;
                 currentlyHolding = null;
             }
-        }
+        }*/
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -89,6 +89,18 @@ public class Grabbing : MonoBehaviour
                 {
                     rb.isKinematic = false;
                 }
+
+                CafetiereController cafetiereController = currentlyHolding.GetComponent<CafetiereController>();
+                if (cafetiereController.gameObject==null || cafetiereController.durability <= 0)
+                {
+                    if (joint != null)
+                    {
+                        Destroy(joint);
+                        joint = null;
+                    }
+                    isHoldingObject = false;
+                    currentlyHolding = null;
+                }
             }
             else if (col.CompareTag("Player") || col.CompareTag("BossMama") || col.CompareTag("BossLasagne"))
             {
@@ -101,5 +113,12 @@ public class Grabbing : MonoBehaviour
             }
         }
     }
-
+    public void DestroyJoint()
+    {
+        if (joint != null)
+        {
+            Destroy(joint);
+            joint = null;
+        }
+    }
 }

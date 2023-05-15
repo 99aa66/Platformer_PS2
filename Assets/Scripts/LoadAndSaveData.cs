@@ -15,8 +15,6 @@ public class LoadAndSaveData : MonoBehaviour
 
         instance = this;
     }
-
-
     public void SaveData()
     {
         if (CurrentSceneManager.instance.levelToUnlock > PlayerPrefs.GetInt("levelReached", 1)) //on veut rejouer à d'anciens niveaux, la condition vérifie si le niveau qu'on vient de terminer n'a pas encore été atteint, valeur par défaut 1 donc 1er niveau

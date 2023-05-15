@@ -15,6 +15,8 @@ public class CafetiereController : MonoBehaviour
 
     private const float transparentAlpha = 0.5f;
 
+    public Grabbing grabbingScript;
+
     public Animator anim;
     void Awake()
     {
@@ -23,6 +25,7 @@ public class CafetiereController : MonoBehaviour
         anim = GetComponent<Animator>();
         initialPosition = transform.position;
         initialRotation = transform.rotation;
+        grabbingScript= GetComponent<Grabbing>();
     }
 
     private void Start()
@@ -36,18 +39,16 @@ public class CafetiereController : MonoBehaviour
         {
             anim.SetTrigger("break");
             sr.color = new Color(1f, 1f, 1f, transparentAlpha);
+            anim.SetTrigger("ResetPosition");
+            StartCoroutine(Static());
             ResetPosition();
         }
     }
     public void ResetPosition()
     {
-        anim.SetTrigger("ResetPosition");
-        rb.simulated = false; // désactiver le Rigidbody2D
         transform.position = initialPosition;
         transform.rotation = initialRotation;
         sr.color = Color.white;
-        StartCoroutine(Static());
-        rb.simulated = true;
         ResetDurability(); // Réinitialiser la durabilité
     }
     private void ResetDurability()
@@ -56,24 +57,29 @@ public class CafetiereController : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Ennemi") || col.gameObject.CompareTag("Glass"))
+        if (col.gameObject.CompareTag("Ennemi") || col.gameObject.CompareTag("Glass") || col.gameObject.CompareTag("Ground"))
         {
             DecrementDurability();
+            if (grabbingScript != null)
+            {
+                grabbingScript.DestroyJoint();
+            }
         }
-        else if (col.gameObject.CompareTag("Ground") && col.relativeVelocity.magnitude > 60f)
+        /*else if (col.gameObject.CompareTag("Ground") && !isHoldingObject && col.relativeVelocity.magnitude > 50f)
         {
+            isHoldingObject = false;
             anim.SetTrigger("break");
             ResetPosition();
-        }
+        }*/
     }
 
     private IEnumerator Static()
     {
         rb.bodyType = RigidbodyType2D.Static;
-
+        //rb.simulated = false;
         // Attendre 0,5 seconde pour que l'objet s'immobilise complètement
-        yield return new WaitForSeconds(0.5f);
-
+        yield return new WaitForSeconds(1f);
+        //rb.simulated = true;
         // Réaffecter le rb par défaut à l'objet
         rb.bodyType = RigidbodyType2D.Dynamic;
     }
