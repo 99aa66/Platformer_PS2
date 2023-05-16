@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3467995891240023626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0499992, y: 0.079, z: 0}
+  m_LocalPosition: {x: 3.0499992, y: 7.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3467995891514159400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.05, y: 16.76, z: 0}
+  m_LocalPosition: {x: 3.05, y: 41.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 3467995891731568538}
   - component: {fileID: 3467995891731568532}
   - component: {fileID: 3467995891731568539}
+  - component: {fileID: 167612246}
   m_Layer: 8
   m_Name: "marmite ouvert sans fum\xE9e"
   m_TagString: Obstacle
@@ -160,19 +161,32 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.059329033, y: 1.7065508}
+  m_Offset: {x: 0.0117836, y: 5.082277}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 5.02, y: 3.78}
+    oldSize: {x: 15.6875, y: 11.8125}
     newSize: {x: 5.02, y: 3.78}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.008974, y: 3.3249192}
+  m_Size: {x: 15.564066, y: 10.076371}
   m_EdgeRadius: 0
+--- !u!114 &167612246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467995891731568537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf68b1de19b1f04087061b82dba783d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverCanvas: {fileID: 0}
 --- !u!1 &3467995892928638177
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +201,7 @@ GameObject:
   - component: {fileID: 4860044656501863712}
   m_Layer: 6
   m_Name: couvercle marmite
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,8 +214,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3467995892928638177}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.01, y: 0.229, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.01, y: 8.04, z: 0}
+  m_LocalScale: {x: 1, y: 1.3625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3141206302983925396}
@@ -285,22 +299,22 @@ BoxCollider2D:
   m_GameObject: {fileID: 3467995892928638177}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 1e53a406b094e684db2eb67b100581ab, type: 2}
+  m_Material: {fileID: 6200000, guid: 90804052a4bad944684d4543ee1f766b, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.28482}
+  m_Offset: {x: -0.011238098, y: -0.9028873}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.33, y: 0.9}
+    oldSize: {x: 10.40625, y: 2.8125}
     newSize: {x: 3.36, y: 1.17}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.33, y: 0.3500027}
+  m_Size: {x: 10.499578, y: 1.0467321}
   m_EdgeRadius: 0
 --- !u!1 &4907180820694511676
 GameObject:
@@ -327,7 +341,7 @@ Transform:
   m_GameObject: {fileID: 4907180820694511676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 32.57, y: -4.05, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3467995892928638178}

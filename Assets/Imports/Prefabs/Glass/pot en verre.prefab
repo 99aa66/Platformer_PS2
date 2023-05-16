@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3853863622630278783}
   - component: {fileID: 3853863622630278782}
   - component: {fileID: 3853863622630278781}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: pot en verre
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3853863622630278780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -31.9, y: -6.16, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,18 +99,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.001408413, y: 0.5601036}
+  m_Offset: {x: -0.0013979077, y: 1.7298537}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.96, y: 1.12}
+    oldSize: {x: 3, y: 3.5}
     newSize: {x: 0.96, y: 1.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96833634, y: 1.1261576}
+  m_Size: {x: 3.007894, y: 3.465658}
   m_EdgeRadius: 0
 --- !u!114 &3853863622630278781
 MonoBehaviour:
