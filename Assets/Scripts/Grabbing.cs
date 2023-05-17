@@ -13,16 +13,19 @@ public class Grabbing : MonoBehaviour
     private bool isHoldingObject;
     private CafetiereController cafControl;
 
+    private FixedJoint2D jointhead;
+
     private void Start()
     {
         cafControl = GetComponent<CafetiereController>();
+        jointhead = GetComponent<FixedJoint2D>();
     }
     void Update()
     {
+        jointhead.enabled = false;
         if (Input.GetKeyDown(mouseButton) && !isHoldingObject)
         {
             canGrab = true;
-
         }
         if (Input.GetKeyUp(mouseButton))
         {
@@ -36,15 +39,7 @@ public class Grabbing : MonoBehaviour
 
         if (!canGrab && currentlyHolding != null )
         {
-            FixedJoint2D[] joints = currentlyHolding.GetComponents<FixedJoint2D>();
-            for (int i = 0; i < joints.Length; i++)
-            {
-                if (joints[i].connectedBody == head && joints[i].isActiveAndEnabled)
-                {
-                    Destroy(joints[i]);
-                }
-            }
-            joint = null;
+            jointhead.enabled = true;
             currentlyHolding = null;
             isHoldingObject = false;
         }
@@ -62,37 +57,12 @@ public class Grabbing : MonoBehaviour
         {
             currentlyHolding = col.gameObject;
             isHoldingObject = true;
-
-            FixedJoint2D[] joints = currentlyHolding.GetComponents<FixedJoint2D>();
-            bool alreadyConnected = false;
-
-            foreach (FixedJoint2D j in joints)
-            {
-                if (j.connectedBody == head)
-                {
-                    alreadyConnected = true;
-                    break;
-                }
-            }
-
-            if (!alreadyConnected)
-            {
-                joint = currentlyHolding.AddComponent<FixedJoint2D>();
-                joint.connectedBody = head;
-                joint.autoConfigureConnectedAnchor = false;
-            }
-
-            Rigidbody2D rb = currentlyHolding.GetComponent<Rigidbody2D>();
-
-            if (rb != null && rb.isKinematic)
-            {
-                rb.isKinematic = false;
-            }
-
-            else if ((cafControl.gameObject != null || cafControl.durability <= 0) && alreadyConnected)
-            {
-                DestroyJoint();
-            }
+            jointhead.enabled = true;
+            jointhead.autoConfigureConnectedAnchor = false;
+        }
+        else if ((cafControl.gameObject != null || cafControl.durability <= 0))
+        {
+            DestroyJoint();
         }
 
         else if (col.CompareTag("Player") || col.CompareTag("BossMama") || col.CompareTag("BossLasagne"))
