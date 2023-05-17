@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CafetiereController : MonoBehaviour
 {
-    public int durability = 6;
+    public int durability = 7;
     public bool isBroken { get { return durability <= 0; } }
     private Vector3 initialPosition;
     private Quaternion initialRotation;
@@ -14,8 +15,8 @@ public class CafetiereController : MonoBehaviour
 
     private const float transparentAlpha = 0.5f;
 
-    public Grabbing grabbingScript;
-    public Animator anim;
+    private bool activated = false;
+    [SerializeField] Animator anim;
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -23,7 +24,6 @@ public class CafetiereController : MonoBehaviour
         anim = GetComponent<Animator>();
         initialPosition = transform.position;
         initialRotation = transform.rotation;
-        grabbingScript= GetComponent<Grabbing>();
     }
 
     private void Start()
@@ -60,7 +60,7 @@ public class CafetiereController : MonoBehaviour
                 anim.SetTrigger("break");
                 sr.color = new Color(1f, 1f, 1f, transparentAlpha);
                 anim.SetTrigger("ResetPosition");
-                StartCoroutine(Static());
+                //StartCoroutine(Static());
                 ResetPosition();
                 break;
         }
@@ -75,20 +75,24 @@ public class CafetiereController : MonoBehaviour
     }
     private void ResetDurability()
     {
-        durability = 5;
+        durability = 7;
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Ennemi") || col.gameObject.CompareTag("Glass") || col.gameObject.CompareTag("Ground"))
+        if (col.gameObject.tag == "Ennemi" || col.gameObject.tag == "Glass" || col.gameObject.tag == "Ground")
         {
             DecrementDurability();
-            if (isBroken)
+        }
+        else if (col.gameObject.tag == "Player" && !activated)
+        {
+            if (rb != null)
             {
-                grabbingScript.DestroyJoint();
+                rb.bodyType = RigidbodyType2D.Dynamic;
+                activated = true;
             }
         }
     }
-    private IEnumerator Static()
+    /*private IEnumerator Static()
     {
         //yield return new WaitForSeconds(0.5f);
         rb.bodyType = RigidbodyType2D.Static;
@@ -96,5 +100,5 @@ public class CafetiereController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         // Réaffecter le rb par défaut à l'objet
         rb.bodyType = RigidbodyType2D.Dynamic;
-    }
+    }*/
 }

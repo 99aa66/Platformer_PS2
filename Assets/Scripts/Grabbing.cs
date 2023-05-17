@@ -1,83 +1,87 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class Grabbing : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D head;
+    [SerializeField] Rigidbody2D head;
     public KeyCode mouseButton;
     private bool canGrab;
-    private FixedJoint2D joint;
+    private FixedJoint2D jointhead;
 
     private GameObject currentlyHolding;
     private bool isHoldingObject;
-    private CafetiereController cafControl;
+    private bool isJointActive;
 
-    private FixedJoint2D jointhead;
-
-    private void Start()
+    private void Update()
     {
-        cafControl = GetComponent<CafetiereController>();
-        jointhead = GetComponent<FixedJoint2D>();
-    }
-    void Update()
-    {
-        jointhead.enabled = false;
-        if (Input.GetKeyDown(mouseButton) && !isHoldingObject)
+        if (Input.GetKeyDown(mouseButton))
         {
             canGrab = true;
         }
         if (Input.GetKeyUp(mouseButton))
         {
             canGrab = false;
-            if (joint != null)
-            {
-                Destroy(joint);
-                joint = null;
-            }
-        }
-
-        if (!canGrab && currentlyHolding != null )
-        {
-            jointhead.enabled = true;
-            currentlyHolding = null;
-            isHoldingObject = false;
+            ReleaseObject();
         }
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        cafControl = col.gameObject.GetComponent<CafetiereController>();
-
-        if (!canGrab || isHoldingObject)
-        {
-            return;
-        }
-
-        if (col.CompareTag("Cafetière"))
+        if (canGrab && currentlyHolding == null && col.gameObject.GetComponent<Rigidbody2D>() != null)
         {
             currentlyHolding = col.gameObject;
-            isHoldingObject = true;
-            jointhead.enabled = true;
-            jointhead.autoConfigureConnectedAnchor = false;
+            jointhead = head.gameObject.AddComponent<FixedJoint2D>();
+            jointhead.connectedBody = currentlyHolding.GetComponent<Rigidbody2D>();
         }
-        else if ((cafControl.gameObject != null || cafControl.durability <= 0))
+    }
+
+    private void ReleaseObject()
+    {
+        if (currentlyHolding != null && jointhead != null)
         {
-            DestroyJoint();
+            Destroy(jointhead);
+            jointhead = null;
+            currentlyHolding = null;
+        }
+    }
+    /*void Update()
+    {
+        if (!isJointActive)
+        {
+            jointhead.enabled = false;
+        }
+        if (Input.GetKeyDown(mouseButton) && !isHoldingObject)
+        {
+            canGrab = true;
+            jointhead.enabled = true;
+        }
+        if (Input.GetKeyUp(mouseButton))
+        {
+            canGrab = false;
+            jointhead.enabled = false;
         }
 
+        if (!canGrab)
+        {
+            isJointActive = false;
+            jointhead.enabled = false;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (canGrab && col.gameObject.GetComponent<Rigidbody2D>() != null && !isHoldingObject)
+        {
+            isHoldingObject = true;
+
+            if (jointhead.connectedBody != col.gameObject.GetComponent<Rigidbody2D>())
+            {
+                jointhead.connectedBody = col.gameObject.GetComponent<Rigidbody2D>();
+            }
+        }
         else if (col.CompareTag("Player") || col.CompareTag("BossMama") || col.CompareTag("BossLasagne"))
         {
             return;
         }
-    }
-    public void DestroyJoint()
-    {
-        if (joint != null)
-        {
-            Destroy(joint);
-            joint = null;
-        }
-        isHoldingObject = false;  // on indique que l'on ne tient plus d'objet
-        currentlyHolding = null;
-    }
+    }*/
 }
