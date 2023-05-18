@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LasagneHealth : MonoBehaviour
@@ -18,6 +16,7 @@ public class LasagneHealth : MonoBehaviour
     [SerializeField] bool isInvincible;
     [SerializeField] float invicibilityTimeAfterHit = 1f;
 
+    private Vector2 initialPosition = new Vector2(39.7f,-7.8f);
     [SerializeField] private GameObject porteLevel02Prefab;
     private GameObject porteLevel02Instance;
     private void Awake()
@@ -33,8 +32,7 @@ public class LasagneHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBarEnnemy.SetMaxHealth(maxHealth);
-        isInvincible = false;
-    }
+        isInvincible = false;    }
     void Update()
     {
         if (currentHealth <= 0)
@@ -75,7 +73,7 @@ public class LasagneHealth : MonoBehaviour
             H_HealPowerUp.velocity = new Vector2(Random.Range(-10, 10), 20);
         }
         // Instancier la porte
-        porteLevel02Instance = Instantiate(porteLevel02Prefab, transform.position, Quaternion.identity);
+        porteLevel02Instance = Instantiate(porteLevel02Prefab, initialPosition, Quaternion.identity);
 
         // Désactiver le collider de l'ennemi
         GetComponent<BoxCollider2D>().enabled = false;

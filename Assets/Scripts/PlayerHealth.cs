@@ -91,8 +91,19 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         PlayerController.instance.enabled = false; //bloquer les mouvements du personnage en désactivant le script PlayerController
-        Head.instance.enabled = false;
-        Head1.instance.enabled = false;
+        //Head.instance.enabled = false;
+        //Head1.instance.enabled = false;
+        PlayerController.instance.Hanchecol.enabled = false;
+        PlayerController.instance.Bustecol.enabled = false;
+        PlayerController.instance.Headcol.enabled = false;
+        PlayerController.instance.Top_Headcol.enabled = false;
+        PlayerController.instance.JambeDcol.enabled = false;
+        PlayerController.instance.TibiaDcol.enabled = false;
+        PlayerController.instance.PiedDcol.enabled = false;
+        PlayerController.instance.JambeGcol.enabled = false;
+        PlayerController.instance.TibiaGcol.enabled = false;
+        PlayerController.instance.PiedGcol.enabled = false;
+        PlayerController.instance.Grabheadcol.enabled = false;
         JambeD.color = new Color(1f, 1f, 1f, 0f);
         PiedD.color = new Color(1f, 1f, 1f, 0f);
         BrasD.color = new Color(1f, 1f, 1f, 0f);
@@ -106,16 +117,6 @@ public class PlayerHealth : MonoBehaviour
         bouche.color = new Color(1f, 1f, 1f, 0f);
         PlayerController.instance.anim.SetTrigger("Die");// jouer l'animation de mort dont l'animator a été récupérer du script PlayerController
         PlayerController.instance.rb.velocity = Vector3.zero; //velocité rb à 0
-        PlayerController.instance.Hanchecol.enabled = false;
-        PlayerController.instance.Bustecol.enabled = false;
-        PlayerController.instance.Headcol.enabled = false;
-        PlayerController.instance.Top_Headcol.enabled = false;
-        PlayerController.instance.JambeDcol.enabled = false;
-        PlayerController.instance.TibiaDcol.enabled = false;
-        PlayerController.instance.PiedDcol.enabled = false;
-        PlayerController.instance.JambeGcol.enabled = false;
-        PlayerController.instance.TibiaGcol.enabled = false;
-        PlayerController.instance.PiedGcol.enabled = false;
         Rigidbody2D[] rigidbodies = transform.root.GetComponentsInChildren<Rigidbody2D>();
         Rigidbody2D hancheRef = null;
         for (int i = 0; i < rigidbodies.Length; i++)
@@ -168,15 +169,26 @@ public class PlayerHealth : MonoBehaviour
     }
     public IEnumerator RespawnPlayer(Rigidbody2D hancheRef)
     {
-        yield return new WaitForSeconds(1.5f);
-        fadeSystem.SetTrigger("FadeIn");
+        //yield return new WaitForSeconds(1.5f);
+        //fadeSystem.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
         // replacer le joueur au dernier checkpoint
         hancheRef.transform.position = CurrentSceneManager.instance.respawnPoint; //position objet collision replacer au position de respawn
         hancheRef.isKinematic = false;
         PlayerController.instance.enabled = true; //bloquer les mouvements du personnage en désactivant le script PlayerController
-        Head.instance.enabled = true;
-        Head1.instance.enabled = true;
+        //Head.instance.enabled = true;
+        //Head1.instance.enabled = true;
+        PlayerController.instance.Hanchecol.enabled = true;
+        PlayerController.instance.Bustecol.enabled = true;
+        PlayerController.instance.Headcol.enabled = true;
+        PlayerController.instance.Top_Headcol.enabled = true;
+        PlayerController.instance.JambeDcol.enabled = true;
+        PlayerController.instance.TibiaDcol.enabled = true;
+        PlayerController.instance.PiedDcol.enabled = true;
+        PlayerController.instance.JambeGcol.enabled = true;
+        PlayerController.instance.TibiaGcol.enabled = true;
+        PlayerController.instance.PiedGcol.enabled = true;
+        PlayerController.instance.Grabheadcol.enabled = true;
         JambeD.color = new Color(1f, 1f, 1f, 1f); // réafficher le perso en opaque
         PiedD.color = new Color(1f, 1f, 1f, 1f);
         BrasD.color = new Color(1f, 1f, 1f, 1f);
@@ -189,16 +201,6 @@ public class PlayerHealth : MonoBehaviour
         oeil.color = new Color(1f, 1f, 1f, 1f);
         bouche.color = new Color(1f, 1f, 1f, 1f);
         PlayerController.instance.anim.SetTrigger("Idle");
-        PlayerController.instance.Hanchecol.enabled = true;
-        PlayerController.instance.Bustecol.enabled = true;
-        PlayerController.instance.Headcol.enabled = true;
-        PlayerController.instance.Top_Headcol.enabled = true;
-        PlayerController.instance.JambeDcol.enabled = true;
-        PlayerController.instance.TibiaDcol.enabled = true;
-        PlayerController.instance.PiedDcol.enabled = true;
-        PlayerController.instance.JambeGcol.enabled = true;
-        PlayerController.instance.TibiaGcol.enabled = true;
-        PlayerController.instance.PiedGcol.enabled = true;
         // réinitialiser la santé
         currentHealth = maxHealth;
         HealthBar.SetHealth(currentHealth);

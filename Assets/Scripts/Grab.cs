@@ -4,7 +4,6 @@ public class Grab : MonoBehaviour
 {
     private bool hold;
     private FixedJoint2D currentJoint; // Stocker le joint actuel
-
     private void Update()
     {
         if (Input.GetKey(KeyCode.Mouse0) || (Input.GetAxis("Grab")>0.5f))

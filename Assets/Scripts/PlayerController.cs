@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     public PolygonCollider2D JambeGcol;
     public PolygonCollider2D TibiaGcol;
     public CapsuleCollider2D PiedGcol;
+    public CircleCollider2D Grabheadcol;
     private void Awake()
     {
         if (instance != null)
