@@ -13,8 +13,7 @@ public class CafetiereController : MonoBehaviour
     private SpriteRenderer sr;
     private Rigidbody2D rb;
 
-    private const float transparentAlpha = 0.5f;
-
+    private float transparentAlpha = 0.5f;
     [SerializeField] Animator anim;
     void Awake()
     {
@@ -28,35 +27,36 @@ public class CafetiereController : MonoBehaviour
     {
         durability--;
 
-        switch (durability)
+        if (durability == 5)
         {
-            case 5:
-                sr.color = Color.white;
-                Debug.Log("Color changed to yellow");
-                break;
-            case 4:
-                sr.color = Color.yellow;
-                Debug.Log("Color changed to yellow");
-                break;
-            case 3:
-                sr.color = new Color(1f, 0.5f, 0f);
-                Debug.Log("Color changed to orange");
-                break;
-            case 2:
-                sr.color = new Color(1f, 0.3f, 0f);
-                Debug.Log("Color changed to dark orange");
-                break;
-            case 1:
-                sr.color = Color.red;
-                Debug.Log("Color changed to red");
-                break;
-            default:
-                anim.SetTrigger("break");
-                sr.color = new Color(1f, 1f, 1f, transparentAlpha);
-                StartCoroutine(Static());
-                ResetPosition();
-                anim.SetTrigger("ResetPosition");
-                break;
+            sr.color = Color.white;
+        }
+        else if (durability == 4)
+        {
+            sr.color = Color.yellow;
+        }
+        else if (durability == 3)
+        {
+            sr.color = new Color(1f, 0.5f, 0f);
+        }
+        else if (durability == 2)
+        {
+            sr.color = new Color(1f, 0.3f, 0f);
+        }
+        else if (durability == 2)
+        {
+            sr.color = Color.red;
+        }
+        else if (durability == 1)
+        {
+            sr.color = Color.red;
+        }
+        else if (durability <= 0)
+        {
+            anim.SetTrigger("break");
+            sr.color = new Color(1f, 1f, 1f, transparentAlpha);
+            anim.SetTrigger("ResetPosition");
+            StartCoroutine(Static());
         }
     }
 
@@ -80,11 +80,9 @@ public class CafetiereController : MonoBehaviour
     }
     private IEnumerator Static()
     {
-        yield return new WaitForSeconds(0.5f);
         rb.bodyType = RigidbodyType2D.Static;
-        // Attendre 1 seconde pour que l'objet s'immobilise complètement
-        yield return new WaitForSeconds(1f);
-        // Réaffecter le rb par défaut à l'objet
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length); // Attendre la fin de l'animation "break" avant de faire réapparaîte cafetière à position d'origine
+        ResetPosition();
         rb.bodyType = RigidbodyType2D.Dynamic;
     }
 }

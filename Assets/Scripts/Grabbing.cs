@@ -33,8 +33,18 @@ public class Grabbing : MonoBehaviour
             currentlyHolding = col.gameObject;
             jointhead = head.gameObject.AddComponent<FixedJoint2D>();
             jointhead.connectedBody = currentlyHolding.GetComponent<Rigidbody2D>();
+
+            if (col.gameObject.tag == "Cafetière")
+            {
+                Rigidbody2D rb = currentlyHolding.GetComponent<Rigidbody2D>();
+
+                if (rb != null && rb.isKinematic)
+                {
+                    rb.isKinematic = false;
+                }
+            }
         }
-        if (col.gameObject.tag == "Cafetière")
+        /*if (col.gameObject.tag == "Cafetière")
         {
             Rigidbody2D rb = currentlyHolding.GetComponent<Rigidbody2D>();
 
@@ -42,7 +52,7 @@ public class Grabbing : MonoBehaviour
             {
                 rb.isKinematic = false;
             }
-        }
+        }*/
     }
 
     private void ReleaseObject()
