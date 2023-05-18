@@ -95,8 +95,8 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: PartieG
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -117,8 +117,8 @@ ScriptedImporter:
     spritePosition: {x: 4, y: 4}
   - name: PartieD
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2

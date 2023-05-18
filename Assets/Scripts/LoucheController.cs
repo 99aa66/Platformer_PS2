@@ -18,7 +18,7 @@ public class LoucheController : MonoBehaviour
     {
         transform.position = initialPosition;
         transform.rotation = initialRotation;
-        //StartCoroutine(Static());
+        StartCoroutine(Static());
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -30,13 +30,12 @@ public class LoucheController : MonoBehaviour
                 activated = true;
             }
         }
-        if(collision.gameObject.tag == "Ground")
+        if(collision.gameObject.tag == "Ground" && collision.gameObject.tag == "Player")
         {
-            rb.bodyType = RigidbodyType2D.Static;
-
+            rb.velocity = Vector2.zero;
         }
     }
-    /*private IEnumerator Static()
+    private IEnumerator Static()
     {
         rb.bodyType = RigidbodyType2D.Static;
 
@@ -45,5 +44,5 @@ public class LoucheController : MonoBehaviour
 
         // Réaffecter le rb par défaut à l'objet
         rb.bodyType = RigidbodyType2D.Dynamic;
-    }*/
+    }
 }

@@ -15,20 +15,14 @@ public class CafetiereController : MonoBehaviour
 
     private const float transparentAlpha = 0.5f;
 
-    private bool activated = false;
     [SerializeField] Animator anim;
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>(); // Récupération du composant Rigidbody2D
         anim = GetComponent<Animator>();
-        initialPosition = transform.position;
-        initialRotation = transform.rotation;
-    }
-
-    private void Start()
-    {
-        ResetDurability();
+        initialPosition = transform.localPosition;
+        initialRotation = transform.localRotation;
     }
     public void DecrementDurability()
     {
@@ -59,17 +53,17 @@ public class CafetiereController : MonoBehaviour
             default:
                 anim.SetTrigger("break");
                 sr.color = new Color(1f, 1f, 1f, transparentAlpha);
-                anim.SetTrigger("ResetPosition");
-                //StartCoroutine(Static());
+                StartCoroutine(Static());
                 ResetPosition();
+                anim.SetTrigger("ResetPosition");
                 break;
         }
     }
 
     public void ResetPosition()
     {
-        transform.position = initialPosition;
-        transform.rotation = initialRotation;
+        transform.localPosition = initialPosition;
+        transform.localRotation = initialRotation;
         sr.color = Color.white;
         ResetDurability(); // Réinitialiser la durabilité
     }
@@ -83,22 +77,14 @@ public class CafetiereController : MonoBehaviour
         {
             DecrementDurability();
         }
-        else if (col.gameObject.tag == "Player" && !activated)
-        {
-            if (rb != null)
-            {
-                rb.bodyType = RigidbodyType2D.Dynamic;
-                activated = true;
-            }
-        }
     }
-    /*private IEnumerator Static()
+    private IEnumerator Static()
     {
-        //yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.5f);
         rb.bodyType = RigidbodyType2D.Static;
         // Attendre 1 seconde pour que l'objet s'immobilise complètement
         yield return new WaitForSeconds(1f);
         // Réaffecter le rb par défaut à l'objet
         rb.bodyType = RigidbodyType2D.Dynamic;
-    }*/
+    }
 }
