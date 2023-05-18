@@ -55,7 +55,6 @@ public class CafetiereController : MonoBehaviour
         {
             anim.SetTrigger("break");
             sr.color = new Color(1f, 1f, 1f, transparentAlpha);
-            anim.SetTrigger("ResetPosition");
             StartCoroutine(Static());
         }
     }
@@ -80,8 +79,9 @@ public class CafetiereController : MonoBehaviour
     }
     private IEnumerator Static()
     {
-        rb.bodyType = RigidbodyType2D.Static;
         yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length); // Attendre la fin de l'animation "break" avant de faire réapparaîte cafetière à position d'origine
+        rb.bodyType = RigidbodyType2D.Static;
+        anim.SetTrigger("ResetPosition");
         ResetPosition();
         rb.bodyType = RigidbodyType2D.Dynamic;
     }

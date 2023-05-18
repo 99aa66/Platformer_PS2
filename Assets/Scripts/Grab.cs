@@ -7,7 +7,7 @@ public class Grab : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) || (Input.GetAxis("Grab")>0.5f))
         {
             hold = true;
         }
