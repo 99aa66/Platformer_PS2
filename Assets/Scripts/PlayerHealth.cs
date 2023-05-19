@@ -48,14 +48,6 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         HealthBar.SetMaxHealth(maxHealth);
     }
-
-   /*private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage(60);
-        }
-    }*/
     public void HealPlayer(int amount)
     {
         if ((currentHealth + amount) > maxHealth)
@@ -91,8 +83,6 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         PlayerController.instance.enabled = false; //bloquer les mouvements du personnage en désactivant le script PlayerController
-        //Head.instance.enabled = false;
-        //Head1.instance.enabled = false;
         PlayerController.instance.Hanchecol.enabled = false;
         PlayerController.instance.Bustecol.enabled = false;
         PlayerController.instance.Headcol.enabled = false;
@@ -169,15 +159,11 @@ public class PlayerHealth : MonoBehaviour
     }
     public IEnumerator RespawnPlayer(Rigidbody2D hancheRef)
     {
-        //yield return new WaitForSeconds(1.5f);
-        //fadeSystem.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
         // replacer le joueur au dernier checkpoint
         hancheRef.transform.position = CurrentSceneManager.instance.respawnPoint; //position objet collision replacer au position de respawn
         hancheRef.isKinematic = false;
         PlayerController.instance.enabled = true; //bloquer les mouvements du personnage en désactivant le script PlayerController
-        //Head.instance.enabled = true;
-        //Head1.instance.enabled = true;
         PlayerController.instance.Hanchecol.enabled = true;
         PlayerController.instance.Bustecol.enabled = true;
         PlayerController.instance.Headcol.enabled = true;

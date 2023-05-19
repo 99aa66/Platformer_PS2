@@ -657,7 +657,7 @@ MonoBehaviour:
   obstacleDetection: {fileID: 7755642885734488443}
   Default:
     serializedVersion: 2
-    m_Bits: 1345
+    m_Bits: 1349
   moveSpeed: 5
   circleRadius: 0.5
   jumpHeight: 18
