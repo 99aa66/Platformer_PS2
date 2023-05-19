@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float movementForce;
     [SerializeField] float jumpForce;
-    [Range(0f, 100f)] public float raycastDistance = 4f;
+    [Range(0f, 100f)] public float raycastDistance = 1.5f;
 
     public float positionRadius;
     public bool isGrounded;
@@ -71,11 +71,11 @@ public class PlayerController : MonoBehaviour
         {
             can_jump = true;
         }
-        if (rb.velocity.y < -8f)
+        if (rb.velocity.y < -9f)
         {
             rb.gravityScale = 60;
         }
-        else rb.gravityScale = 10;
+        else rb.gravityScale = 12;
     }
 
     private void FixedUpdate()

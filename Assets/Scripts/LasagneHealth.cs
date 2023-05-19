@@ -89,9 +89,7 @@ public class LasagneHealth : MonoBehaviour
         LasagneHealth lasagneHealth = GetComponent<LasagneHealth>();
         if (collision.gameObject.CompareTag("Player"))
         {
-            Head1 head1 = collision.gameObject.GetComponent<Head1>();
-            Head head = collision.gameObject.GetComponent<Head>();
-            bool isAttacking = (head1 != null && head1.isAttacking) || (head != null && head.isAttacking);
+            bool isAttacking = Head1.isAttacking || (collision.gameObject.GetComponent<Head>()?.isAttacking ?? false);
 
             if (isAttacking)
             {

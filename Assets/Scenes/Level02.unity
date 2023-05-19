@@ -5690,6 +5690,10 @@ PrefabInstance:
       propertyPath: Grabheadcol
       value: 
       objectReference: {fileID: 798378304}
+    - target: {fileID: 3726854767838255432, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+      propertyPath: raycastDistance
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3726854767838255438, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
       propertyPath: HealthBar
       value: 

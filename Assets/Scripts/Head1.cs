@@ -10,7 +10,7 @@ public class Head1 : MonoBehaviour
     [SerializeField] float distMax = 3;
     public GameObject playerPos;
     float restingAngle = 90f;
-    public bool isAttacking;
+    public static bool isAttacking;
 
     public static Head1 instance;
 

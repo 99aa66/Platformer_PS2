@@ -107,7 +107,7 @@ public class IAJumpFusilliAttacking : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            bool isAttacking = (collision.gameObject.GetComponent<Head1>()?.isAttacking ?? false) || (collision.gameObject.GetComponent<Head>()?.isAttacking ?? false);
+            bool isAttacking = Head1.isAttacking || (collision.gameObject.GetComponent<Head>()?.isAttacking ?? false);
 
             if (!isAttacking)
             {
