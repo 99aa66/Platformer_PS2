@@ -3164,7 +3164,7 @@ PrefabInstance:
     - target: {fileID: 3467995892928638179, guid: a8d849a438de1b34999dc647684d93c6, type: 3}
       propertyPath: playerPos
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1929891090}
     - target: {fileID: 4907180820694511676, guid: a8d849a438de1b34999dc647684d93c6, type: 3}
       propertyPath: m_Name
       value: Marmite
@@ -3486,6 +3486,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+--- !u!1 &1929891090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5295717294985708648, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+  m_PrefabInstance: {fileID: 1929891089}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1986481995 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1846082997129847515, guid: 0462868ac1f12d249b209b0b566f8690, type: 3}
@@ -3565,7 +3570,7 @@ PrefabInstance:
     - target: {fileID: 3467995892928638179, guid: a8d849a438de1b34999dc647684d93c6, type: 3}
       propertyPath: playerPos
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1929891090}
     - target: {fileID: 4907180820694511676, guid: a8d849a438de1b34999dc647684d93c6, type: 3}
       propertyPath: m_Name
       value: Marmite (1)
