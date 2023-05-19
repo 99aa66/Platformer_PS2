@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,8 +5,8 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float movementForce;
     [SerializeField] float jumpForce;
-    [Space(5)]
-    [Range(0f, 100f)] public float raycastDistance = 1.5f;
+    [Space(3)]
+    [Range(0f, 100f)] public float raycastDistance = 2f;
 
     public float positionRadius;
     public bool isGrounded;
@@ -78,7 +76,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.gravityScale = 50;
         }
-        else rb.gravityScale = 25;
+        else rb.gravityScale = 18;
     }
 
     private void FixedUpdate()

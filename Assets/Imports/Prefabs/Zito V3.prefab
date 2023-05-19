@@ -636,11 +636,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 90804052a4bad944684d4543ee1f766b, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -658,8 +658,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.3480241, y: -0.07272651}
-  m_Size: {x: 0.93867356, y: 0.17850669}
+  m_Offset: {x: 0.2874698, y: -0.07586692}
+  m_Size: {x: 0.9123911, y: 0.12805846}
   m_Direction: 1
 --- !u!233 &3726854768175786793
 HingeJoint2D:
@@ -1008,11 +1008,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 90804052a4bad944684d4543ee1f766b, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -1030,8 +1030,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.43169194, y: -0.10974979}
-  m_Size: {x: 1.1083043, y: 0.17448696}
+  m_Offset: {x: 0.38611567, y: -0.08703047}
+  m_Size: {x: 0.9501782, y: 0.13406089}
   m_Direction: 1
 --- !u!233 &3726854768122003316
 HingeJoint2D:
@@ -1119,7 +1119,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -1912,12 +1912,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.30488494, y: 0.20862119}
+    - - {x: 0.3795704, y: 0.20181759}
       - {x: 0.086379655, y: 0.2115306}
       - {x: -0.06922805, y: 0.13816643}
       - {x: 0.07163347, y: -0.16803414}
-      - {x: 0.39217216, y: -0.06820485}
-      - {x: 0.3762083, y: 0.029856533}
+      - {x: 0.4287965, y: -0.0677476}
+      - {x: 0.42777738, y: 0.044273827}
 --- !u!233 &3726854766305375565
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -2141,8 +2141,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.04089707, y: 0.5699531}
-      - {x: -0.14249903, y: 0.41500953}
-      - {x: -0.14895703, y: -0.33757088}
+      - {x: -0.10706812, y: 0.4099436}
+      - {x: -0.12871243, y: -0.32492137}
       - {x: -0.034065, y: -0.44800857}
       - {x: 1.1150855, y: -0.4676403}
       - {x: 1.1314831, y: 0.56152135}
@@ -2299,6 +2299,7 @@ MonoBehaviour:
   JambeGcol: {fileID: 3726854766321699796}
   TibiaGcol: {fileID: 3726854766170395098}
   PiedGcol: {fileID: 3726854768122003317}
+  Grabheadcol: {fileID: 3726854768061545558}
 --- !u!1 &5046839769947524599
 GameObject:
   m_ObjectHideFlags: 0
@@ -2531,7 +2532,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -3270,11 +3271,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8846855792238885195, guid: f080bcb006f252d4cb04d75a17540a34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.793
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8846855792238885195, guid: f080bcb006f252d4cb04d75a17540a34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.073
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 8846855792238885195, guid: f080bcb006f252d4cb04d75a17540a34, type: 3}
       propertyPath: m_LocalPosition.z
