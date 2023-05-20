@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7306696103580165345}
   - component: {fileID: 7306696103580165344}
-  - component: {fileID: 7306696103580165351}
+  - component: {fileID: 698992110928459378}
   m_Layer: 0
   m_Name: PorteCredits
   m_TagString: Untagged
@@ -47,7 +47,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 7.798271, y: 6.956236}
+  m_Offset: {x: 8.509261, y: 7.0083365}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -58,9 +58,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.69043, y: 12.8518715}
+  m_Size: {x: 9.26845, y: 12.74767}
   m_EdgeRadius: 0
---- !u!114 &7306696103580165351
+--- !u!114 &698992110928459378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,9 +69,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7306696103580165350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf42bfc62d7418d4281abf30a3c74cf0, type: 3}
+  m_Script: {fileID: 11500000, guid: f308795bf7ac1234cb30b06d4ab96e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VictoryAnimationContainer: {fileID: 0}
+  victoryAnimator: {fileID: 0}
   sceneName: Credits
 --- !u!1 &7306696103935058647
 GameObject:

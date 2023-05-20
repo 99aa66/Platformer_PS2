@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 562}
+  m_AnchoredPosition: {x: 0, y: 474}
   m_SizeDelta: {x: 368, y: 368}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &72115935
@@ -257,14 +257,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<SIZE=12><B>PLATFORMER  2D</B>\\r\n</SIZE>\n<SIZE=6>PROJET SEMESTRE 2</SIZE>\n<SIZE=5>2022/2023</SIZE>\n\n\n<SIZE=8><B>ASSETS</B>\\r</SIZE>\n\n<SIZE=6>-\r  
+  m_text: "<SIZE=12><B>SOGGO ZITO</B>\\r\n</SIZE>\n<SIZE=6>PLATFORMER 2D</SIZE>\n<SIZE=5>PROJET
+    SEMESTRE 2 - 2022/2023</SIZE>\n\n\n<SIZE=8><B>ASSETS</B>\\r</SIZE>\n\n<SIZE=6>-\r  
     GRAPHICS  -</SIZE>\n<SIZE=4> By JAUZE Lauriane</I></SIZE>\n\n<SIZE=6>-\r   GAME
     DEVELOPER  -</SIZE>\n<SIZE=4> By JAUZE Lauriane</I></SIZE>\n\n<SIZE=6>-\r   AUDIO 
     -</SIZE>\n<SIZE=4>ECRAN TITRE & IN GAME\\r\\n<I>By  Mathieu LIGDAMIS</I></SIZE>\n\n<SIZE=6>-\r  
     FONT  -</SIZE>\n<SIZE=4>Sunny Spells\\r\\n<I>By  Niskala HURUF</I></SIZE>\n\n\n<SIZE=8>SPECIAL 
-    THANKS</SIZE>\n\n<SIZE=4><I>Enseignants de l'ESMA Montpellier\n\nPapyGoustave\nVrais
-    de Vrais\nDalons\nArchiPotes\n\nFamille\n\nHope <SIZE=3>(le meilleur des chats)</SIZE>\n\nYOUTUBE</I></SIZE>\n<SIZE=3><I>Tuto 
-    Unity  Fr \nBrackeys\nAdrenalyzed\nRomi Fauzi\nChrono ABI\nRehope Games\nUnityPourLesNuls</I></SIZE>"
+    THANKS</SIZE>\n\n<SIZE=4><I>Enseignants de l'ESMA Montpellier\nEmanuele CIRRONIS
+    & HIRSCH Sacha\nLes camarades de classe\n\nPapyGoustave\nVrais de Vrais\nDalons\nArchiPotes\n\nFamille\n\nHope
+    <SIZE=3>(le meilleur des chats)</SIZE>\n\nYOUTUBE</I></SIZE>\n<SIZE=3><I>Tuto 
+    Unity  FR \nBrackeys\nAdrenalyzed\nRomi Fauzi\nChrono ABI\nRehope Games\nUnityPourLesNuls</I></SIZE>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f5ebbc7f62014c45afc726851c85f7c, type: 2}
   m_sharedMaterial: {fileID: -6292530887239417655, guid: 4f5ebbc7f62014c45afc726851c85f7c, type: 2}

@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Lasagne_Run : StateMachineBehaviour
 {
-
-    public float speed = 3f;
-    public float attackRange = 7f;
+    [SerializeField]float speed = 3f;
+    [SerializeField] float attackRange = 5f;
 
     Transform player;
     Rigidbody2D rb;

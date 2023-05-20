@@ -11,7 +11,6 @@ public class Destructible : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player") && isAttacking)
         {
-
             PlayerHealth.instance.TakeDamage(damageOnCollision);
             GameObject brokenObject = Instantiate(destroyedVersion,transform.position,transform.rotation);
             Destroy(brokenObject, destroyDelay);

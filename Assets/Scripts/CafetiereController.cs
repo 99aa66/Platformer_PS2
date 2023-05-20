@@ -64,7 +64,6 @@ public class CafetiereController : MonoBehaviour
         transform.localPosition = initialPosition;
         transform.localRotation = initialRotation;
         sr.color = Color.white;
-        rb.velocity = Vector2.zero;
         ResetDurability(); // Réinitialiser la durabilité
     }
     private void ResetDurability()
@@ -84,6 +83,6 @@ public class CafetiereController : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("ResetPosition");
         ResetPosition();
-        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.bodyType = RigidbodyType2D.Kinematic;
     }
 }
