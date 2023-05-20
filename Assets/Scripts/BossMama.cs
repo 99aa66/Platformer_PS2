@@ -9,6 +9,7 @@ public class BossMama : MonoBehaviour
     private Collider2D bossCollider; // Le Collider du boss
     private Rigidbody2D bossRb; // Le Rigidbody du boss
     private bool isBossBlocked = false; // Variable de contrôle pour vérifier si le boss est bloqué
+    private Animator bossMamaAnimator;
 
     [SerializeField] GameObject porteCredits;
     [SerializeField] GameObject gameOverCanvas;
@@ -24,6 +25,7 @@ public class BossMama : MonoBehaviour
     {
         bossRb = GetComponent<Rigidbody2D>();
         bossCollider = GetComponent<Collider2D>();
+        bossMamaAnimator = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -59,8 +61,8 @@ public class BossMama : MonoBehaviour
         else if (collision.collider.gameObject == objectToDrop && !isBossBlocked)
         {
             bossRb.bodyType = RigidbodyType2D.Static;
-            bossRb.velocity = Vector2.zero;
             isBossBlocked = true; // Le boss est bloqué
+            bossMamaAnimator.SetBool("isBossBlocked", true);
             porteCredits.SetActive(true); // Activation de l'objet porte crédits
         }
     }
