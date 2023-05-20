@@ -64,6 +64,7 @@ public class CafetiereController : MonoBehaviour
         transform.localPosition = initialPosition;
         transform.localRotation = initialRotation;
         sr.color = Color.white;
+        rb.velocity = Vector2.zero;
         ResetDurability(); // Réinitialiser la durabilité
     }
     private void ResetDurability()
