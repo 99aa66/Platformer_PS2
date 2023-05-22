@@ -6,6 +6,7 @@ public class Grab : MonoBehaviour
     private FixedJoint2D currentJoint; // Stocker le joint actuel
     private Collider2D grabHeadCollider;
 
+    public AudioClip grabSound;
     private void Start()
     {
         grabHeadCollider = GetComponent<Collider2D>();
@@ -39,6 +40,11 @@ public class Grab : MonoBehaviour
                     rb.isKinematic = false;
                     currentJoint = gameObject.AddComponent<FixedJoint2D>(); // Ajout du joint à l'objet actuel
                     currentJoint.connectedBody = rb;
+                    if (collision.gameObject.tag == "Cafetière")
+                    {
+                        AudioManager.instance.PlayClipAt(grabSound, transform.position);
+                    }
+                     
                 }
             }
         }

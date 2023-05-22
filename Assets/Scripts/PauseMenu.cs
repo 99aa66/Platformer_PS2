@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
 
     private Animator fadeSystem;
 
-    //public GameObject settingsWindow;
+    public GameObject settingsWindow;
 
     private void Awake()
     {
@@ -47,7 +47,7 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
     }
 
-    /*public void OpenSettingsWindow()
+    public void OpenSettingsWindow()
     {
         settingsWindow.SetActive(true);
     }
@@ -55,7 +55,7 @@ public class PauseMenu : MonoBehaviour
     public void CloseSettingsWindow()
     {
         settingsWindow.SetActive(false);
-    }*/
+    }
 
     public void LoadMainMenu()
     {

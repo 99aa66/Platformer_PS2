@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5089534871438080944
 RectTransform:
   m_ObjectHideFlags: 0
@@ -180,12 +180,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<SIZE=2><B>GAME OVER</B>\r
-
-    </SIZE>'
+  m_text: GAME OVER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f5ebbc7f62014c45afc726851c85f7c, type: 2}
-  m_sharedMaterial: {fileID: -6292530887239417655, guid: 4f5ebbc7f62014c45afc726851c85f7c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 45ae4fadad173b1409b6e41a39e117ea, type: 2}
+  m_sharedMaterial: {fileID: 2257306272250884196, guid: 45ae4fadad173b1409b6e41a39e117ea, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -209,8 +207,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2
-  m_fontSizeBase: 2
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -127,3 +127,4 @@ MonoBehaviour:
   destroyedVersion: {fileID: 8452860938426288596, guid: b4edd25554696d34cac32e76c20342dc, type: 3}
   destroyDelay: 1
   damageOnCollision: 5
+  glassSound: {fileID: 8300000, guid: 8962cb3d6d0ee2e4ca5aeba2f688f4e1, type: 3}

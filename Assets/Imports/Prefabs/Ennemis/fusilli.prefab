@@ -684,6 +684,7 @@ MonoBehaviour:
   currentHealth: 0
   healthBarEnnemy: {fileID: 1271409930}
   takeDamage: 0
+  deadSound: {fileID: 8300000, guid: 6f8b38f6701caf74eba36398b9d9b6d2, type: 3}
 --- !u!1 &7755642887651500006
 GameObject:
   m_ObjectHideFlags: 0

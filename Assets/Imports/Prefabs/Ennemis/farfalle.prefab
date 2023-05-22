@@ -292,7 +292,7 @@ MonoBehaviour:
   is_attacking: 0
   groundCheck: {fileID: 2474510314808706181}
   boxSize: {x: 0, y: 0}
-  attack_point: {fileID: 6059785635356767827}
+  attack_point: {fileID: 0}
   enemy_layers:
     serializedVersion: 2
     m_Bits: 128
@@ -312,6 +312,7 @@ MonoBehaviour:
   currentHealth: 0
   healthBarEnnemy: {fileID: 1319901571569585013}
   takeDamage: 0
+  deadSound: {fileID: 8300000, guid: 6f8b38f6701caf74eba36398b9d9b6d2, type: 3}
 --- !u!1 &1319901570881159467
 GameObject:
   m_ObjectHideFlags: 0

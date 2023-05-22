@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 3bd2ca781f7403945b25214232f0e28a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Chomiku 3D
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1ca5342f5cd375a4680e07aa5f16aa9f, type: 3}
+  - {fileID: 12800000, guid: 751d241f8f1bb464c91c6541a674d7cc, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         {
             can_jump = true;
         }
-        if (rb.velocity.y < -9f)
+        if (rb.velocity.y < -10f)
         {
             rb.gravityScale = 60;
         }
@@ -114,7 +114,6 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Walk", false);
             anim.SetBool("WalkBack", false);
         }
-
     }
     private void OnDrawGizmos()
     {

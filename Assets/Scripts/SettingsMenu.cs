@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -18,10 +18,10 @@ public class SettingsMenu : MonoBehaviour
     public void Start()
     {
         audioMixer.GetFloat("Music", out float musicValueForSlider);
-        /*musicSlider.value = musicValueForSlider;
+        musicSlider.value = musicValueForSlider;
 
         audioMixer.GetFloat("Sound", out float soundValueForSlider);
-        soundSlider.value = soundValueForSlider;*/
+        soundSlider.value = soundValueForSlider;
 
         resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray(); // pour ne pas afficher résolutions en dupliquées
         resolutionDropdown.ClearOptions();

@@ -1,9 +1,11 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
     private Animator anim;
 
+    public AudioClip waterSound;
     private void Awake()
     {
         anim = GetComponentInChildren<Animator>(); ;
@@ -12,10 +14,10 @@ public class Checkpoint : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            AudioManager.instance.PlayClipAt(waterSound, transform.position);
             CurrentSceneManager.instance.respawnPoint = transform.position;
             anim.SetTrigger("Play");
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            
         }
     }
 }

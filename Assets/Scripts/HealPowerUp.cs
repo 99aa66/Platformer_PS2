@@ -5,13 +5,15 @@ using UnityEngine;
 public class HealPowerUp : MonoBehaviour
 {
     public int healthPoints;
+
+    public AudioClip sound;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
-            // rendre de la vie au joueur + garder coeur sur map si max de vie
-            if (PlayerHealth.instance.currentHealth != PlayerHealth.instance.maxHealth)
+            if (PlayerHealth.instance.currentHealth != PlayerHealth.instance.maxHealth) // rendre de la vie au joueur + garder coeur sur map si max de vie
             {
+                AudioManager.instance.PlayClipAt(sound, transform.position);
                 PlayerHealth.instance.HealPlayer(healthPoints);
                 Destroy(gameObject);
             }
