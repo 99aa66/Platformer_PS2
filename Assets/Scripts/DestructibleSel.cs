@@ -5,10 +5,13 @@ public class DestructibleSel : MonoBehaviour
     public GameObject destroyedVersion;
     public float destroyDelay = 1.5f;
     public GameObject selPrefab;
+
+    public AudioClip breakSound;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("BossMama"))
         {
+            AudioManager.instance.PlayClipAt(breakSound, transform.position);
             GameObject brokenObject = Instantiate(destroyedVersion, transform.position, transform.rotation);
             Destroy(brokenObject, destroyDelay);
             Destroy(gameObject);

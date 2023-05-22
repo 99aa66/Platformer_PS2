@@ -8,11 +8,12 @@ public class Victory : MonoBehaviour
     public Animator victoryAnimator;
 
     public string sceneName;
-
+    public AudioClip achieveSound;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            AudioManager.instance.PlayClipAt(achieveSound, transform.position);
             StartCoroutine(PlayVictoryAnimation());
         }
     }
