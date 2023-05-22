@@ -8116,6 +8116,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3726854766170395097, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+      propertyPath: m_UseMotor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726854766170395097, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+      propertyPath: m_Motor.m_MotorSpeed
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726854766305375565, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+      propertyPath: m_UseMotor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726854766305375565, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+      propertyPath: m_Motor.m_MotorSpeed
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726854766321699802, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+      propertyPath: force
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 3726854766765566727, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
       propertyPath: HealthBar
       value: 
@@ -8136,6 +8156,18 @@ PrefabInstance:
       propertyPath: selectedBoxCollider
       value: 
       objectReference: {fileID: 46966917}
+    - target: {fileID: 3726854767149741843, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+      propertyPath: m_UseMotor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726854767149741843, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+      propertyPath: m_Motor.m_MotorSpeed
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726854767149741843, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+      propertyPath: m_Motor.m_MaximumMotorForce
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 3726854767287543056, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
       propertyPath: HealthBar
       value: 
@@ -8144,6 +8176,10 @@ PrefabInstance:
       propertyPath: fadeSystem
       value: 
       objectReference: {fileID: 1856424787}
+    - target: {fileID: 3726854767287543057, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+      propertyPath: force
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 3726854767838255432, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
       propertyPath: camFollow
       value: 
@@ -8164,6 +8200,22 @@ PrefabInstance:
       propertyPath: objectToIgnore
       value: 
       objectReference: {fileID: 7749013120450250750, guid: 545376ce2c50b54498eb2acdb03fcbca, type: 3}
+    - target: {fileID: 3726854768061545557, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726854768122003323, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+      propertyPath: force
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726854768124082601, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+      propertyPath: force
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726854768175786792, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
+      propertyPath: force
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3773943326166602648, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
       propertyPath: m_Name
       value: Zito V3
