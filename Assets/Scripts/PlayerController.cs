@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
                 Physics2D.IgnoreCollision(colliders[i], colliders[k]);
             }
         }
-
     }
     void Update()
     {

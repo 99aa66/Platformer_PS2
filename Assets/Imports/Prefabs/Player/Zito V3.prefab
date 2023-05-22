@@ -698,7 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restingAngle: 0
-  force: 50
+  force: 100
 --- !u!1 &2659132547701686448
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restingAngle: 90
-  force: 750
+  force: 10000
 --- !u!1 &3189774344150524744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restingAngle: 0
-  force: 50
+  force: 100
 --- !u!1 &3572127739216852881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restingAngle: 0
-  force: 600
+  force: 2000
 --- !u!1 &3726854767967925650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 461b566fb973d2442b1ccc19beb0c37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabSound: {fileID: 0}
+  grabSound: {fileID: 8300000, guid: 9ff37bda70652c94d82337588d9cfb2b, type: 3}
 --- !u!1 &3773943326166602648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,6 +1846,7 @@ GameObject:
   - component: {fileID: 3726854766305375564}
   - component: {fileID: 3726854766305375566}
   - component: {fileID: 3726854766305375565}
+  - component: {fileID: 3494003799662090217}
   m_Layer: 3
   m_Name: Tibia_D
   m_TagString: Player
@@ -1945,6 +1946,20 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -10
     m_UpperAngle: 10
+--- !u!114 &3494003799662090217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4471909823065656817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e6b63e8e8d2b04b93ad08b1154e1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restingAngle: 0
+  force: 2000
 --- !u!1 &4493965565150481468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2613,7 +2628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restingAngle: 0
-  force: 600
+  force: 2000
 --- !u!1 &6694589208936594374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,6 +2720,7 @@ GameObject:
   - component: {fileID: 3726854766170395096}
   - component: {fileID: 3726854766170395098}
   - component: {fileID: 3726854766170395097}
+  - component: {fileID: 8820851585678067049}
   m_Layer: 3
   m_Name: Tibia_G
   m_TagString: Player
@@ -2803,6 +2819,20 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -10
     m_UpperAngle: 10
+--- !u!114 &8820851585678067049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6966209475221566176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e6b63e8e8d2b04b93ad08b1154e1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restingAngle: 0
+  force: 2000
 --- !u!1 &7969112637012957662
 GameObject:
   m_ObjectHideFlags: 0

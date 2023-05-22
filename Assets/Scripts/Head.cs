@@ -72,7 +72,7 @@ public class Head : MonoBehaviour
         }
         else
         {
-            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, restingAngle, 5000 * Time.deltaTime));  // Si le bouton gauche de la souris n'est pas enfoncé, la tête revient à sa position
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, restingAngle, 10000 * Time.deltaTime));  // Si le bouton gauche de la souris n'est pas enfoncé, la tête revient à sa position
         }
     }
 }

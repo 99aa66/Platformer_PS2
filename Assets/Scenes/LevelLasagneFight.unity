@@ -3538,34 +3538,6 @@ PrefabInstance:
       propertyPath: objectToIgnore
       value: 
       objectReference: {fileID: 7749013120450250750, guid: 545376ce2c50b54498eb2acdb03fcbca, type: 3}
-    - target: {fileID: 3726854768061545557, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
-      propertyPath: m_UseMotor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3726854768061545557, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 1.7460896
-      objectReference: {fileID: 0}
-    - target: {fileID: 3726854768061545557, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0.0039977254
-      objectReference: {fileID: 0}
-    - target: {fileID: 3726854768061545557, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
-      propertyPath: m_AutoConfigureConnectedAnchor
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3726854768061545558, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3726854768061545563, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.856
-      objectReference: {fileID: 0}
-    - target: {fileID: 3726854768061545563, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3773943326166602648, guid: 2adb0efec688f974e80d29daecdd7ae5, type: 3}
       propertyPath: m_Name
       value: Zito V3
