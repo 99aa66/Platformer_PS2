@@ -7,6 +7,8 @@ public class DeathZone : MonoBehaviour
     private Animator fadeSystem;
     public GameObject gameOverCanvas;
     private bool isReplacingPlayer = false;
+
+    public AudioClip deathZoneSound;
     private void Awake()
     {
         fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
@@ -15,6 +17,7 @@ public class DeathZone : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !isReplacingPlayer)
         {
+            AudioManager.instance.PlayClipAt(deathZoneSound, transform.position);
             isReplacingPlayer = true;
             Rigidbody2D[] rigidbodies = collision.transform.root.GetComponentsInChildren<Rigidbody2D>();
             Rigidbody2D hancheRef = null;

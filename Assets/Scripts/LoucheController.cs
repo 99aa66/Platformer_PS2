@@ -8,6 +8,8 @@ public class LoucheController : MonoBehaviour
     private Quaternion initialRotation;
 
     private bool activated = false;
+
+    public AudioClip achievementSound;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,6 +28,7 @@ public class LoucheController : MonoBehaviour
         {
             if (rb != null)
             {
+                AudioManager.instance.PlayClipAt(achievementSound, transform.position);
                 rb.bodyType = RigidbodyType2D.Dynamic;
                 activated = true;
             }

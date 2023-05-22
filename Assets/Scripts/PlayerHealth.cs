@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private Animator fadeSystem;
 
-    private Vector3 lastCheckpoint;
+    public AudioClip hitSound;
 
     public static PlayerHealth instance;
     public void Awake()
@@ -66,6 +66,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (!isInvincible)
         {
+            AudioManager.instance.PlayClipAt(hitSound, transform.position);
             currentHealth -= damage;  // si on prend des degats on retire de la vie a la vie actuelle
             HealthBar.SetHealth(currentHealth); // mettre a jour le visuel de la barre de vie
             //vérifier si le joueur est toujours vivant

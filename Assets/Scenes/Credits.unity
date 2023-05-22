@@ -262,14 +262,14 @@ MonoBehaviour:
     GRAPHICS  -</SIZE>\n<SIZE=4> By JAUZE Lauriane</I></SIZE>\n\n<SIZE=6>-\r   GAME
     DEVELOPER  -</SIZE>\n<SIZE=4> By JAUZE Lauriane</I></SIZE>\n\n<SIZE=6>-\r   AUDIO 
     -</SIZE>\n<SIZE=4>ECRAN TITRE & IN GAME\\r\\n<I>By  Mathieu LIGDAMIS</I></SIZE>\n\n<SIZE=6>-\r  
-    FONT  -</SIZE>\n<SIZE=4>Sunny Spells\\r\\n<I>By  Niskala HURUF</I></SIZE>\n\n\n<SIZE=8>SPECIAL 
+    FONT  -</SIZE>\n<SIZE=4>Chomiku\\r\\n<I>By  Alit Design</I></SIZE>\n\n\n<SIZE=8>SPECIAL 
     THANKS</SIZE>\n\n<SIZE=4><I>Aux enseignants de l'ESMA GAME de Montpellier\nEmanuele
     CIRRONIS & HIRSCH Sacha\nLes camarades de classe\n\nPapyGoustave\nVrais de Vrais\nDalons\nArchiPotes\n\nFamille\n\nHope
     <SIZE=3>(le meilleur des chats)</SIZE>\n\nYOUTUBE</I></SIZE>\n<SIZE=3><I>Tuto 
     Unity  FR \nBrackeys\nAdrenalyzed\nRomi Fauzi\nChrono ABI\nRehope Games\nUnityPourLesNuls</I></SIZE>"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4f5ebbc7f62014c45afc726851c85f7c, type: 2}
-  m_sharedMaterial: {fileID: -6292530887239417655, guid: 4f5ebbc7f62014c45afc726851c85f7c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ca151b960c0b0594dbb2df643274e92e, type: 2}
+  m_sharedMaterial: {fileID: -231845727847668186, guid: ca151b960c0b0594dbb2df643274e92e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -293,8 +293,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5
-  m_fontSizeBase: 5
+  m_fontSize: 3
+  m_fontSizeBase: 3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

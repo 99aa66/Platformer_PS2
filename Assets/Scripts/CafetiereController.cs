@@ -15,6 +15,11 @@ public class CafetiereController : MonoBehaviour
 
     private float transparentAlpha = 0.5f;
     [SerializeField] Animator anim;
+
+    [Header("Audio")]
+    public AudioClip cafHitSound;
+    public AudioClip cafBreakSound;
+    public AudioClip cafResetSound;
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -54,13 +59,14 @@ public class CafetiereController : MonoBehaviour
         else if (durability <= 0)
         {
             anim.SetTrigger("break");
+            AudioManager.instance.PlayClipAt(cafBreakSound, transform.position);
             sr.color = new Color(1f, 1f, 1f, transparentAlpha);
             StartCoroutine(Static());
         }
     }
-
     public void ResetPosition()
     {
+        AudioManager.instance.PlayClipAt(cafResetSound, transform.position);
         transform.localPosition = initialPosition;
         transform.localRotation = initialRotation;
         sr.color = Color.white;
@@ -74,6 +80,7 @@ public class CafetiereController : MonoBehaviour
     {
         if (col.gameObject.tag == "Ennemi" || col.gameObject.tag == "Glass" || col.gameObject.tag == "Ground")
         {
+            AudioManager.instance.PlayClipAt(cafHitSound, transform.position);
             DecrementDurability();
         }
     }

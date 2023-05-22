@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToDestroy: {fileID: 7028945278891784059}
+  deadSound: {fileID: 8300000, guid: 6f8b38f6701caf74eba36398b9d9b6d2, type: 3}
 --- !u!1 &7028945277875400782
 GameObject:
   m_ObjectHideFlags: 0

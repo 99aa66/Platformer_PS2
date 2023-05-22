@@ -9,8 +9,9 @@ public class EnemyHealthFarfalle : MonoBehaviour
     private SpriteRenderer SpriteEnnemi;
     public bool takeDamage = false;
 
-    private static EnemyHealthFarfalle instance;
+    public AudioClip deadSound;
 
+    private static EnemyHealthFarfalle instance;
     private void Awake()
     {
         if (instance != null)
@@ -30,6 +31,7 @@ public class EnemyHealthFarfalle : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            AudioManager.instance.PlayClipAt(deadSound, transform.position);
             Object.Destroy(gameObject);
         }
     }

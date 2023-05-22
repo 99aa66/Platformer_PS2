@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: LevelLasagneFight
+  sucessSound: {fileID: 8300000, guid: aca9c883630097d4d875a6659205e494, type: 3}
 --- !u!1 &7306696103935058647
 GameObject:
   m_ObjectHideFlags: 0

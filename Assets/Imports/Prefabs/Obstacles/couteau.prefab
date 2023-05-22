@@ -132,3 +132,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 0}
+  deathZoneSound: {fileID: 8300000, guid: 4ff77811fa0d5f047a5d0bb7063bea91, type: 3}

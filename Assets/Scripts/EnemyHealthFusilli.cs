@@ -10,8 +10,9 @@ public class EnemyHealthFusilli : MonoBehaviour
     private SpriteRenderer SpriteEnnemi;
     public bool takeDamage = false;
 
-    private static EnemyHealthFusilli instance;
+    public AudioClip deadSound;
 
+    private static EnemyHealthFusilli instance;
     private void Awake()
     {
         if (instance != null)
@@ -31,6 +32,7 @@ public class EnemyHealthFusilli : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            AudioManager.instance.PlayClipAt(deadSound, transform.position);
             Object.Destroy(gameObject);
         }
     }

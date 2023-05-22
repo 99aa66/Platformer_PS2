@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealPowerUp1 : MonoBehaviour
@@ -8,6 +9,7 @@ public class HealPowerUp1 : MonoBehaviour
     Rigidbody2D rb;
     Collider2D col;
 
+    public AudioClip sound;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,6 +23,7 @@ public class HealPowerUp1 : MonoBehaviour
             // rendre de la vie au joueur + garder coeur sur map si max de vie
             if (PlayerHealth.instance.currentHealth != PlayerHealth.instance.maxHealth)
             {
+                AudioManager.instance.PlayClipAt(sound, transform.position);
                 PlayerHealth.instance.HealPlayer(healthPoints);
                 Destroy(gameObject);
             }
