@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aba6fed19b05f84fbe97632ed0517b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durability: 7
+  durability: 10
   anim: {fileID: 1434274487}
   cafHitSound: {fileID: 8300000, guid: 718133192522df247be70658b5ffda5b, type: 3}
   cafBreakSound: {fileID: 8300000, guid: fba1e59e8a4124c45a54cdd052310107, type: 3}

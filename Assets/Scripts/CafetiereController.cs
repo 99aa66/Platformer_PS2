@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CafetiereController : MonoBehaviour
 {
-    public int durability = 7;
+    public int durability = 10;
     public bool isBroken { get { return durability <= 0; } }
     private Vector3 initialPosition;
     private Quaternion initialRotation;
@@ -74,14 +74,22 @@ public class CafetiereController : MonoBehaviour
     }
     private void ResetDurability()
     {
-        durability = 7;
+        durability = 10;
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Ennemi" || col.gameObject.tag == "Glass" || col.gameObject.tag == "Ground")
+        if (col.gameObject.tag == "Ennemi" || col.gameObject.tag == "Glass")
         {
             AudioManager.instance.PlayClipAt(cafHitSound, transform.position);
             DecrementDurability();
+        }
+        if (col.gameObject.tag == "Ground" && col.relativeVelocity.magnitude > 10f)
+        {
+            AudioManager.instance.PlayClipAt(cafHitSound, transform.position);
+            anim.SetTrigger("break");
+            sr.color = new Color(1f, 1f, 1f, transparentAlpha);
+            StartCoroutine(Static());
+            ResetPosition();
         }
     }
     private IEnumerator Static()
