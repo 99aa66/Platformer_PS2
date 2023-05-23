@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
         }
         if (rb.velocity.y < -10f)
         {
-            rb.gravityScale = 60;
+            rb.gravityScale = 30;
         }
         else rb.gravityScale = 10;
     }
